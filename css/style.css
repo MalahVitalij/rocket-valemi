@@ -1,0 +1,87 @@
+/*==========FONTS=========*/
+@font-face {
+    font-family: '', sans-serif;
+    src: url('../fonts/.eot');
+    src: url('../fonts/.eot?iefix') format('eot'),
+    url('../fonts/.woff') format('woff'),
+    url('../fonts/.ttf') format('truetype'),
+    url('../fonts/.svg#webfont') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+/*=========CUSTOM=========*/
+body {
+    position: relative;
+    overflow: hidden; 
+    height: 0; 
+    opacity: 0;
+}
+input,
+input:active,
+input:visited,
+input:focus,
+input:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+img{
+    max-width:100%;
+}
+* {
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a, 
+a:hover, 
+a:focus, 
+a:active, 
+a:visited {
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+button,
+button:hover,
+button:active,
+button:focus,
+button:visited {
+    box-shadow: none;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+}
+button {
+    background: inherit;
+    cursor: pointer;
+}
+p {
+    margin-bottom: 0;
+}
+/*=========HEADER=========*/
+
+
+
+/*=========CONTENT=========*/
+
+
+
+/*=========FOOTER=========*/
+
+
+
+/*=========MEDIA=========*/
+@media only screen and (max-width: ) {
+    
+}
