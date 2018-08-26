@@ -80,12 +80,40 @@ section {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    z-index: 1;
 }
 .clearfix,
 .clearfix::after {
     display: block;
     content: "";
     clear: both;
+}
+.custom-counter {
+    position: relative;
+    margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+}
+.custom-counter li {
+    counter-increment: step-counter;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+.custom-counter li::before {
+    display: block;
+    position: absolute;
+    content: counter(step-counter);
+    width: 27px;
+    height: 27px;
+    margin-right: 5px;
+    left: 0;
+    background: url(../img/set-list.png) no-repeat;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 27px;
+    border-radius: 50%;
 }
 .styled-btn1 {
     display: block;
@@ -324,7 +352,7 @@ section {
     
 }
 .logo-block {
-    width: 137px;
+    width: 47px;
     height: 137px;
 }
 .main-top-wrapper {
@@ -1322,6 +1350,10 @@ section {
     transform: translateX(-50%);
     z-index: -2;
 }
+.main-popular .section-side-title {
+    top: 0;
+    right: -60px;
+}
 .main-popular .popular-slider {}
 .main-popular .popular-slider .slick-arrow {
     display: block;
@@ -1423,6 +1455,178 @@ section {
 .main-popular .popular-slider .slide .popular.cs3 {
     background: #F8EAC5;
 }
+
+.main-set {
+    padding-top: 48px;
+    padding-bottom: 20px;
+    background: #EDE8F3;
+}
+.main-set .sec-bg-title {
+    display: block;
+    position: absolute;
+    bottom: -120px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 251px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: -1;
+}
+.main-set .set-wrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.main-set .set-wrapper .set-block {
+    width: 25%;
+}
+.main-set .set-wrapper .set-block.center {
+    width: 50%;
+}
+.main-set .set-wrapper .set-block.center img {
+    display: block;
+    margin: 0 auto;
+}
+.main-set .set-wrapper .set-block .title {
+    color: #6c5d7f;
+    font-size: 21px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+.main-set .set-wrapper .set-block .custom-counter {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+.main-set .set-wrapper .set-block .custom-counter::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 51px;
+    height: 1px;
+    background: #858488;
+    left: 0;
+    bottom: 0;
+}
+.main-set .set-wrapper .set-block .price {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    position: relative;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.main-set .set-wrapper .set-block .price > div {
+    color: #333333;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14px;
+}
+.main-set .set-wrapper .set-block .price > div:first-child {
+    align-self: flex-start;
+    
+}
+.main-set .set-wrapper .set-block .price > div:nth-child(2) {
+    align-self: center;
+    color: #d28883;
+    font-size: 40px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 900;
+    line-height: 40px;
+}
+.main-set .set-wrapper .set-block .price > div:nth-child(3) {
+    align-self: flex-end;
+}
+.main-set .set-wrapper .set-block .price-wrapper {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.main-set .set-wrapper .set-block .price-wrapper .old-price {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #d28883;
+    font-size: 20px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 900;
+    line-height: 20px;
+    text-decoration: line-through;
+}
+.main-set .set-wrapper .set-block .styled-btn1 {
+    max-width: 200px;
+    float: left;
+}
+
+.main-additional {
+    
+}
+.main-additional .container {
+    padding-top: 34px;
+    padding-bottom: 50px;
+}
+.main-additional .container::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 2000px;
+    height: 100%;
+    top: 0;
+    right: 20%;
+    background: #FCF7F6;
+    z-index: -1;
+}
+.main-additional .sec-subtitle {
+    color: #cabbdc;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.main-additional .add-wrapper {
+    display: block;
+    position: relative;
+    border: 8px solid #CABBDC;
+    max-width: 610px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 100px;
+    z-index: 1;
+}
+.main-additional .add-wrapper .add-img {
+    display: block;
+    position: absolute;
+}
+.main-additional .add-wrapper .add-img.img1 {
+    left: -200px;
+    z-index: -1;
+}
+.main-additional .add-wrapper .add-img.img2 {
+    right: -200px;
+    z-index: 2;
+}
+.main-additional .add-wrapper .title {}
+.main-additional .add-wrapper .add-price-wrapper {}
+.main-additional .add-wrapper .add-price-wrapper .price {}
+.main-additional .add-wrapper .add-price-wrapper .price div:first-child {}
+.main-additional .add-wrapper .add-price-wrapper .price div:nth-child(2) {}
+.main-additional .add-wrapper .add-price-wrapper .price div:nth-child(3) {}
+.main-additional .add-wrapper .add-price-wrapper .styled-btn1 {}
+
 /*=========FOOTER=========*/
 
 
