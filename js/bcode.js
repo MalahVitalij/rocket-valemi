@@ -37,4 +37,24 @@ $(document).ready(function() {
             $('.checked-ball .img-block').find('img').attr('src', $(this).find('img').attr('src'));
         }
     });
+
+// select style
+
+  $(".main__form-select").on("click", function() {
+    $(this).closest(".main__form-select-wrap").find(".main__form-submenu").slideToggle(0);
+  });
+
+  
+
+  $(".main__form-submenu").on("click",'span', function() {
+
+    $(this).closest('.main__form-select-wrap').find('.main__form-select').attr('value',($(this).text()));
+    $(this).parent().slideUp(0);
+  });
+
+  // select style end
+
+
+
+
 });

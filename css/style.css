@@ -1,4 +1,4 @@
-/*=========CUSTOM=========*/
+/*/*=========CUSTOM=========*/
 body {
     position: relative;
     margin: 0;
@@ -201,6 +201,9 @@ section {
     -ms-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
+.banner-form .styled-btn2 {
+    width: 80%;
+}
 .radio {
     position: absolute;
     z-index: -1;
@@ -265,6 +268,7 @@ section {
     text-align: center;
     line-height: 36px;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
 .sec-title::before {
     display: block;
@@ -289,7 +293,7 @@ section {
     font-size: 18px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 41px;
 }
 .sec-subtitle.w-subtitle {
     color: #ffffff;
@@ -310,6 +314,7 @@ section {
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    margin-bottom: 41px;
 }
 .scroll-to:hover {
     -webkit-transform: translateX(-50%) scale(1.1);
@@ -328,7 +333,7 @@ section {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
-    top: 80px;
+    top: 125px;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
@@ -523,6 +528,8 @@ a {
     flex-wrap: wrap;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
+    margin-left: 17px;
+    margin-top: -31px;
 }
 .banner-advantages > .advan-block {
     display: -ms-flexbox;
@@ -530,7 +537,8 @@ a {
     align-items: center;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
-    margin-right: 45px;
+    margin-right: 25px;
+    width: 210px;
 }
 .banner-advantages > .advan-block .icon-block {
     margin-right: 15px;
@@ -617,18 +625,21 @@ a {
     font-weight: 900;
     text-transform: uppercase;
     text-align: center;
+    padding-left: 9px;
+    padding-top: 5px;
 }
 .styled-form .form-hd span {
     font-size: 40px;
+    margin-left: -8px;
 }
 .styled-form .form-hd:before {
     display: block;
     position: absolute;
     content: '';
-    width: 35px;
+    width: 27px;
     height: 8px;
     background: #ffffff;
-    top: 50%;
+    top: 47%;
     left: 0;
     transform: translateY(-50%);
 }
@@ -636,10 +647,10 @@ a {
     display: block;
     position: absolute;
     content: '';
-    width: 35px;
+    width: 27px;
     height: 8px;
     background: #ffffff;
-    top: 50%;
+    top: 47%;
     right: 0;
     transform: translateY(-50%);
 }
@@ -648,7 +659,7 @@ a {
     display: block;
     position: relative;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 .styled-form form .form-block:after {
     display: block;
@@ -706,7 +717,7 @@ a {
     font-size: 14px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 7px;
 }
 .styled-form form .form-block.price {
     display: flex;
@@ -780,10 +791,11 @@ a {
 
 /*=========CONTENT=========*/
 .content {
-    padding-top: 62px; 
+    
 }
 .main-advantages {
     position: relative;
+    padding-top: 60px;
 }
 .main-advantages .advan-slider {
     display: -ms-flexbox;
@@ -791,13 +803,14 @@ a {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 78px;
+    margin-bottom: 65px;
 }
 .main-advantages .advan-slider .advan-block {
     display: flex;
     justify-content: flex-start;
     width: 32%;
-    margin-bottom: 20px;
+    margin-bottom: 59px;
 }
 .main-advantages .advan-slider .advan-block .icon-block {
     width: 40%;
@@ -964,8 +977,9 @@ a {
     text-align: center;
 }
 .main-userfulness {
-    padding-top: 30px;
+    padding-top: 51px;
     padding-bottom: 30px;
+    position: relative;
 }
 .main-userfulness .userfulness-center {
     display: block;
@@ -1080,7 +1094,7 @@ a {
 .main-compound > .container {
     position: relative;
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 27px;
     z-index: 1;
 }
 .main-compound > .container::before {
@@ -1144,7 +1158,8 @@ a {
     padding-bottom: 35px;
 }
 .main-colors-scheme .section-side-title {
-    left: -60px;
+    left: -78px;
+    top: 75px;
 }
 .scheme-wrapper {
     display: -webkit-flex;
@@ -1358,6 +1373,97 @@ a {
     max-width: 200px;
     width: 100%;
 }
+.scheme-wrapper .colors-form .main__form-select-wrap{
+    cursor: pointer;
+}
+.scheme-wrapper .colors-form .main__form-select-wrap input{
+    cursor: pointer;
+}
+.scheme-wrapper .colors-form .form-block input[type="text"]{
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    padding-left: 18px;
+    padding-right: 20px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+}
+.scheme-wrapper .colors-form .form-block .main__form-select-wrap input[type="text"]:after{   
+    display: block;
+    position: absolute;
+    content: 'fgdhfgdhfgd';
+    width: 44px;
+    height: 44px;
+    top: 0;
+    right: 0;
+    background-color: #000;
+}
+.colors-form .form-block.check input[type="checkbox"]{
+    display: none;
+}
+.colors-form .form-block.check label{
+    padding-left: 20px;
+}
+.colors-form .check label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    
+}
+
+.colors-form .form-block.check input[type="checkbox"]:checked + label::before{
+    content: '';
+    background-image: url(../img/checked.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu {
+    display: block;
+    width: 100%;
+    /* height: 44px; */
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    padding-left: 18px;
+    padding-right: 20px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
+    overflow: hidden;
+    background-color: #FFF;
+}
+.scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu{
+    display: none;
+}
+.scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu span{
+    display: block;
+    color: #4d4f5b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.scheme-wrapper .colors-form label::before {
+    border: 2px solid #ccc;
+    width: 26px;
+    height: 26px;
+    top: -6px;
+    left: 7px;
+}
+.scheme-wrapper .colors-form label::after {
+    top: 4px;
+    left: 17px;
+}
 .scheme-wrapper .colors-form .form-wrapper {}
 .scheme-wrapper .colors-form .form-wrapper .form-hd {
     color: #fe88d7;
@@ -1381,15 +1487,47 @@ a {
 .scheme-wrapper .colors-form .form-wrapper form .form-block {
     margin-bottom: 10px;
 }
+
+.colors-form .form-wrapper .form-block.price {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.colors-form .form-wrapper .form-block.price div{
+    display: flex;
+    color: #4d4f5b;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 700;
+}
+
+.colors-form .form-wrapper .form-block.price div:first-child {
+    align-self: flex-start;
+}
+
+.colors-form .form-wrapper .form-block.price div:nth-child(2) {
+    align-self: center;
+    font-size: 40px;
+    line-height: 40px;
+    color: #FE88D7;
+}
+.colors-form .form-wrapper .form-block.price div:nth-child(3) {
+    align-self: flex-end;
+}
+
 .scheme-wrapper .colors-form .form-wrapper form .form-block .form-block-name {
     color:#4d4f5b;
     font-size: 13px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 18px;
 }
 .scheme-wrapper .colors-form .form-wrapper form .form-block label {
     color: #6c5d7f;
-    
+}
+.scheme-wrapper .colors-form .form-wrapper form .form-block label {
+    color: #6c5d7f;
 }
 @media (min-width: 1200px) {
     .main-popular .container {
@@ -2098,6 +2236,11 @@ a {
     font-weight: 400;
     height: 278px;
 }
+
+
+
+
+
 .main-reviews .reviews-wrapper .review:nth-child(2) .desc-bottom {
     display: -webkit-flex;
     display: -moz-flex;
@@ -2139,7 +2282,7 @@ a {
     height: 32px;
     top: 50%;
     left: -43px;
-    background: url() no-repeat;
+    /*background: url() no-repeat;*/
 }
 .main-reviews .reviews-wrapper .review:nth-child(3) {
     display: -webkit-flex;
@@ -2152,6 +2295,11 @@ a {
     max-width: 230px;
     z-index: 1;
 }
+
+
+
+
+
 .main-reviews .reviews-wrapper .review:nth-child(3)::after {
     display: block;
     position: absolute;
@@ -2446,4 +2594,3 @@ a {
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-
