@@ -1,8 +1,64 @@
 /*=========MEDIA=========*/
+@media only screen and (max-width: 1702px) {
+    /*размер надписей на bg */
+    
+    .content .main-clients .container .sec-bg-title {
+        font-size: 175px;
+    }
+    .content .main-popular .sec-bg-title {
+        font-size: 160px;
+    }
+    .content .main-set .sec-bg-title {
+        font-size: 170px;
+    }
+    .content .main-reviews .sec-bg-title {
+        font-size: 160px;
+    }
+     /*размер надписей на bg конец*/
+}
+
+
+@media only screen and (max-width: 1310px) {
+    /*размер надписей на bg */
+    .content .main-userfulness .userfulness-center{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .content .main-clients .container .sec-bg-title {
+        font-size: 125px;
+    }
+    .content .main-popular .sec-bg-title {
+        font-size: 120px;
+    }
+    .content .main-set .sec-bg-title {
+        font-size: 120px;
+    }
+    .content .main-reviews .sec-bg-title {
+        font-size: 120px;
+    }
+     /*размер надписей на bg конец*/
+}
+
+
+
+
 @media only screen and (max-width: 1280px) {
     
 }
-/*use bootstrap grid*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* use bootstrap grid
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -17,7 +73,7 @@
     .container {
         max-width: 960px;
     }
-}
+} */
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;

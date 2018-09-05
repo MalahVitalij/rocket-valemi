@@ -38,6 +38,20 @@ $(document).ready(function() {
         }
     });
 
+
+
+// burger-menu
+$('.menu-btn').on('click', function(e) {
+  e.preventDefault();
+  $(this).toggleClass('menu-btn_active');
+  $('.menu-nav').toggleClass('menu-nav_active');
+});
+// burger-menu end
+
+
+
+
+
 // select style
 
   $(".main__form-select").on("click", function() {
@@ -54,7 +68,60 @@ $(document).ready(function() {
 
   // select style end
 
+// popup
+/* модальное окно попап заказа */
+$('.btn-close_view').click(function(e) {
+    e.preventDefault();
+    //do other stuff when a click happens
+});
 
+    $(".btn-view").click (function (){
+            $(".modal-overlay-order").fadeIn();
+        });
+        $(".btn-close_view").click (function (){
+            $(".modal-overlay-order").fadeOut();
+        });
+
+$(document).mouseup(function (e) {
+    var myOrders = $(".modal-overlay-order");
+    if (myOrders.has(e.target).length === 0){
+        myOrders.fadeOut();
+    }
+});
+/* конец модальное окно попап просмотр заказа */
+/* модальное окно попап оплата */
+
+    $(".btn-view-pay").click (function (){
+            $(".modal-overlay-orderPay").fadeIn();
+        });
+        $(".btn-close_view").click (function (){
+            $(".modal-overlay-orderPay").fadeOut();
+        });
+
+$(document).mouseup(function (e) {
+    var myPay = $(".modal-overlay-orderPay");
+    if (myPay.has(e.target).length === 0){
+        myPay.fadeOut();
+    }
+});
+/* конец модальное окно попап оплата заказа */
+/* модальное окно попап оплата */
+
+    $(".btn-view-hill").click (function (){
+            $(".modal-overlay-order-hill").fadeIn();
+        });
+        $(".btn-close_view").click (function (){
+            $(".modal-overlay-order-hill").fadeOut();
+        });
+
+$(document).mouseup(function (e) {
+    var myPay = $(".modal-overlay-order-hill");
+    if (myPay.has(e.target).length === 0){
+        myPay.fadeOut();
+    }
+});
+/* конец модальное окно попап оплата заказа */
+// popup end
 
 
 });
