@@ -1,79 +1,110 @@
 /*=========MEDIA=========*/
 @media only screen and (max-width: 1702px) {
-    /*размер надписей на bg */
-    
-    .content .main-clients .container .sec-bg-title {
-        font-size: 175px;
-    }
-    .content .main-popular .sec-bg-title {
-        font-size: 160px;
-    }
-    .content .main-set .sec-bg-title {
-        font-size: 170px;
-    }
-    .content .main-reviews .sec-bg-title {
-        font-size: 160px;
-    }
-     /*размер надписей на bg конец*/
+   
 }
 
 
 @media only screen and (max-width: 1310px) {
-    /*размер надписей на bg */
+    
     .content .main-userfulness .userfulness-center{
         width: 90%;
         margin: 0 auto;
     }
-    .content .main-clients .container .sec-bg-title {
-        font-size: 125px;
-    }
-    .content .main-popular .sec-bg-title {
-        font-size: 120px;
-    }
-    .content .main-set .sec-bg-title {
-        font-size: 120px;
-    }
-    .content .main-reviews .sec-bg-title {
-        font-size: 120px;
-    }
-     /*размер надписей на bg конец*/
+   
 }
-
-
 
 
 @media only screen and (max-width: 1280px) {
-    
+    .main-banner .main-wrapper .mb-ball.ball2{
+        display: none;
+    }
+    .main-banner .main-wrapper .mb-ball.ball3{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 1100px) {
+    #header {
+        background-position: 70% 50%;
+    }
+    .content .main-userfulness .userfulness-center{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    a.scroll-to{
+        display: none;
+    }
+    .container {
+       
+    }
+    .container .section-side-title{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #header {
+        background-position: 70% 50%;
+    }
+    .main-top-wrapper .menu-block .main-menu {
+        flex-direction: column;
+        width: 150px;
+    }
+    .main-banner .banner-description .banner-desc::before{
+        background: none;
+    }
+    .top-line .menu-block .main-menu li {
+        font-size: 13px;
+        margin: 5px 0;
+    }
+    .top-line .menu-block .main-menu li:first-child {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .top-line .menu-block .main-menu li:not(:first-child){
+        display: none;
+    }
+    .top-line .menu-block .menu-btn {
+      display: block;
+      float: right;
+      right: 0;
+    }
+    .content .main-userfulness .userfulness-center {
+        background: url(../img/center-pull-760.png) no-repeat center center;
+    }
+    .sec-title {
+        font-size: 24px;
+    }
+    .main-userfulness .userfulness-center .use-block {
+        width: 195px;
+    }
+    .main-userfulness .userfulness-center .use-block:first-child {
+        top: 15%;
+        left: 50%;
+    }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-/* use bootstrap grid
-@media (min-width: 576px) {
+/* use bootstrap grid*/
+/*@media (min-width: 576px) {
     .container {
         max-width: 540px;
     }
-}
-@media (min-width: 768px) {
+}*/
+/*@media (min-width: 768px) {
     .container {
         max-width: 720px;
     }
-}
+}*/
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
     }
-} */
+} 
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;

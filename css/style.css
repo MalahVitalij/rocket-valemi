@@ -1,13 +1,13 @@
 /*/*=========CUSTOM=========*/
 html{
-    overflow: hidden;
+   
 }
 body {
     position: relative;
     margin: 0;
-    overflow: hidden; 
-   /* height: 0; 
-    opacity: 0;*/
+    /*overflow-y: hidden; 
+    height: 0; 
+    opacity: 0; */
     font-family: "Open Sans", sans-serif;
 }
 input,
@@ -415,6 +415,10 @@ a {
 .main-top-wrapper .open-menu-wrapper {
     display: none;
 }
+.main-top-wrapper .menu-block{
+    position: relative;
+    width: 190px;
+}
 .main-top-wrapper .menu-block .main-menu {
     display: -ms-flexbox;
     display: flex;
@@ -430,6 +434,7 @@ a {
     padding-top: 15px;
     margin-top: 11px;
     text-transform: uppercase;
+    width: 100%;
 }
 .main-top-wrapper .menu-block .main-menu li a {
     color: #ffffff;
@@ -441,6 +446,54 @@ a {
 .main-top-wrapper .menu-block .main-menu li a:hover {
     color: #F3D7D4;
 }
+
+/*burger*/
+.main-menu-li-activ{
+    
+}
+.menu-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  top: 50%; margin-top: -1px;
+  left: 50%; margin-left: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
+.menu-btn span::before,
+.menu-btn span::after {
+  content: '';
+  display: block;
+  transition: 0.2s;
+}
+.menu-btn span::before {
+  transform: translateY(-5px);
+}
+.menu-btn span::after {
+  transform: translateY(5px);
+}
+
+.menu-btn_active span {
+  height: 0;
+}
+.menu-btn_active span:before {
+  transform: rotate(-135deg);
+}
+.menu-btn_active span:after {
+  transform: rotate(135deg);
+}
+
+/*burger end*/
+
 .inst-block {
     margin-top: 15px;
     margin-left: -12px;
@@ -532,9 +585,8 @@ a {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-justify-content: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     margin-left: 17px;
-    margin-top: -31px;
 }
 .banner-advantages > .advan-block {
     display: -ms-flexbox;
@@ -564,7 +616,7 @@ a {
 }
 .banner-description .banner-desc {
     position: relative;
-    padding-top: 95px;
+    padding-top: 78px;
     padding-right: 30px;
     min-height: 420px;
     color: #ffffff;
@@ -586,7 +638,7 @@ a {
     font-family: 'Gilroy', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     z-index: 1;
 }
 .banner-description .banner-desc .desc {
@@ -602,8 +654,8 @@ a {
 .banner-form .form-wrapper {
     display: block;
     position: relative;
-    max-width: 270px;
-    width: 100%;
+    width: 270px;
+    /*width: 100%;*/
     float: right;
     border-left: 8px solid #ffffff;
     border-right: 8px solid #ffffff;
@@ -797,6 +849,9 @@ a {
 }
 
 /*=========CONTENT=========*/
+main{
+    overflow: hidden;
+}
 .content {
     
 }
@@ -817,10 +872,11 @@ a {
     display: flex;
     justify-content: flex-start;
     width: 32%;
-    margin-bottom: 59px;
+    margin-bottom: 20px;
 }
+
 .main-advantages .advan-slider .advan-block .icon-block {
-    width: 40%;
+    margin-right: 12px;
 }
 .main-advantages .advan-slider .advan-block .icon-block img {
     display: block;
@@ -845,6 +901,53 @@ a {
     text-transform: uppercase;
     margin-bottom: 5px;
 }
+.slick-initialized .slick-list {
+    width: 90%;
+}
+.slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+ .slide{
+    display: flex!important;
+}
+ .slick-arrow {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 42px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 0;
+    text-indent: -9999px;
+}
+.slick-arrow.slick-prev {
+    left: 0px;
+}
+ .slick-arrow.slick-prev::before {
+    content: '';
+    width: 40px;
+    height: 60px;
+    display: block;
+    background: url(../img/slick-left.png) no-repeat;
+}
+  .slick-arrow.slick-next {
+    right: 10px;
+}
+  .slick-arrow.slick-next::before {
+    content: '';
+    width: 40px;
+    height: 60px;
+    display: block;
+    background: url(../img/slick-right.png) no-repeat;
+}
+
 .main-clients {
     background: #E3DBED;
     z-index: 1;
@@ -897,6 +1000,9 @@ a {
 .main-clients .clients-carousel {
     margin-left: -15px;
     margin-right: -15px;
+    display: flex;
+    -webkit-justify-content: space-around;
+            justify-content: space-around;
 }
 .main-clients .clients-carousel .slide {
     padding-left: 15px;

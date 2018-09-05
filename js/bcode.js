@@ -3,13 +3,6 @@ $(window).on('load', function(){
     $('body').fadeTo('slow' , 1);
 });
 $(document).ready(function() {
-    $('.clients-carousel').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-    });
     $('.popular-slider').slick({
         dots: false,
         arrows: true,
@@ -42,13 +35,76 @@ $(document).ready(function() {
 
 // burger-menu
 $('.menu-btn').on('click', function(e) {
-  e.preventDefault();
+    // $('.main-menu li').not(':first-child').css("display","none")
+    $('.main-menu li').not(':first-child').slideToggle()
+  e.preventDefault;
   $(this).toggleClass('menu-btn_active');
-  $('.menu-nav').toggleClass('menu-nav_active');
 });
 // burger-menu end
 
 
+
+// при разрешении 760 добавляется класс к valemi - это
+    $(window).on('load resize', function () {
+        if($(window).width() <= 900){
+            $('.advan-slider').slick({
+                dots: false,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 2048,
+                        settings: "unslick"
+                    },
+                    {
+                       breakpoint: 900,
+                       settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 1
+                        }
+                    },
+                    {
+                       breakpoint: 600,
+                       settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+            $('.clients-carousel').slick({
+                dots: false,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 2048,
+                        settings: "unslick"
+                    },
+                    {
+                       breakpoint: 900,
+                       settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 1
+                    }},
+                    {
+                       breakpoint: 600,
+                       settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                    }
+                }
+                    ]
+                });
+        }
+    });
+// при разрешении 760 добавляется класс к valemi - это
 
 
 
