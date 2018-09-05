@@ -390,8 +390,6 @@ a {
     
 }
 .logo-block {
-    width: 47px;
-    height: 137px;
 }
 .main-top-wrapper {
     display: -ms-flexbox;
@@ -417,7 +415,6 @@ a {
 }
 .main-top-wrapper .menu-block{
     position: relative;
-    width: 190px;
 }
 .main-top-wrapper .menu-block .main-menu {
     display: -ms-flexbox;
@@ -434,7 +431,7 @@ a {
     padding-top: 15px;
     margin-top: 11px;
     text-transform: uppercase;
-    width: 100%;
+    width: 190px;
 }
 .main-top-wrapper .menu-block .main-menu li a {
     color: #ffffff;
@@ -1240,7 +1237,7 @@ main{
     flex-wrap: wrap;
 }
 .comp-wrapper .material {
-    width: 360px;
+    width: 32%;
     flex-grow: 1;
     color: #333333;
     font-size: 14px;
@@ -1281,7 +1278,8 @@ main{
     display: -o-flex;
     display: flex;
     -webkit-justify-content: space-around;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 .scheme-wrapper .colors-wrapper {
     display: -webkit-flex;
@@ -1369,7 +1367,12 @@ main{
     font-weight: 400;
     text-align: center;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper {
+.scheme-wrapper .wrap-balls {
+    order: 2;
+    width: 70%;
+    margin-top: -130px;
+}
+.scheme-wrapper .balls-wrapper {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -1378,7 +1381,7 @@ main{
     -webkit-justify-content: space-around;
     justify-content: space-around;
 }
-.scheme-wrapper .colors-wrapper .check-ball-wrapper {
+.scheme-wrapper .check-ball-wrapper {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -1387,7 +1390,7 @@ main{
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
-.scheme-wrapper .colors-wrapper .check-ball-wrapper .ball img {
+.scheme-wrapper  .check-ball-wrapper .ball img {
     display: block;
     overflow: hidden;
     -webkit-transition: all 0.3s ease-out;
@@ -1396,10 +1399,10 @@ main{
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-.scheme-wrapper .colors-wrapper .check-ball-wrapper .ball:hover {
+.scheme-wrapper  .check-ball-wrapper .ball:hover {
     cursor: pointer;
 }
-.scheme-wrapper .colors-wrapper .check-ball-wrapper .ball:hover img {
+.scheme-wrapper  .check-ball-wrapper .ball:hover img {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -1411,19 +1414,19 @@ main{
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-.scheme-wrapper .colors-wrapper .bottom.check-ball-wrapper {
+.scheme-wrapper  .bottom.check-ball-wrapper {
     flex-grow: 100;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .check-ball {
+.scheme-wrapper .balls-wrapper .check-ball {
     width: calc(100% - 250px);
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .check-ball .block-title {
+.scheme-wrapper .balls-wrapper .check-ball .block-title {
     color: #6c5d7f;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 30px;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .check-ball .block-desc {
+.scheme-wrapper .balls-wrapper .check-ball .block-desc {
     display: block;
     max-width: 400px;
     width: 100%;
@@ -1432,25 +1435,25 @@ main{
     font-weight: 400;
     margin-bottom: 20px;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .checked-ball {
+.scheme-wrapper .balls-wrapper .checked-ball {
     position: relative;
     max-width: 250px;
     width: 100%;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .checked-ball .img-block {
+.scheme-wrapper .balls-wrapper .checked-ball .img-block {
     display: block;
     width: 250px;
     height: 180px;
     overflow: hidden;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .checked-ball .img-block img {
+.scheme-wrapper .balls-wrapper .checked-ball .img-block img {
     -webkit-transform: translate(60%, 50%) scale(2.5);
     -moz-transform: translate(60%, 50%) scale(2.5);
     -ms-transform: translate(60%, 50%) scale(2.5);
     -o-transform: translate(60%, 50%) scale(2.5);
     transform: translate(60%, 50%) scale(2.5);
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .checked-ball .desc {
+.scheme-wrapper .balls-wrapper .checked-ball .desc {
     display: block;
     position: absolute;
     top: 70%;
@@ -1465,7 +1468,7 @@ main{
     font-weight: 700;
     z-index: 1;
 }
-.scheme-wrapper .colors-wrapper .balls-wrapper .checked-ball .desc::before {
+.scheme-wrapper .balls-wrapper .checked-ball .desc::before {
     display: block;
     position: absolute;
     content: '';

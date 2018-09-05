@@ -36,18 +36,13 @@
     a.scroll-to{
         display: none;
     }
-    .container {
-       
-    }
     .container .section-side-title{
         display: none;
     }
 }
 
 @media only screen and (max-width: 800px) {
-    #header {
-        background-position: 70% 50%;
-    }
+   
     .main-top-wrapper .menu-block .main-menu {
         flex-direction: column;
         width: 150px;
@@ -77,12 +72,32 @@
     .sec-title {
         font-size: 24px;
     }
-    .main-userfulness .userfulness-center .use-block {
-        width: 195px;
+    .main-userfulness .container .userfulness-center .use-block {
+        width: 175px;
     }
-    .main-userfulness .userfulness-center .use-block:first-child {
+    .main-userfulness .container .userfulness-center .use-block:first-child {
         top: 15%;
         left: 50%;
+    }
+    .main-userfulness .container .userfulness-center .use-block:nth-child(2) {
+        top: 22%;
+        left: 12%;
+    }
+    .main-userfulness .container .userfulness-center .use-block:nth-child(3) {
+        bottom: -6%;
+        left: 12%;
+    }
+    .main-userfulness .container .userfulness-center .use-block:nth-child(4) {
+        top: 22%;
+        right: -16%;
+    }
+    .main-userfulness .container .userfulness-center .use-block:nth-child(5) {
+        top: 72%;
+        right: -17%;
+    }
+    .main-userfulness .container .userfulness-center .use-block:nth-child(6) {
+        bottom: -17%;
+        right: 24%;
     }
 }
 
