@@ -41,14 +41,25 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
-   
-    .main-top-wrapper .menu-block .main-menu {
-        flex-direction: column;
-        width: 150px;
+@media only screen and (max-width: 1000px) {
+    
+}
+
+@media only screen and (max-width: 950px) {
+    /*header*/
+    .main-top-wrapper > div {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        flex: 0 0 auto;
+        padding-left: 5px;
+        padding-right: 5px;
     }
-    .main-banner .banner-description .banner-desc::before{
-        background: none;
+  /*header end*/
+
+    /*планшетное меню burger*/
+
+    .top-line .menu-block .main-menu {
+        width: 190px;
     }
     .top-line .menu-block .main-menu li {
         font-size: 13px;
@@ -66,11 +77,51 @@
       float: right;
       right: 0;
     }
-    .content .main-userfulness .userfulness-center {
-        background: url(../img/center-pull-760.png) no-repeat center center;
+    /*планшетное меню burger конец*/
+    
+    .scheme-wrapper .colors-wrapper {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+        order: 1;
+    }
+    .scheme-wrapper .wrap-balls{
+        order: 2;
+        width: 100%;
+        margin-top: 0;
+    }
+    .scheme-wrapper .colors-form {
+        order: 3;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 800px) {
+   
+    .main-top-wrapper .menu-block .main-menu {
+        flex-direction: column;
+        width: 150px;
+    }
+    .main-banner .banner-description .banner-desc::before{
+        background: none;
     }
     .sec-title {
         font-size: 24px;
+    }
+    
+    .banner-advantages > .advan-block {
+            margin-right: 0; 
+        }
+    /*блок "зачем нужен сухой бассейн valemi"*/
+    .content .main-userfulness .userfulness-center {
+        background: url(../img/center-pull-760.png) no-repeat center center;
     }
     .main-userfulness .container .userfulness-center .use-block {
         width: 175px;
@@ -98,6 +149,152 @@
     .main-userfulness .container .userfulness-center .use-block:nth-child(6) {
         bottom: -17%;
         right: 24%;
+    }
+    /*блок "зачем нужен сухой бассейн valemi" конец*/
+}
+
+@media only screen and (max-width: 720px) {
+    .main-top-wrapper {
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: space-around;
+        -moz-justify-content: space-around;
+        -ms-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-items: center;
+                align-items: center;
+    }
+    .main-top-wrapper .logo-block {
+        -webkit-order: 2;
+            -ms-order: 2;
+                order: 2;
+    }
+
+    .main-top-wrapper .inst-block {
+        -webkit-order: 1;
+            -ms-order: 1;
+                order: 1;
+    }
+
+    .main-top-wrapper .menu-block {
+        -webkit-order: 3;
+            -ms-order: 3;
+                order: 3;
+    }
+
+    .main-top-wrapper .phone-block {
+        -webkit-order: 4;
+            -ms-order: 4;
+                order: 4;
+    }
+}
+
+
+@media only screen and (max-width: 610px) {
+    .main-banner .main-wrapper .mb-ball.ball1 {
+        display: none;
+    }
+    .main-banner .main-wrapper {
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .banner-advantages{
+        display: none;
+    }
+
+    .banner-description .banner-desc {
+        padding-right: 0;
+        margin-bottom: 90px;
+    }
+    .banner-description .banner-desc .title {
+        font-size: 21px;
+    }
+    .banner-description .banner-desc .desc {
+        display: none;
+    }
+
+    /*мобильное меню burger*/
+
+    .top-line .menu-block  {
+        display: flex;
+        width: 30%;
+        -webkit-align-items: center;
+                align-items: center;
+        -webkit-justify-content: center;
+                justify-content: center;        
+    }
+    .top-line .menu-block .main-menu {
+        width: 100vw;
+        position: absolute;
+        display: block;
+        background-color: #6c5d7f;
+    }
+    .top-line .menu-block .main-menu li {
+        font-size: 13px;
+        margin: 5px 0;
+    }
+    .top-line .menu-block .main-menu li:first-child {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .top-line .menu-block .main-menu li:not(:first-child){
+        display: block;
+    }
+    .top-line .menu-block .menu-btn {
+        -webkit-border-radius: 50%;
+                border-radius: 50%;
+        background-color: #fe88d7;
+        float: none;
+        position: static;
+        width: 45px;
+        height: 45px;
+    }
+    /*мобильное меню burger конец*/
+    /*форма в хедере*/
+    .banner-form {
+        display: none;
+    }
+    /*форма в хедере end*/
+    .main-top-wrapper {
+    }
+    .main-top-wrapper .logo-block {
+        width: 40%;
+        display: flex;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+    }
+
+    .main-top-wrapper .inst-block {
+        width: 30%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .main-top-wrapper .inst-block a{
+        justify-content: center;
+    }
+    .main-top-wrapper .inst-block a img{
+        margin-right: 0;
+    }
+
+    .main-top-wrapper .inst-block span{
+        display: none;
+    }
+
+    .main-top-wrapper .menu-block {
+        -webkit-order: 3;
+            -ms-order: 3;
+                order: 3;
+    }
+
+    .main-top-wrapper .phone-block {
+    }
+    .main-top-wrapper .phone-block a{
+        color: #fff;
     }
 }
 

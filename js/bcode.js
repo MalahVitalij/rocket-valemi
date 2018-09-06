@@ -35,8 +35,9 @@ $(document).ready(function() {
 
 // burger-menu
 $('.menu-btn').on('click', function(e) {
-    // $('.main-menu li').not(':first-child').css("display","none")
+    if($(window).width() >= 610){
     $('.main-menu li').not(':first-child').slideToggle()
+    } ;
   e.preventDefault;
   $(this).toggleClass('menu-btn_active');
 });
@@ -47,7 +48,9 @@ $('.menu-btn').on('click', function(e) {
 // при разрешении 760 добавляется класс к valemi - это
     $(window).on('load resize', function () {
         if($(window).width() <= 900){
-            $('.advan-slider').slick({
+            
+            
+            $('.advan-slider').not('.slick-initialized').slick({
                 dots: false,
                 arrows: true,
                 infinite: true,
@@ -75,7 +78,7 @@ $('.menu-btn').on('click', function(e) {
                     }
                 ]
             });
-            $('.clients-carousel').slick({
+            $('.clients-carousel').not('.slick-initialized').slick({
                 dots: false,
                 arrows: true,
                 infinite: true,
@@ -103,6 +106,7 @@ $('.menu-btn').on('click', function(e) {
                     ]
                 });
         }
+        
     });
 // при разрешении 760 добавляется класс к valemi - это
 
