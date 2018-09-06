@@ -10,6 +10,22 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+                    {
+                       breakpoint: 1000,
+                       settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 1
+                        }
+                    },
+                    {
+                       breakpoint: 770,
+                       settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                        }
+                    }
+                ]
     });
     
     $('.check-ball-wrapper .ball').on('click', function(){
@@ -36,11 +52,20 @@ $(document).ready(function() {
 // burger-menu
 $('.menu-btn').on('click', function(e) {
     if($(window).width() >= 610){
-    $('.main-menu li').not(':first-child').slideToggle()
-    } ;
+        $('.main-menu li').not(':first-child').slideToggle()
+    } 
+    if($(window).width() <= 610){
+        $('.main-menu').toggleClass('main-menu-active');
+    };
   e.preventDefault;
   $(this).toggleClass('menu-btn_active');
 });
+/*
+$('.main-menu li').on('click', function(e) {
+    $('.menu-btn').removeClass('main-menu-active');
+  e.preventDefault;
+  $(this).toggleClass('menu-btn_active');
+});*/
 // burger-menu end
 
 
@@ -70,7 +95,7 @@ $('.menu-btn').on('click', function(e) {
                         }
                     },
                     {
-                       breakpoint: 600,
+                       breakpoint: 770,
                        settings: {
                           slidesToShow: 1,
                           slidesToScroll: 1
@@ -129,22 +154,30 @@ $('.menu-btn').on('click', function(e) {
   // select style end
 
 // popup
+
 /* модальное окно попап заказа */
 $('.btn-close_view').click(function(e) {
+    e.preventDefault();
+    //do other stuff when a click happens
+});
+$('.btn-view').click(function(e) {
     e.preventDefault();
     //do other stuff when a click happens
 });
 
     $(".btn-view").click (function (){
             $(".modal-overlay-order").fadeIn();
+            $('html, body').css('overflowY', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-order").fadeOut();
+            $('html, body').css('overflowY', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
     var myOrders = $(".modal-overlay-order");
     if (myOrders.has(e.target).length === 0){
+        $('html, body').css('overflowY', 'auto'); 
         myOrders.fadeOut();
     }
 });
@@ -153,14 +186,17 @@ $(document).mouseup(function (e) {
 
     $(".btn-view-pay").click (function (){
             $(".modal-overlay-orderPay").fadeIn();
+            $('html, body').css('overflowY', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-orderPay").fadeOut();
+            $('html, body').css('overflowY', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay-orderPay");
     if (myPay.has(e.target).length === 0){
+        $('html, body').css('overflowY', 'auto'); 
         myPay.fadeOut();
     }
 });
@@ -169,14 +205,17 @@ $(document).mouseup(function (e) {
 
     $(".btn-view-hill").click (function (){
             $(".modal-overlay-order-hill").fadeIn();
+            $('html, body').css('overflowY', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-order-hill").fadeOut();
+            $('html, body').css('overflowY', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay-order-hill");
     if (myPay.has(e.target).length === 0){
+        $('html, body').css('overflowY', 'auto'); 
         myPay.fadeOut();
     }
 });
