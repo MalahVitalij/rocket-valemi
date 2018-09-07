@@ -26,6 +26,19 @@
     }
 }
 
+@media only screen and (max-width: 1190px) {
+    .main-additional .add-wrapper{
+        margin-left: 95px;
+    }
+    .main-example .example-wrapper .example-block.left .ex-ans .ans-img {
+        display: none;
+    }
+    .main-reviews .hd-block {
+        margin-left: 0;
+        margin: 0 auto 90px;
+    }
+}
+
 
 @media only screen and (max-width: 1100px) {
     #header {
@@ -35,12 +48,24 @@
         width: 90%;
         margin: 0 auto;
     }
-
+    .main-additional .add-wrapper{
+        margin-left: 45px;
+    }
     a.scroll-to{
         display: none;
     }
     .container .section-side-title{
         display: none;
+    }
+    .main-reviews .reviews-wrapper .review:nth-child(2) {
+        display: none;
+    }
+    .main-reviews .reviews-wrapper .review:nth-child(3) {
+        display: none;
+    }
+    .main-reviews .reviews-wrapper {
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
     }
 }
 
@@ -58,7 +83,31 @@
         padding-right: 5px;
     }
   /*header end*/
-
+    .main-delivery .del-wrapper > .map img {
+        display: block;
+        margin-left: 0; 
+        margin-right: 0; 
+        width: 100%;
+    }
+    .main-delivery .del-wrapper .del-block:first-child {
+        top: 153px;
+        left: 59px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(2) {
+        bottom: 33px;
+        left: 35px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(3) {
+        top: 397px;
+        right: 106px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(4) {
+        bottom: 336px;
+        right: 37px;
+    }
+    .main-additional .add-wrapper{
+        margin-left: -31px;
+    }
     /*планшетное меню burger*/
 
     .top-line .menu-block .main-menu {
@@ -118,7 +167,66 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .main-set .set-wrapper .set-block {
+        width: 30%;
+    }
+    .set-block-1{
+        -webkit-order: 1;
+            -ms-order: 1;
+                order: 1;
+        margin-left: -123px;
+        width: 40%;
+    }    
+    
+    .main-additional .add-wrapper{
+        margin-left: -95px;
+    }
+    .main-additional .add-wrapper .add-img.img2 {
+    right: -275px;
+    top: -85px;
 }
+.main-set .set-wrapper .set-block.center img:first-child{
+    width: 340px;
+}
+.main-set .set-wrapper .set-block.center .set-block-number{
+    display: block;
+}
+    .set-block-2{
+        -webkit-order: 2;
+            -ms-order: 2;
+                order: 2;
+    }
+    .set-block-3{
+        -webkit-order: 3;
+            -ms-order: 3;
+                order: 3;
+    }
+}
+
+
+
+@media only screen and (max-width: 850px) {
+    .main-delivery .del-wrapper .del-block:first-child {
+        top: 153px;
+        left: 59px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(2) {
+        bottom: 33px;
+        left: 35px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(3) {
+        top: 397px;
+        right: 106px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(4) {
+        bottom: 285px;
+        right: 37px;
+    }
+}
+
+
+
+
 
 @media only screen and (max-width: 800px) {
    .pull-wrapper{
@@ -171,6 +279,28 @@
     }
     /*блок "зачем нужен сухой бассейн valemi" конец*/
 }
+@media only screen and (max-width: 750px) {
+    .main-delivery .del-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .main-delivery .del-wrapper .del-block {
+        position: relative!important;
+        top: 0!important;
+        bottom: 0!important;
+        left: 0!important;
+        right: 0!important;
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+    .main-delivery .del-wrapper .map {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+}
 
 @media only screen and (max-width: 720px) {
     .main-top-wrapper {
@@ -216,6 +346,108 @@
             -ms-order: 4;
                 order: 4;
     }
+    .main-set .set-wrapper{
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+    }
+    .main-set .set-wrapper .set-block {
+        width: 100%;
+    }
+    .main-set .set-wrapper .set-block .set-block .center {
+        width: 100%;
+    }
+    .set-block-1{
+        -webkit-order: 2;
+            -ms-order: 2;
+                order: 2;
+        width: 100%!important;
+    }    
+    
+    .set-block-2{
+        -webkit-order: 1;
+            -ms-order: 1;
+                order: 1;
+    }
+    .set-block-3{
+        -webkit-order: 3;
+            -ms-order: 3;
+                order: 3;
+    }
+    .main-additional .add-wrapper .add-price-wrapper {
+        position: static;
+        max-width: 100%;
+        margin-bottom: -45px;
+    }
+    .main-additional .add-wrapper .add-price-wrapper .price {
+        width: 50%;
+        float: none;
+        margin: 10px auto;
+    }
+    .main-additional .add-wrapper .add-price-wrapper .styled-btn1 {
+        width: 60%;
+        top: 18px;
+        z-index: 10;
+    }
+    .main-additional .add-wrapper .add-price-wrapper .price div:nth-child(2) {
+        text-align: center;
+    }
+    .main-additional .add-wrapper {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 300px;
+        max-width: 96.7%;        
+        padding: 30px 20px;
+        padding-right: 5px;
+    }
+    .main-additional .add-wrapper .title {
+        padding-left: 15px;
+    }
+    .main-additional .add-wrapper .add-img.img2 {
+       right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -287px;
+        width: 60%;
+    }
+    .main-additional .add-wrapper .add-img.img1 {
+            display: none;
+    }
+    .main-additional .container::after {
+        display: none;
+    }
+    .main-additional .container .add-ball {
+        display: none;
+    }
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        display: none;
+    }
+
+    .main-delivery .del-wrapper .map {
+       display: block;
+    }
+    .main-delivery .del-wrapper .del-block {
+       display: block;
+    }
+    .main-delivery .del-wrapper .del-block:first-child {
+        top: 153px;
+        left: 59px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(2) {
+        bottom: 33px;
+        left: 35px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(3) {
+        top: 397px;
+        right: 106px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(4) {
+        bottom: 285px;
+        right: 37px;
+    }
+
 
 
 }
@@ -360,6 +592,45 @@
     .main-top-wrapper .phone-block a{
         color: #fff;
     }
+    .main-example .example-wrapper .example-block .ex-ask .desc {
+        font-size: 20px;
+    }
+    .main-example .example-wrapper .example-block .ex-ans .desc {
+        margin-left: 0px; 
+    }
+    .main-example .example-wrapper .example-block.pink {
+         margin-bottom: 310px; 
+    }
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        display: block;
+        top: 270px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .main-example .example-wrapper .example-block .ex-ask .photo-block {
+        width: 125px;
+        margin-right: 0;
+        padding-top: 20px; 
+    }
+    .main-example .example-wrapper .example-block .ex-ask .photo-block img{
+        width: 109px;
+        height: 108px;
+    }
+    .main-example .example-wrapper .example-block .ex-ask .photo-block:before {
+        max-width: 118px;
+        width: 118px;
+        background-size: 118px;
+        top: -2px;
+        left: 0;
+    }
+}
+@media (max-width: 500px) {
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        top: 325px;
+    }
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img img{
+        width: 300px;
+    }
 }
 @media (max-width: 400px) {
     .main-colors-scheme .scheme-wrapper .colors-wrapper .color-ball{
@@ -377,8 +648,36 @@
     .scheme-wrapper .colors-wrapper .pull-wrapper .pull-color .color:focus .title{
         text-decoration: underline;
     }
+    .main-additional .add-wrapper {
+        margin-top: 260px;
+    }
+    .main-additional .add-wrapper {
+        max-width: 95%;
+    }
+
+    .main-additional .add-wrapper .add-img.img2 {
+        width: 100%;
+        top: -238px;
+    }
+    .main-additional .add-wrapper .add-img.img2 img{
+        width: 100%;
+    }
+    .main-additional .add-wrapper .add-price-wrapper .styled-btn1 {
+        width: 100%;
+    }
+    .main-example .example-wrapper .example-block .ex-ans .desc {
+        margin-left: 0px; 
+    }
+    .main-example .example-wrapper .example-block.pink {
+        margin-bottom: 265px;
+    }
 } 
 
+@media (max-width: 360px) {
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        top: 380px;
+    }
+}
 
 
 /* use bootstrap grid*/

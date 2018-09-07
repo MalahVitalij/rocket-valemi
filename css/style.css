@@ -99,10 +99,9 @@ section {
 }
 .custom-counter li {
     counter-increment: step-counter;
-    padding-left: 30px;
+    padding-left: 35px;
     margin-bottom: 10px;
     height: 27px;
-    line-height: 27px;
 }
 .custom-counter li::before {
     display: block;
@@ -111,7 +110,7 @@ section {
     width: 27px;
     height: 27px;
     margin-right: 5px;
-    left: 0;
+    left: -5px;
     background: url(../img/set-list.png) no-repeat;
     color: #ffffff;
     font-size: 16px;
@@ -130,7 +129,7 @@ section {
 .custom-counter2 li {
     position: relative;
     counter-increment: step-counter;
-    padding-left: 15px;
+    padding-left: 17px;
     margin-bottom: 10px;
 }
 .custom-counter2 li::before {
@@ -1878,10 +1877,30 @@ main{
 .main-set .set-wrapper .set-block.center {
     width: 50%;
     margin-top: 17px;
+    position: relative;
+}
+.main-set .set-wrapper .set-block.center .set-block-number{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main-set .set-wrapper .set-block.center .set-block-number-1{
+    top: -6px;
+    left: 163px;
+    width: 21px;    
+}
+.main-set .set-wrapper .set-block.center .set-block-number-2{
+    top: 205px;
+    left: 238px;
+    width: 60px;
 }
 .main-set .set-wrapper .set-block.center img {
     display: block;
     margin: 0 auto;
+}
+.main-set .set-wrapper .set-block.center img:first-child{
+    width: 90%;
 }
 .main-set .set-wrapper .set-block .title {
     color: #6c5d7f;
@@ -1998,11 +2017,10 @@ main{
 .main-additional .add-wrapper {
     display: block;
     position: relative;
-    
     max-width: 610px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 100px;
+    padding: 30px 100px;
     z-index: 1;
 }
 .main-additional .add-wrapper::before {
@@ -2141,6 +2159,7 @@ main{
     height: 152px;
     padding-top: 2px;
     padding-left: 2px;
+    padding-right: 16px;
 }
 .main-example .example-wrapper .example-block .ex-ask .photo-block:before {
     display: block;
@@ -2500,7 +2519,9 @@ main{
     margin-bottom: 8px;
 }
 
-.main-delivery {}
+.main-delivery {
+    margin-bottom: 50px;
+}
 .main-delivery .del-wrapper {}
 .main-delivery .del-wrapper > .map img {
     display: block;
@@ -2520,7 +2541,11 @@ main{
 }
 
 .main-delivery .sec-title{
-    
+    text-transform: none;
+}
+
+.main-delivery .sec-title::before{
+    display: none;
 }
 
 .main-delivery .del-wrapper .del-block .title {
@@ -2690,10 +2715,11 @@ main{
     }
 .custom-counter li {
     counter-increment: step-counter;
-    padding-left: 30px;
+    padding-left: 35px;
     margin-bottom: 10px;
     height: 27px;
-    line-height: 27px;
+    display: flex;
+    align-items: center;
 }
 /*=========FOOTER=========*/
 .footer {
