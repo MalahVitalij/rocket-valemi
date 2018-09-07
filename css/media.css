@@ -130,7 +130,6 @@
       right: 0;
     }
     /*планшетное меню burger конец*/
-    
     .scheme-wrapper .colors-wrapper {
         display: -webkit-flex;
         display: -moz-flex;
@@ -146,6 +145,24 @@
         order: 2;
         width: 100%;
         margin-top: 0;
+    }
+    .scheme-wrapper .balls-wrapper .check-ball {
+        width: 100%;
+    }
+    .scheme-wrapper .check-ball-wrapper {
+        display: none;
+    }
+    .scheme-wrapper .check-ball-wrapper-760{
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
     }
     .scheme-wrapper .wrap-balls .checked-ball{
        display: none;
@@ -355,15 +372,24 @@
     }
     .main-set .set-wrapper .set-block {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
     }
-    .main-set .set-wrapper .set-block .set-block .center {
+    .main-set .set-wrapper .set-block .center {
         width: 100%;
+    }
+    .main-set .set-wrapper .set-block.center .set-block-number {
+    display: none;
     }
     .set-block-1{
         -webkit-order: 2;
             -ms-order: 2;
                 order: 2;
         width: 100%!important;
+        margin: 50px 0;
     }    
     
     .set-block-2{
@@ -447,6 +473,16 @@
         bottom: 285px;
         right: 37px;
     }
+    .main-order .order-wrapper {
+        -webkit-justify-content: space-around;
+         justify-content: space-around; 
+    }
+    .main-order .order-wrapper .order-form {
+        display: none; 
+    }
+    .main-order .order-desc {
+     padding-bottom: 30px; 
+}
 
 
 
@@ -622,6 +658,29 @@
         background-size: 118px;
         top: -2px;
         left: 0;
+    }
+    .footer .contacts-wrapper {
+        justify-content: space-between;
+        align-items: center;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .footer .contacts-wrapper .contact-block {
+        width: 50%;
+        margin: 10px 0;
+    }
+    .footer .contacts-wrapper .contact-block .phone {
+        display: block;
+        position: relative;
+        width: auto;
+        width: 100%;
+        padding-left: 50px;
+        color: #6c5d7f;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 45px;
+        margin: 0 auto;
     }
 }
 @media (max-width: 500px) {
