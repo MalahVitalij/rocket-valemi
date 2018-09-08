@@ -1842,6 +1842,16 @@ main{
     background: #F8EAC5;
 }
 
+.main-popular p{
+    display: none;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 20px;
+    color: #6c5d7f;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
 .main-set {
     padding-top: 48px;
     padding-bottom: 20px;
