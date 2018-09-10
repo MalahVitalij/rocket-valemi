@@ -56,10 +56,42 @@ $('.menu-btn').on('click', function(e) {
     } 
     if($(window).width() <= 610){
         $('.main-menu').toggleClass('main-menu-active');
+        $('html, body').toggleClass('overflow'); 
     };
   e.preventDefault;
   $(this).toggleClass('menu-btn_active');
 });
+
+
+$('.main-top-wrapper .menu-block .main-menu li a').on('click', function() {
+    $('.main-menu').removeClass('main-menu-active');
+    $('.menu-btn').removeClass('menu-btn_active');
+    $('html, body').removeClass('overflow'); 
+});
+
+//
+
+$('.ball').on('click','img', function(){
+   colorToInput( $(this), $('[data-object="ball"]') )
+})
+
+$('[data-object="ball"]').on('click','.main__form-submenu span', function(){
+    var text = $(this).text();
+    $('.ball img[alt=' + text + ']').click()
+})
+
+$('.img-block').on('click','img', function(){
+   colorToInput( $(this),  $('[data-object="img-block"]') )
+})
+
+function colorToInput( ho, to ){
+    var alt =ho.attr('alt');
+    to.find('input').attr('value', alt);
+}
+
+
+
+
 /*
 $('.main-menu li').on('click', function(e) {
     $('.menu-btn').removeClass('main-menu-active');
@@ -167,18 +199,19 @@ $('.btn-view').click(function(e) {
 
     $(".btn-view").click (function (){
             $(".modal-overlay-order").fadeIn();
-            $('html, body').css('overflowY', 'hidden'); 
+            $('html, body').css('overflow-y', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-order").fadeOut();
-            $('html, body').css('overflowY', 'auto'); 
+            $('html, body').css('overflow-y', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
     var myOrders = $(".modal-overlay-order");
     if (myOrders.has(e.target).length === 0){
-        $('html, body').css('overflowY', 'auto'); 
+        
         myOrders.fadeOut();
+        // $('html, body').css('overflow-y', 'auto');
     }
 });
 /* конец модальное окно попап просмотр заказа */
@@ -186,17 +219,17 @@ $(document).mouseup(function (e) {
 
     $(".btn-view-pay").click (function (){
             $(".modal-overlay-orderPay").fadeIn();
-            $('html, body').css('overflowY', 'hidden'); 
+            $('html, body').css('overflow-y', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-orderPay").fadeOut();
-            $('html, body').css('overflowY', 'auto'); 
+            $('html, body').css('overflow-y', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
-    var myPay = $(".modal-overlay-orderPay");
+    var myPay = $(".modal-overlay");
     if (myPay.has(e.target).length === 0){
-        $('html, body').css('overflowY', 'auto'); 
+        $('html, body').css('overflow-y', 'auto'); 
         myPay.fadeOut();
     }
 });
@@ -205,17 +238,36 @@ $(document).mouseup(function (e) {
 
     $(".btn-view-hill").click (function (){
             $(".modal-overlay-order-hill").fadeIn();
-            $('html, body').css('overflowY', 'hidden'); 
+            $('html, body').css('overflow-y', 'hidden'); 
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-order-hill").fadeOut();
-            $('html, body').css('overflowY', 'auto'); 
+            $('html, body').css('overflow-y', 'auto'); 
         });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay-order-hill");
     if (myPay.has(e.target).length === 0){
-        $('html, body').css('overflowY', 'auto'); 
+        // $('html, body').css('overflow-y', 'auto'); 
+        myPay.fadeOut();
+    }
+});
+/* конец модальное окно попап оплата заказа */
+/* модальное окно попап оплата */
+
+    $(".btn-view-call").click (function (){
+            $(".modal-overlay-order-call").fadeIn();
+            $('html, body').css('overflow-y', 'hidden'); 
+        });
+        $(".btn-close_view").click (function (){
+            $(".modal-overlay-order-call").fadeOut();
+            $('html, body').css('overflow-y', 'auto'); 
+        });
+
+$(document).mouseup(function (e) {
+    var myPay = $(".modal-overlay-order-call");
+    if (myPay.has(e.target).length === 0){
+        // $('html, body').css('overflow-y', 'auto'); 
         myPay.fadeOut();
     }
 });
