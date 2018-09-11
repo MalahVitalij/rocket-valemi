@@ -103,7 +103,12 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    
+    .main-popular .popular-slider .slick-arrow.slick-prev {
+        left: 0px;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-next {
+        right: 0px;
+    }
 }
 
 @media only screen and (max-width: 950px) {
@@ -154,7 +159,7 @@
         margin: 0;
         margin-bottom: 5px;
     }
-    .top-line .menu-block .main-menu li:not(:first-child){
+    .top-line .menu-block .hidden-li li:not(:first-child){
         display: none;
     }
     .top-line .menu-block .menu-btn {
@@ -311,6 +316,21 @@
     }
 }
 
+@media only screen and (max-width: 840px) {
+    .main-popular .popular-slider .slick-arrow.slick-prev {
+        left: 30px;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-prev::before {
+        background: url(../img/slick-left-760.png) no-repeat;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-next {
+        right: 30px;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-next::before {
+        background: url(../img/slick-right-760.png) no-repeat;
+    }
+}
+
 
 @media (max-height: 550px) {
     .popup-wrap {
@@ -349,6 +369,13 @@
     .banner-advantages > .advan-block {
             margin-right: 0; 
         }
+
+    .main-popular .popular-slider .slick-arrow.slick-prev {
+        left: 15px;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-next {
+        right: 15px;
+    }
     /*блок "зачем нужен сухой бассейн valemi"*/
     .content .main-userfulness .userfulness-center {
         background: url(../img/center-pull-760.png) no-repeat center center;
@@ -386,7 +413,7 @@
 
 @media only screen and (max-width: 770px) {
     .main-popular .popular-slider .slick-arrow.slick-prev {
-     left: 10px; 
+        left: 10px; 
     }
     .main-popular .popular-slider .slick-arrow.slick-next {
         right: 10px;
@@ -394,9 +421,14 @@
     .main-popular .popular-slider .slick-arrow {
         top: 113%;
     }
-
     .main-popular p{
         display: block;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-prev::before {
+        background: url(../img/slick-left.png) no-repeat;
+    }
+    .main-popular .popular-slider .slick-arrow.slick-next::before {
+        background: url(../img/slick-right.png) no-repeat;
     }
 }
 
@@ -421,6 +453,9 @@
         position: absolute;
         top: 0;
         z-index: -1;
+    }
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        display: none;
     }
 }
 
@@ -550,9 +585,6 @@
         display: none;
     }
     .main-additional .container .add-ball {
-        display: none;
-    }
-    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
         display: none;
     }
 

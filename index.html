@@ -27,10 +27,10 @@
                         </div>
                         <div class="menu-block">
                             <div>
-                                <ul class="main-menu">
+                                <ul class="main-menu hidden-li">
                                     <li><a href="#catalog">каталог</a></li>
                                     <li><a href="#paydel">доставка и оплата</a></li>
-                                    <li><a href="#reviews">отызывы</a></li>
+                                    <li><a href="#reviews">отзывы</a></li>
                                 </ul>
                             </div>
                             <a href="#" class="menu-btn">
@@ -98,14 +98,14 @@
                                     </div>
                                     <div class="form-block">
                                         <div class="form-block-name">Выбрать размер бассейна:</div>
-                                        <input type="radio" name="size" class="radio" id="size1" checked />
-                                        <label for="size1">90 см</label>
-                                        <input type="radio" name="size" class="radio" id="size2" />
-                                        <label for="size2">120 см</label>
+                                        <input type="radio" name="size" class="radio" id="size11" checked data-price="5990"/>
+                                        <label for="size11">90 см</label>
+                                        <input type="radio" name="size" class="radio" id="size12" data-price="6990"/>
+                                        <label for="size12">120 см</label>
                                     </div>
                                     <div class="form-block price">
                                         <div>Цена от:</div>
-                                        <div>5990</div>
+                                        <div class='price-change'>5990</div>
                                         <div>руб.</div>
                                     </div>
                                     <button type="submit" class="styled-btn1">Заказать бассейн</button>
@@ -324,7 +324,7 @@
                 </div>
             </section>
             <!--цветовая гамма-->
-            <section class="main-colors-scheme">
+            <section class="main-colors-scheme" id="catalog">
                 <div class="container">
                     <div class="section-side-title left-side p-side">Большой выбор</div>
                     <div class="sec-title sec-p">Палитра цветов</div>
@@ -421,9 +421,9 @@
                                     <div class="form-block-wrap form-block-wrap-1">
                                         <div class="form-block">                                        
                                             <div class="form-block-name">Выбрать размер бассейна:</div>
-                                            <input type="radio" name="size" class="radio" id="size3" checked />
+                                            <input type="radio" name="size" class="radio" id="size3" checked data-price="4343"/>
                                             <label for="size3">90 см</label>
-                                            <input type="radio" name="size" class="radio" id="size4" />
+                                            <input type="radio" name="size" class="radio" id="size4" data-price="2222"/>
                                             <label for="size4">120 см</label>
                                         </div>
                                         <div class="form-block">
@@ -468,7 +468,7 @@
                                         </div>
                                         <div class="form-block price">
                                             <div>Цена:</div>
-                                            <div>5599</div>
+                                            <div class="price-change">5599</div>
                                             <div>руб.</div>
                                         </div>
                                     </div>
@@ -663,7 +663,7 @@
                 </div>
             </section>
             <!--отзывы-->
-            <section class="main-reviews">
+            <section class="main-reviews" id="reviews">
                 <div class="container">
                     <div class="sec-bg-title">Отзывы</div>
                     <div class="hd-block">
@@ -691,7 +691,7 @@
                 </div>
             </section>
             <!--доставка-->
-            <section class="main-delivery">
+            <section class="main-delivery" id="paydel">
                 <div class="container">
                     <div class="section-side-title right-side">Доставка</div>
                     <div class="hd-block">
@@ -762,14 +762,14 @@
                                 </div>
                                 <div class="form-block">
                                     <div class="form-block-name">Выбрать размер бассейна:</div>
-                                    <input type="radio" name="size" class="radio" id="size1" checked />
+                                    <input type="radio" name="size" class="radio" id="size1" checked data-price="8850"/>
                                     <label for="size1">90 см</label>
-                                    <input type="radio" name="size" class="radio" id="size2" />
+                                    <input type="radio" name="size" class="radio" id="size2" data-price="2576" />
                                     <label for="size2">120 см</label>
                                 </div>
                                 <div class="form-block price">
                                     <div>Цена от:</div>
-                                    <div>5990</div>
+                                    <div class="price-change">5990</div>
                                     <div>руб.</div>
                                 </div>
                                 <button type="submit" class="styled-btn1">Заказать бассейн</button>
@@ -819,13 +819,10 @@
                                 <input type="text" placeholder="Ваше имя" required />
                             </div>
                             <div class="form-block phone">
-                                <input type="text" placeholder="Ваш телефон" required />
+                                <input type="tel" placeholder="Ваш телефон" required />
                             </div> 
                             <div class="form-block city">
                                 <input type="text" placeholder="Ваш город" required />
-                            </div>
-                            <div class="form-block promo">
-                                <input type="text" placeholder="Ваш ПРОМОКОД">
                             </div>
                             <div class="form-block price">
                                 <div>Цена от:</div>
@@ -853,7 +850,7 @@
                             <div class="form-block phone">
                                 <input type="text" placeholder="Ваш телефон" required />
                             </div>
-                            <button type="submit" class="styled-btn1">Заказать горку</button>
+                            <button type="submit" class="styled-btn1">Заказать звонок</button>
                             <div class="form-subtitle">Мы перезвоним в течении <span>15</span> минут</div>
                             <a href="#" class="form-pol">Политика конфиденциальности</a>
                         </form>
@@ -922,6 +919,31 @@
                                         <span>blue</span>
                                         <span>green</span>
                                         <span>white</span>
+                                        <span>pink dream</span>
+                                        <span>pink</span>
+                                        <span>blue</span>
+                                        <span>green</span>
+                                        <span>white</span>
+                                        <span>pink dream</span>
+                                        <span>pink</span>
+                                        <span>blue</span>
+                                        <span>green</span>
+                                        <span>white</span>
+                                        <span>pink dream</span>
+                                        <span>pink</span>
+                                        <span>blue</span>
+                                        <span>green</span>
+                                        <span>white</span>
+                                        <span>pink dream</span>
+                                        <span>pink</span>
+                                        <span>blue</span>
+                                        <span>green</span>
+                                        <span>white</span>
+                                        <span>pink dream</span>
+                                        <span>pink</span>
+                                        <span>blue</span>
+                                        <span>green</span>
+                                        <span>white</span>
                                     </div>
                                 </span>
                             </div>
@@ -953,7 +975,9 @@
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>        
+        <script src="js/jquery.maskedinput.js"></script>        
         <!-- <script src="js/jquery.magnific-popup.min.js"></script> -->
+
 	    <script src="js/slick.js"></script>
 	    <script src="js/bcode.js"></script>
     </body>

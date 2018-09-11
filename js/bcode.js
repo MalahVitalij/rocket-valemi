@@ -12,7 +12,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         responsive: [
                     {
-                       breakpoint: 1200,
+                       breakpoint: 1270,
                        settings: {
                           slidesToShow: 2,
                           slidesToScroll: 1
@@ -52,9 +52,11 @@ $(document).ready(function() {
 // burger-menu
 $('.menu-btn').on('click', function(e) {
     if($(window).width() >= 610){
-        $('.main-menu li').not(':first-child').slideToggle()
+        $('.main-menu').toggleClass('hidden-li');
     } 
-    if($(window).width() <= 610){
+    if($(window).width() < 610 ){
+        // $('.menu-btn').removeClass('menu-btn_active');
+        $('.main-menu').removeClass('hidden-li');
         $('.main-menu').toggleClass('main-menu-active');
         $('html, body').toggleClass('overflow'); 
     };
@@ -69,7 +71,30 @@ $('.main-top-wrapper .menu-block .main-menu li a').on('click', function() {
     $('html, body').removeClass('overflow'); 
 });
 
-//
+$( window ).resize( function() {
+
+    if($(window).width() > 610 && $('.menu-btn').hasClass('menu-btn_active')){
+        console.log("dfsf")
+        $('.menu-btn').removeClass('menu-btn_active');
+        $('.main-menu').addClass('hidden-li');
+    } else{
+        // $('.main-menu').addClass('hidden-li');
+        // 
+    };
+
+    if($(window).width() < 610 && $('.main-menu').hasClass('main-menu-active')){
+        $('.main-menu').removeClass('main-menu-active');
+        $('.menu-btn').removeClass('menu-btn_active');
+    } else{
+        $('.main-menu').addClass('hidden-li');
+        /*$('.main-menu').removeClass('hidden-li');
+        $('.menu-btn').removeClass('menu-btn_active');*/
+    };
+});
+
+
+
+// цвета шариков и басейнов в инпут
 
 $('.ball').on('click','img', function(){
    colorToInput( $(this), $('[data-object="ball"]') )
@@ -89,7 +114,7 @@ function colorToInput( ho, to ){
     to.find('input').attr('value', alt);
 }
 
-
+// цвета шариков и басейнов в инпут конец
 
 
 /*
@@ -166,7 +191,7 @@ $('.main-menu li').on('click', function(e) {
         
     });
 // при разрешении 760 добавляется класс к valemi - это
-
+$(".phone").inputmask("99-9999999");  //static mask
 
 
 // select style
@@ -273,6 +298,11 @@ $(document).mouseup(function (e) {
 });
 /* конец модальное окно попап оплата заказа */
 // popup end
-
-
+$(".radio").click(function(){
+   var price= $(this).attr("data-price");
+   $(this).closest("form").find(".price-change").text(price);
 });
+
+    
+});
+
