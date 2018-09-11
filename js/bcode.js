@@ -3,6 +3,8 @@ $(window).on('load', function(){
     $('body').fadeTo('slow' , 1);
 });
 $(document).ready(function() {
+   
+
     $('.popular-slider').slick({
         dots: false,
         arrows: true,
@@ -191,7 +193,7 @@ $('.main-menu li').on('click', function(e) {
         
     });
 // при разрешении 760 добавляется класс к valemi - это
-$(".phone").inputmask("99-9999999");  //static mask
+
 
 
 // select style
