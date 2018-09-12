@@ -780,6 +780,9 @@ form .form-block {
     line-height: 40px;
     background: transparent;
 }
+.popup-wrap .popup-make-order .styled-form form .form-block:after{
+    display: none;
+}
 .styled-form form .form-block input[type="text"]::-webkit-input-placeholder {
     color: #ffffff;
     font-size: 14px;
@@ -952,9 +955,12 @@ main{
     margin-top: 0;
     font-family: "OpenSans-Bold", sans-serif;
 
-}
- .slick-initialized .slick-list:not(.main-popular .slick-initialized .slick-list) {
+} 
+ .slick-initialized .slick-list {
     width: 90%;
+}  
+ .main-popular .slick-initialized .slick-list {
+    width: 100%;
 } 
 
 .slick-initialized .slick-slide {
@@ -1594,7 +1600,8 @@ main{
     font-size: 14px;
     font-weight: 700;
     line-height: 40px;
-    position: relative; 
+    position: relative;
+    background-color: transparent;
 }
 .scheme-wrapper .colors-form .main__form-select-wrap {
     cursor: pointer;
@@ -1613,7 +1620,7 @@ main{
     background-image: url(../img/arrow-select.png);
     background-position: center;
     background-repeat: no-repeat;   
-    z-index: 5; 
+    z-index: 0; 
 }
 .colors-form .form-block.check input[type="checkbox"]{
     display: none;

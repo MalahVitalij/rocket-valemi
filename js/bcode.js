@@ -205,7 +205,6 @@ $('.main-menu li').on('click', function(e) {
   
 
   $(".main__form-submenu").on("click",'span', function() {
-
     $(this).closest('.main__form-select-wrap').find('.main__form-select').attr('value',($(this).text()));
     $(this).parent().slideUp(0);
   });
