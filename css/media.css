@@ -329,6 +329,9 @@
     .main-popular .popular-slider .slick-arrow.slick-next::before {
         background: url(../img/slick-right-760.png) no-repeat;
     }
+    .footer .contacts-wrapper .contact-block {
+        width: 30%;
+    }
 }
 
 
@@ -363,7 +366,7 @@
         background: none;
     }
     .sec-title {
-        font-size: 24px;
+        
     }
     
     .banner-advantages > .advan-block {
@@ -468,6 +471,9 @@
         -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    }
+    .footer .contacts-wrapper .contact-block {
+        width: 33%;
     }
 }
 @media only screen and (max-width: 724px) {

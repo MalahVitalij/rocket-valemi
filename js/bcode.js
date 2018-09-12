@@ -154,7 +154,7 @@ $('.main-menu li').on('click', function(e) {
                         }
                     },
                     {
-                       breakpoint: 770,
+                       breakpoint: 755,
                        settings: {
                           slidesToShow: 1,
                           slidesToScroll: 1
