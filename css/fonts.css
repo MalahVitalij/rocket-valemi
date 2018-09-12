@@ -81,9 +81,9 @@
 
 @font-face {
   font-family: 'GilroyExtra';
-  src: url('../fonts/Radomir Tinkov - Gilroy-ExtraBold (1).eot');
-  src: url('../fonts/Radomir Tinkov - Gilroy-ExtraBold (1).woff2') format('woff2'),
-       url('../fonts/Radomir Tinkov - Gilroy-ExtraBold (1).eot?#iefix') format('embedded-opentype');
+  src: url('../fonts/Gilroy-ExtraBold.eot');
+  src: url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),
+       url('../fonts/Gilroy-ExtraBold.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -97,10 +97,10 @@
 }
 
 @font-face {
-  font-family: 'Radomir Tinkov - Gilroy-Light (1)';
-  src: url('../fonts/Radomir Tinkov - Gilroy-Light (1).eot');
-  src: url('../fonts/Radomir Tinkov - Gilroy-Light (1).woff2') format('woff2'),
-       url('../fonts/Radomir Tinkov - Gilroy-Light (1).eot?#iefix') format('embedded-opentype');
+  font-family: 'Gilroy-Light';
+  src: url('../fonts/Gilroy-Light.eot');
+  src: url('../fonts/Gilroy-Light.woff2') format('woff2'),
+       url('../fonts/Gilroy-Light.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
