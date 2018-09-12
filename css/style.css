@@ -5,8 +5,8 @@ html{
 body {
     position: relative;
     margin: 0;
-    /*overflow-y: hidden; 
-    height: 0; 
+    overflow-x: hidden; 
+    /*height: 0; 
     opacity: 0; */
     font-family: "OpenSans-Regular", sans-serif;
 }
@@ -210,6 +210,7 @@ section {
     width: 80%;
 }
 .radio {
+    display: none;
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -217,7 +218,7 @@ section {
 }
 .radio + label {
     position: relative;
-    padding: 0 0 0 45px;
+    padding: 0 0 0 35px;
     cursor: pointer;
     color: #ffffff;
     font-size: 18px;
@@ -560,6 +561,7 @@ a {
     text-align: center;
     line-height: 40px;
     margin: 10px auto 0;
+    background: transparent;
 }
 .phone-block .modal-btn:hover {
     
@@ -599,6 +601,7 @@ a {
 }
 .main-banner .main-wrapper > div:first-child {
     flex-grow: 2;
+    width: 100%;
 }
 .main-banner .main-wrapper > div:last-child {
     flex-grow: 1;
@@ -740,11 +743,15 @@ a {
     transform: translateY(-50%);
 }
 .styled-form form {}
-.styled-form form .form-block {
+form .form-block {
     display: block;
     position: relative;
     width: 100%;
     margin-bottom: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 .styled-form form .form-block:after {
     display: block;
@@ -803,6 +810,7 @@ a {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3px;
+    width: 100%;
 }
 .styled-form form .form-block.price {
     display: flex;
@@ -913,7 +921,7 @@ main{
 
 .main-advantages .advan-slider .advan-block .icon-block {
     margin-right: 12px;
-    width: 115px;
+    
     height: 115px;
 }
 .main-advantages .advan-slider .advan-block .icon-block img{
@@ -1572,9 +1580,7 @@ main{
 }
 .scheme-wrapper .colors-form .main__form-select-wrap{
     cursor: pointer;
-}
-.scheme-wrapper .colors-form .main__form-select-wrap input{
-    cursor: pointer;
+    position: relative; 
 }
 .scheme-wrapper .colors-form .form-block input[type="text"]{
     display: block;
@@ -1588,16 +1594,26 @@ main{
     font-size: 14px;
     font-weight: 700;
     line-height: 40px;
+    position: relative; 
 }
-.scheme-wrapper .colors-form .form-block .main__form-select-wrap input[type="text"]:after{   
+.scheme-wrapper .colors-form .main__form-select-wrap {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    display: block; 
+}
+.scheme-wrapper .colors-form .main__form-select-wrap:before{   
     display: block;
     position: absolute;
-    content: 'fgdhfgdhfgd';
+    content: '';
     width: 44px;
     height: 44px;
     top: 0;
     right: 0;
-    background-color: #000;
+    background-image: url(../img/arrow-select.png);
+    background-position: center;
+    background-repeat: no-repeat;   
+    z-index: 5; 
 }
 .colors-form .form-block.check input[type="checkbox"]{
     display: none;
@@ -1628,11 +1644,8 @@ main{
 .scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu {
     display: block;
     width: 100%;
-    /* height: 44px; */
-    border-radius: 30px;
+    border-radius: 5px;
     border: 2px solid #ccc;
-    padding-left: 18px;
-    padding-right: 20px;
     color: #333;
     font-size: 14px;
     font-weight: 700;
@@ -1641,7 +1654,9 @@ main{
     background-color: #FFF;
     position: absolute;
     z-index: 9;
-    width: 200px;
+    height: 200px;  
+    -ms-overflow-y:     auto;
+        overflow-y:     auto;
 }
 .scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu{
     display: none;
@@ -1650,19 +1665,25 @@ main{
     display: block;
     color: #4d4f5b;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 700;    
+    padding-left: 18px;
+    padding-right: 20px;
+}
+.scheme-wrapper .colors-form .main__form-select-wrap .main__form-submenu span:hover{
+   background-color: #cabbdc;
+   width:   100%;
 }
 
 .scheme-wrapper .colors-form label::before {
     border: 2px solid #ccc;
     width: 22px;
     height: 22px;
-    top: -6px;
-    left: 7px;
+    top: 0px;
+    left: 0px;
 }
 .scheme-wrapper .colors-form label::after {
-    top: 4px;
-    left: 17px;
+    top: 8px;
+    left: 9px;
 }
 .scheme-wrapper .colors-form .form-wrapper {}
 .scheme-wrapper .colors-form .form-wrapper .form-hd {
@@ -2024,7 +2045,7 @@ main{
     align-self: center;
     color: #d28883;
     font-size: 40px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'GilroyExtra', sans-serif;
     font-weight: 900;
     line-height: 40px;
 }
@@ -2045,7 +2066,7 @@ main{
     right: 0;
     color: #d28883;
     font-size: 20px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'GilroyExtra', sans-serif;
     font-weight: 900;
     line-height: 20px;
     text-decoration: line-through;
@@ -2288,7 +2309,7 @@ main{
 }
 
 .main-example .example-wrapper .wash .ex-ans .desc {
-    padding-top: 49px;
+    padding-top: 41px;
 }
 .main-example .example-wrapper .wash .ex-ans {
     margin-bottom: 75px;
@@ -2395,12 +2416,20 @@ main{
 .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
     left: 243px;
 }
+.main-example .example-wrapper .example-block.wash .ex-ans .ans-img {
+    right: -375px;
+    top: 17px;
+}
+
+.main-example .example-wrapper .example-block.wash .ex-ask {
+   margin-top: 10px;
+}
 
 .main-reviews {
     background: #FEF0EF;
     overflow: hidden;
     padding-top: 60px;
-    padding-bottom: 74px;
+    padding-bottom: 83px;
 }
 .main-reviews .sec-bg-title {
     display: block;
@@ -2765,6 +2794,9 @@ main{
     width: 272px;
     margin-bottom: 32px;
 }
+.order-desc-form{
+    display: none;
+}
 .main-order .order-desc .politics{
     color: #ffffff;
     font-size: 13px;
@@ -2813,7 +2845,7 @@ main{
 }
 /*=========FOOTER=========*/
 .footer {
-    padding-top: 30px;
+    padding-top: 20px;
     overflow: hidden;
 }
 .footer .container {
@@ -3035,6 +3067,7 @@ main{
     background-color: #6c5d7f;
     z-index: 2;
     height: 150px;
+    top: 45px;
     
 }
 .popup-wrap .main__form-submenu span{
