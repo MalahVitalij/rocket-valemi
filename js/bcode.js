@@ -131,7 +131,7 @@ $('.main-menu li').on('click', function(e) {
 
 // при разрешении 760 добавляется класс к valemi - это
     $(window).on('load resize', function () {
-        if($(window).width() <= 900){
+        if($(window).width() <= 980){
             
             
             $('.advan-slider').not('.slick-initialized').slick({
@@ -147,7 +147,7 @@ $('.main-menu li').on('click', function(e) {
                         settings: "unslick"
                     },
                     {
-                       breakpoint: 900,
+                       breakpoint: 980,
                        settings: {
                           slidesToShow: 2,
                           slidesToScroll: 1

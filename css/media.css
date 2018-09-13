@@ -33,7 +33,17 @@
     }
     .scheme-wrapper .bottom.check-ball-wrapper {
     width: 103%;
-}
+    }
+    .main-reviews .reviews-wrapper .review:nth-child(2) {
+        display: none;
+    }
+    .main-reviews .reviews-wrapper .review:nth-child(3) {
+        display: none;
+    }
+    .main-reviews .reviews-wrapper {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    }
 }
 
 
@@ -129,6 +139,11 @@
     }
     .main-popular .popular-slider .slick-arrow.slick-next {
         right: 0px;
+    }
+}
+@media only screen and (max-width: 979px){
+    .main-advantages .advan-slider .advan-block {
+        margin-bottom: 0px;
     }
 }
 
@@ -449,6 +464,23 @@
         right: 15%;
     }
     /*блок "зачем нужен сухой бассейн valemi" конец*/
+    
+    .main-delivery .del-wrapper .del-block:first-child {
+        top: 153px;
+        left: 59px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(2) {
+        bottom: -24px;
+        left: 35px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(3) {
+        top: 397px;
+        right: 106px;
+    }
+    .main-delivery .del-wrapper .del-block:nth-child(4) {
+        bottom: 336px;
+        right: 37px;
+    }
 }
 
 @media only screen and (max-width: 770px) {
@@ -458,11 +490,14 @@
     .main-popular .popular-slider .slick-arrow.slick-next {
         right: 10px;
     }
-    .main-popular .popular-slider .slick-arrow {
-        top: 113%;
-    }
     .main-popular p{
         display: block;
+    }
+
+}
+@media only screen and (max-width: 754px) {
+    .main-popular .popular-slider .slick-arrow {
+        top: 113%;
     }
     .main-popular .popular-slider .slick-arrow.slick-prev::before {
         background: url(../img/slick-left.png) no-repeat;
@@ -471,7 +506,6 @@
         background: url(../img/slick-right.png) no-repeat;
     }
 }
-
 
 @media only screen and (max-width: 750px) {
     .main-delivery .del-wrapper {
