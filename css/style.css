@@ -2786,6 +2786,7 @@ main{
 }
 .main-order .sec-title span{
     font-size: 28px;
+    text-transform: none;
 }
 .main-order .order-desc{
     padding-top: 62px;
@@ -3096,11 +3097,11 @@ background-color:#ecedee
 .main__form-submenu::-webkit-scrollbar-thumb {
 -webkit-border-radius: 0px;
 border-radius: 0px;
-background-color:#6dc0c8;
+background-color:#6c5d7f;
 }
 
 .main__form-submenu::-webkit-scrollbar-thumb:hover{
-background-color:#56999f;
+background-color:#6c5d7f;
 }
 
 .main__form-submenu::-webkit-resizer{

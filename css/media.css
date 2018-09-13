@@ -26,6 +26,16 @@
     }
 }
 
+
+@media only screen and (max-width: 1200px) {
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        left: 105px;
+    }
+}
+
+
+
+
 @media only screen and (max-width: 1190px) {
     .main-additional .add-wrapper{
         margin-left: 95px;
@@ -67,7 +77,15 @@
         -webkit-justify-content: space-around;
         justify-content: space-around;
     }
-
+    .main-example .example-wrapper .example-block.pink {
+        margin-bottom: 310px;
+    }
+    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
+        display: block;
+        top: 270px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .content .main-userfulness .userfulness-center {
         background: url(../img/center-pull-760.png) no-repeat center center;
@@ -457,9 +475,6 @@
         top: 0;
         z-index: -1;
     }
-    .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
-        display: none;
-    }
     .main-top-wrapper {
         display: -ms-flexbox;
         display: flex;
@@ -512,6 +527,11 @@
         -webkit-order: 2;
             -ms-order: 2;
                 order: 2;
+        width: 33%;
+        text-align: center;
+    }
+    .main-top-wrapper .logo-block img{
+        width: 77px;
     }
     .main-top-wrapper .inst-block {
         -webkit-order: 1;
@@ -779,6 +799,7 @@
     .banner-description .banner-desc {
         padding-right: 0;
         margin-bottom: 90px;
+        padding-top: 15px;
     }
     .banner-description .banner-desc .title {
         font-size: 21px;
