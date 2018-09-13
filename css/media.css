@@ -31,6 +31,9 @@
     .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
         left: 105px;
     }
+    .scheme-wrapper .bottom.check-ball-wrapper {
+    width: 103%;
+}
 }
 
 
@@ -201,9 +204,24 @@
         order: 2;
         width: 100%;
         margin-top: 0;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .scheme-wrapper .balls-wrapper .check-ball {
         width: 100%;
+        text-align: center;
+        
+    }
+    .scheme-wrapper .balls-wrapper .check-ball .block-desc {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 20px;
     }
     .scheme-wrapper .check-ball-wrapper {
         display: none;
@@ -214,11 +232,12 @@
         display: -ms-flex;
         display: -o-flex;
         display: flex;
-        -webkit-justify-content: flex-start;
-        justify-content: flex-start;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
+        width: 100%;
     }
     .scheme-wrapper .wrap-balls .checked-ball{
        display: none;
@@ -486,15 +505,47 @@
         -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -webkit-align-items: center;
+                align-items: center;
     }
     .footer .contacts-wrapper .contact-block {
         width: 33%;
+    }
+    .banner-form .form-wrapper {
+        margin-top: 95px;
     }
 }
 @media only screen and (max-width: 724px) {
     .banner-form .form-wrapper{
        margin-top: 95px;
     }
+
+    .main-top-wrapper .logo-block {
+        -webkit-order: 2;
+            -ms-order: 2;
+                order: 2;
+        width: 33%;
+        text-align: center;
+    }
+    .main-top-wrapper .logo-block img{
+        width: 77px;
+    }
+    .main-top-wrapper .inst-block {
+        -webkit-order: 1;
+            -ms-order: 1;
+                order: 1;
+    }
+    .main-top-wrapper .menu-block {
+        -webkit-order: 3;
+            -ms-order: 3;
+                order: 3;
+    }
+    .main-top-wrapper .phone-block {
+        -webkit-order: 4;
+            -ms-order: 4;
+                order: 4;
+    }
+
 }
 @media only screen and (max-width: 720px) {
     .main-top-wrapper {
@@ -755,6 +806,15 @@
         width: 200px !important;
     }
 }
+@media only screen and (max-width: 690px) {
+   .scheme-wrapper .colors-form .form-wrapper form .form-block label {
+        padding-left: 27px;
+    }
+
+
+}
+
+
 @media only screen and (max-width: 610px) {
     header {
         overflow: hidden;
@@ -956,6 +1016,11 @@
         margin: 0 auto;
     }
 }
+@media (max-width: 599px) {
+    .main-clients .slick-arrow{
+        top: 87%;
+    }
+}
 @media (max-width: 500px) {
     .main-example .example-wrapper .example-block.right .ex-ans .ans-img {
         top: 325px;
@@ -984,7 +1049,7 @@
 }
 @media (max-width: 430px) {
     .scheme-wrapper .check-ball-wrapper-760 .ball{
-        width: 30%;
+        width: 32%;
     }
 }
 
