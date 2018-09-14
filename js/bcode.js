@@ -297,6 +297,8 @@ $(document).mouseup(function (e) {
         myPay.fadeOut();
     }
 });
+
+
 /* конец модальное окно попап оплата заказа */
 // popup end
 $(".radio").click(function(){
@@ -304,6 +306,37 @@ $(".radio").click(function(){
    $(this).closest("form").find(".price-change").text(price);
 });
 
+
+// Form submit
+
+var forms = [].slice.call( document.body.querySelectorAll('form') );
+forms.forEach(function(form){
+    form.addEventListener('submit', function(){
+        form.reset();
+        var myPay = $(".modal-overlay");
+        myPay.fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    })
+})
+
+
+// $(document).bind("mouseup touchend" function (e) {
+//     var myPay = $(".modal-overlay-order-call");
+//     if (myPay.has(e.target).length === 0){
+//         // $('html, body').css('overflow-y', 'auto'); 
+//         myPay.fadeOut();
+//     }
+// });
+
+
+
+
+/*
+на всплывающий попап
+$(".btn-wishes_popap").click (function PopUpShow(){
+    $(this).closest('.my-wishes-item').find(".my-wishes-item_popap").fadeIn('slow');
+    setTimeout( function() { $(".my-wishes-item_popap").fadeOut('slow'); }, 1000);
+});*/
     
 });
 

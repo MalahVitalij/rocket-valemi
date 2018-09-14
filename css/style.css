@@ -83,7 +83,6 @@ section {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    z-index: 1;
 }
 .clearfix,
 .clearfix::after {
@@ -480,6 +479,7 @@ a {
   width: 20px;
   height: 2px;
   background-color: #fff;
+  z-index: 9999;
 }
 .menu-btn span::before,
 .menu-btn span::after {
@@ -3089,6 +3089,7 @@ main{
     position: fixed;
     top: 0px;
     z-index: 10;
+    cursor: pointer;
 }
 .overflow{
     overflow: hidden!important;

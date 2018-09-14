@@ -1096,7 +1096,7 @@
         position: static;
         width: 45px;
         height: 45px;
-        z-index: 9999;
+        z-index: 9990;
     }
     .top-line .menu-block .main-menu.main-menu-active {
         width: 100vw;
@@ -1108,7 +1108,7 @@
         background-color: rgba(108, 93, 127, 0.8);
         border: none;
         padding-top: 66px;
-        z-index: 9999;
+        z-index: 999;
         -webkit-transition: all ease .3s;
            -moz-transition: all ease .3s;
             -ms-transition: all ease .3s;
@@ -1256,6 +1256,9 @@
     }
     .scheme-wrapper .balls-wrapper .check-ball .block-title {
         text-align: center;
+    }
+    .main-delivery .del-wrapper .map {
+        width: 180%;
     }
 
 }
