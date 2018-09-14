@@ -87,13 +87,13 @@
                                 <div class="form-hd">Оставить <br/><span>заявку</span></div>
                                 <form action="#">
                                     <div class="form-block name">
-                                        <input type="text" placeholder="Ваше имя" required />
+                                        <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$"/>
                                     </div>
                                     <div class="form-block phone">
                                         <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$" />
                                     </div> 
                                     <div class="form-block city">
-                                        <input type="text" placeholder="Ваш город" required />
+                                        <input type="text" placeholder="Ваш город" required  pattern="[^0-9]+$"/>
                                     </div>
                                     <div class="form-block promo">
                                         <input type="text" placeholder="Ваш ПРОМОКОД" />
@@ -492,6 +492,7 @@
             <section class="main-popular">
                 <div class="container">
                     <div class="section-side-title right-side p-side">Популярное</div>
+                    <div class="sec-title sec-p">Комплекты</div>
                     <div class="sec-bg-title">Комплекты</div>
                     <div class="popular-slider">
                         <div class="slide">
@@ -577,7 +578,7 @@
                                 <li>Сухой бассейн</li>
                                 <li>400 шаров</li>
                                 <li>Мешок для хранения бассейна</li>
-                                <li>2 мешока для хранения шаров</li>
+                                <li>2 мешка для хранения шаров</li>
                             </ol>
                             <div class="price-wrapper">
                                 <div class="price">
@@ -751,7 +752,7 @@
                                 <li>Мешок для хранения шаров</li>
                             </ol>
                             <p>Оставьте заявку, чтобы узнать точную стоимость и сроки доставки</p>
-
+                            <a href="#" class="politics">Политика конфиденциальности</a>
                             <div class="styled-form order-desc-form">
                                 <form>
                                     <div class="form-block price">
@@ -762,18 +763,18 @@
                                     <button type="submit" class="styled-btn1 btn-view">Заказать бассейн</button>
                                 </form>
                             </div>
-                            <a href="#" class="politics">Политика конфиденциальности</a>
+                            
                         </div>
                         <div class="order-block order-form styled-form">
                             <form action="#">
                                 <div class="form-block name">
-                                    <input type="text" placeholder="Ваше имя" required />
+                                    <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$"/>
                                 </div>
                                 <div class="form-block phone">
                                     <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
                                 </div> 
                                 <div class="form-block city">
-                                    <input type="text" placeholder="Ваш город" required />
+                                    <input type="text" placeholder="Ваш город" required pattern="[^0-9]+$" />
                                 </div>
                                 <div class="form-block promo">
                                     <input type="text" placeholder="Ваш ПРОМОКОД" />
@@ -834,13 +835,13 @@
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
                         <form action="#">
                             <div class="form-block name">
-                                <input type="text" placeholder="Ваше имя" required />
+                                <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block phone">
                                 <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
                             </div> 
                             <div class="form-block city">
-                                <input type="text" placeholder="Ваш город" required />
+                                <input type="text" placeholder="Ваш город" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block price">
                                 <div>Цена от:</div>
@@ -864,7 +865,7 @@
                         <div class="form-hd">Заказать<br/><span>звонок</span></div>
                         <form action="#">
                             <div class="form-block name">
-                                <input type="text" placeholder="Ваше имя" required />
+                                <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block phone">
                                 <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
@@ -887,13 +888,13 @@
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
                         <form action="#">
                             <div class="form-block name">
-                                <input type="text" placeholder="Ваше имя" required />
+                                <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block phone">
                                 <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
                             </div> 
                             <div class="form-block city">
-                                <input type="text" placeholder="Ваш город" required />
+                                <input type="text" placeholder="Ваш город" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block promo">
                                 <input type="text" placeholder="Ваш ПРОМОКОД">
@@ -921,13 +922,13 @@
                         <div class="form-hd">оплатить<br/><span>заказ</span></div>
                         <form action="#">
                             <div class="form-block name">
-                                <input type="text" placeholder="ФИО" required />
+                                <input type="text" placeholder="ФИО" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block phone">
                                 <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
                             </div> 
                             <div class="form-block city">
-                                <input type="text" placeholder="Ваш город" required />
+                                <input type="text" placeholder="Ваш город" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block">
                                 <div class="form-block-name">Выбрать комплект шаров:</div>
