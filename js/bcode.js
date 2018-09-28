@@ -223,6 +223,16 @@ $('.btn-view').click(function(e) {
     //do other stuff when a click happens
 });
 
+$('.catalog-form-mobile-btn').click(function(e) {
+    e.preventDefault();
+    //do other stuff when a click happens
+});
+
+    $(".catalog-form-mobile-btn").click (function (){
+        $(".modal-overlay-order").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+
     $(".btn-view").click (function (){
             $(".modal-overlay-order").fadeIn();
             $('html, body').css('overflow-y', 'hidden'); 
@@ -268,6 +278,15 @@ $(document).mouseup(function (e) {
         });
         $(".btn-close_view").click (function (){
             $(".modal-overlay-order-hill").fadeOut();
+            $('html, body').css('overflow-y', 'auto'); 
+        });
+
+        $(".btn-view-pool").click (function (){
+            $(".modal-overlay-order-pool").fadeIn();
+            $('html, body').css('overflow-y', 'hidden'); 
+        });
+        $(".btn-close_view").click (function (){
+            $(".modal-overlay-order-pool").fadeOut();
             $('html, body').css('overflow-y', 'auto'); 
         });
 
