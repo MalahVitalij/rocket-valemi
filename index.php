@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Valemi</title>
+        <title><?=wp_title();?></title>
         <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
         <!-- <link rel="icon" href="img/favicon.png" type="image/x-icon"> -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/media.css" />
         <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+        <?php wp_head(); ?>
     </head>
     <body>
         <header id="header" class="container-fluid header">
@@ -927,8 +928,6 @@
                 </div>
             </div>
             
-
-
             <div class="modal-overlay modal-overlay-order-call">  
                 <!-- <div class="popup-wrap-bg"> -->
                     <div class="main-block popup-wrap">
@@ -983,7 +982,6 @@
                 </div>
             </div>
             
-
             <div class="modal-overlay modal-overlay-order-hill">     
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
@@ -1014,10 +1012,6 @@
                 </div>
             </div>
             
-
-
-
-
             <div class="modal-overlay modal-overlay-orderPay">     
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
@@ -1098,11 +1092,7 @@
             </div>
             
 
-
-
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>        
-       
-
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="js/slick.js"></script>
         <script src="js/bcode.js"></script>
     </body>
