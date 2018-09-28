@@ -14,3 +14,16 @@ function my_acf_settings_dir( $dir ) {
 include_once( get_stylesheet_directory() . '/acf/acf.php' );
 //end acf include in theme
 
+if( function_exists('acf_add_options_page') ) {
+ 
+	$option_page = acf_add_options_page(array(
+		'page_title' 	=> 'Продукты',
+		'menu_title' 	=> 'Продукты',
+        'menu_slug' 	=> 'valemi-products',
+        'position'      => 20,
+        'icon_url'      => 'dashicons-cart',
+		'capability' 	=> 'edit_posts',
+		'redirect' 	    => false
+	));
+ 
+}
