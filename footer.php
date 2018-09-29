@@ -1,3 +1,10 @@
+<?php
+global $fpid;
+$address = get_field('address', $fpid);
+$phone = get_field('phone', $fpid);
+$email = get_field('email', $fpid);
+
+?>
         <footer class="container-fluid footer">
             <section class="contacts">
                 <div class="container">
@@ -5,14 +12,14 @@
                     <div class="contacts-wrapper">
                         <div class="contact-block">
                             <div class="title">Наш адрес:</div>
-                            <div class="desc">МО, г. Серпухов, ул. Пушкина д.45</div>
+                            <div class="desc"><?=$address?></div>
                         </div>
                         <div class="contact-block">
-                            <a href="tel:+389268423090" class="phone">8 926 842 30 90</a>
+                            <a href="tel:<?=preg_replace('/[^0-9]/', '', $phone);?>" class="phone"><?=$phone?></a>
                         </div>
                         <div class="contact-block">
                             <div class="title">Наша электронная почта:</div>
-                            <a href="mail:e.a.rozkova@yandex.ru">e.a.rozkova@yandex.ru</a>
+                            <a href="mail:<?=$email?>"><?=$email?></a>
                         </div>
                     </div>
                     <a href="#" class="politics">Политика конфиденциальности</a>

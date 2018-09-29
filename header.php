@@ -1,3 +1,4 @@
+<?php global $fpid; ?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -15,6 +16,15 @@
         <?php wp_head(); ?>
     </head>
     <body>
+    <?php
+    
+    $instagram = get_field('instaram', $fpid);
+    $phone = get_field('phone', $fpid);
+    $header_big_title = get_field('header_big_title', $fpid);
+    $header_small_title = get_field('header_small_title', $fpid);
+    $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
+    
+    ?>
         <header id="header" class="container-fluid header">
             <!---->
             <section class="top-line">
@@ -24,7 +34,7 @@
                             <a href="/"><img src="<?=get_template_directory_uri()?>/img/main-logo.png" alt="логотип компании" /></a>
                         </div>
                         <div class="inst-block">
-                            <a href="#"><img src="<?=get_template_directory_uri()?>/img/inst-icon.png" alt="инстаграм" /><span>Мы в Инстраграм</span></a>
+                            <a href="<?=$instagram['url']?>" target="<?=$instagram['target']?>"><img src="<?=get_template_directory_uri()?>/img/inst-icon.png" alt="инстаграм" /><span>Мы в Инстраграм</span></a>
                         </div>
                         <div class="menu-block">
                             <div>
@@ -39,7 +49,7 @@
                             </a>
                         </div>
                         <div class="phone-block">
-                            <a href="tel:+389268423090"><img src="<?=get_template_directory_uri()?>/img/phone-icon.png" alt="телефон" /> 8 926 842 30 90</a>
+                            <a href="tel:<?=preg_replace('/[^0-9]/', '', $phone);?>"><img src="<?=get_template_directory_uri()?>/img/phone-icon.png" alt="телефон" /><?=$phone?> </a>
                             <button class="styled-bnt modal-btn btn-view-call">Заказать звонок</button>
                         </div>
                     </div>
@@ -52,8 +62,8 @@
                         <!--описание на баннере-->
                         <div class="main-block banner-description">
                             <div class="banner-desc">
-                                <div class="title">VALEMI — СУХОЙ БАССЕЙН ДЛЯ ДЕТЕЙ ОТ 6 МЕСЯЦЕВ ДО 5 ЛЕТ</div>
-                                <div class="desc">Ребенок играет - Родители отдыхают!</div>
+                                <div class="title"><?=$header_big_title?></div>
+                                <div class="desc"><?=$header_small_title?></div>
                             </div>
                             <!--преимущества на баннере-->
                             <div class="banner-advantages">
@@ -111,7 +121,7 @@
                                     </div>
                                     <button type="submit" class="styled-btn1">Заказать бассейн</button>
                                 </form>
-                                <div class="form-subtitle">Мы перезвоним в течении <span>15</span> минут</div>
+                                <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                                 <a href="#" class="form-pol">Политика конфиденциальности</a>
                             </div>
                             <div class="clearfix"></div>

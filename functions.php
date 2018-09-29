@@ -1,4 +1,7 @@
-<?php 
+<?php
+//set front page id global 
+global $fpid;
+$fpid = get_option('page_on_front');
 
 //acf include in theme
 add_filter('acf/settings/path', 'my_acf_settings_path');
@@ -27,3 +30,10 @@ if( function_exists('acf_add_options_page') ) {
 	));
  
 }
+
+add_image_size('block1_points', 115, 115, true);
+add_image_size('star_image', 236, 281, true);
+add_image_size('block3_points', 146, 146, true);
+add_image_size('block4_points', 252, 188, true);
+add_image_size('pool_size', 113, 93, true);
+add_image_size('bubble', 104, 104, true);
