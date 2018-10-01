@@ -14,6 +14,9 @@
         <link rel="stylesheet" type="text/css" href="<?=get_template_directory_uri()?>/css/media.css" />
         <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
         <?php wp_head(); ?>
+        <script>
+            ajaxurl = '<?=admin_url("admin-ajax.php")?>';
+        </script>
     </head>
     <body>
     <?php
@@ -23,7 +26,10 @@
     $header_big_title = get_field('header_big_title', $fpid);
     $header_small_title = get_field('header_small_title', $fpid);
     $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
+    $privacy = get_field('privacy', $fpid);
     
+    $pools = get_field('pool_sizes', options);
+
     ?>
         <header id="header" class="container-fluid header">
             <!---->
@@ -31,7 +37,7 @@
                 <div class="container">
                     <div class="main-top-wrapper">
                         <div class="logo-block">
-                            <a href="/"><img src="<?=get_template_directory_uri()?>/img/main-logo.png" alt="логотип компании" /></a>
+                            <a href="<?=home_url()?>"><img src="<?=get_template_directory_uri()?>/img/main-logo.png" alt="логотип компании" /></a>
                         </div>
                         <div class="inst-block">
                             <a href="<?=$instagram['url']?>" target="<?=$instagram['target']?>"><img src="<?=get_template_directory_uri()?>/img/inst-icon.png" alt="инстаграм" /><span>Мы в Инстраграм</span></a>
@@ -94,35 +100,38 @@
                         <div class="main-block banner-form">
                             <div class="form-wrapper styled-form">
                                 <div class="form-hd">Оставить <br/><span>заявку</span></div>
-                                <form >
+                                <form action="order_pool" autocomplete="off">
                                     <div class="form-block name">
-                                        <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$"/>
+                                        <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$"/>
                                     </div>
                                     <div class="form-block phone">
-                                        <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$" />
+                                        <input type="text" placeholder="Ваш телефон" name="phone" required pattern="^[ 0-9]+$" />
                                     </div> 
                                     <div class="form-block city">
-                                        <input type="text" placeholder="Ваш город" required  pattern="[^0-9]+$"/>
+                                        <input type="text" placeholder="Ваш город"  name="city" required  pattern="[^0-9]+$"/>
                                     </div>
                                     <div class="form-block promo">
-                                        <input type="text" placeholder="Ваш ПРОМОКОД" />
+                                        <input type="text" class="promocode" name="promocode" placeholder="Ваш ПРОМОКОД" />
                                     </div>
                                     <div class="form-block">
                                         <div class="form-block-name">Выбрать размер бассейна:</div>
-                                        <input type="radio" name="size" class="radio" id="size11" checked data-price="5990"/>
-                                        <label for="size11">90 см</label>
-                                        <input type="radio" name="size" class="radio" id="size12" data-price="6990"/>
-                                        <label for="size12">120 см</label>
+                                        <?php $i=11; foreach ($pools as $pool) {?>
+                                            <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==11)?'checked':'';?> value="<?=$pool['size']?>" data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
+                                            <label for="size<?=$i?>"><?=$pool['size']?> см</label>
+                                        <?php $i++;}?>
                                     </div>
                                     <div class="form-block price">
                                         <div>Цена от:</div>
-                                        <div class='price-change'>5990</div>
+                                        <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                                        <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                                        <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                                        <input type="hidden" data-name="sale">
                                         <div>руб.</div>
                                     </div>
                                     <button type="submit" class="styled-btn1">Заказать бассейн</button>
                                 </form>
                                 <div class="form-subtitle"><?=$header_under_recive_pool?></div>
-                                <a href="#" class="form-pol">Политика конфиденциальности</a>
+                                <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                             </div>
                             <div class="clearfix"></div>
                             <button type="button" class="styled-btn2 btn-view-pay">Оплатить</button>

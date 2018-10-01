@@ -321,8 +321,21 @@ $(document).mouseup(function (e) {
 /* конец модальное окно попап оплата заказа */
 // popup end
 $(".radio").click(function(){
-   var price= $(this).attr("data-price");
-   $(this).closest("form").find(".price-change").text(price);
+    var price= $(this).attr("data-price");
+    let sale = $(this).closest("form").find('input[data-name=sale]').val(),
+        gorka = $(this).closest("form").find("input[type=checkbox]");
+    if(sale != 0){
+        price = parseInt(price) - (parseInt(price) / 100 * parseInt(sale));
+    }
+
+    if(gorka.prop('checked')){
+        gorka_price = parseInt(gorka.data('price')) - (parseInt(gorka.data('price')) / 100 * sale);
+        price = parseInt(price) + parseInt(gorka_price);
+    }
+
+    $(this).closest("form").find(".price-change").text(price);
+    $(this).closest("form").find("input[name='order-price']").text(price);
+    $(this).closest("form").find("input[name='order-price']").val(price);
 });
 
 
@@ -330,12 +343,90 @@ $(".radio").click(function(){
 
 var forms = [].slice.call( document.body.querySelectorAll('form') );
 forms.forEach(function(form){
-    form.addEventListener('submit', function(){
-        form.reset();
-        var myPay = $(".modal-overlay");
-        myPay.fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        console.log($(form).attr('action'));
+        let data = new FormData(),
+            info = $(this).serialize();
+
+        $.ajax({
+            method:"POST",
+            url:ajaxurl,
+            data: { action: $(form).attr('action'), data:info},
+            success: function (r){
+                form.reset();
+                var myPay = $(".modal-overlay");
+                myPay.fadeOut();
+                $('html, body').css('overflow-y', 'auto'); 
+            }
+        });
+        
     })
+})
+
+$('input:text.promocode').on('keyup', function(e) {
+    e.preventDefault();
+    let promo = $(this).val(),
+        variable = $(this);
+    if(promo == 0){
+        let price = variable.closest("form").find('input[name=size]:checked').data('price');
+        //set values no promo
+        variable.closest("form").find(".price-change").text(price);
+        variable.closest("form").find("input[name='order-price']").text(price);
+        variable.closest("form").find("input[name='order-price']").val(price);
+        variable.closest("form").find("input[data-name='sale']").val('');
+    }
+    if (promo.length > 4 && promo.length <= 12){
+        
+        $.ajax({
+            method:"POST",
+            url:ajaxurl,
+            data:{action:'promocode',promocode:promo},
+            success: function(r){
+                result = JSON.parse(r);
+                if(result.status){
+                    let start_price = variable.closest("form").find(".price-change").text(),
+                    calc = start_price - (start_price / 100 * result.percent),
+                        price = variable.closest("form").find('input[name=order-price]').val();
+                    //set values no promo
+                    variable.closest("form").find(".price-change").text(price);
+                    variable.closest("form").find("input[name=order-price]").text(price);
+                    variable.closest("form").find("input[name=order-price]").val(price);
+                    variable.closest("form").find("input[data-name='sale']").val('');
+                    //add discount
+                    variable.closest("form").find(".price-change").text(calc);
+                    variable.closest("form").find("input[name=order-price]").val(calc);
+                    variable.closest("form").find("input[data-name=sale]").val(result.percent);
+                }else{
+                    let price = variable.closest("form").find('input[name=size]:checked').data('price');
+                    //set values no promo
+                    variable.closest("form").find(".price-change").text(price);
+                    variable.closest("form").find("input[name='order-price']").text(price);
+                    variable.closest("form").find("input[name='order-price']").val(price);
+                    variable.closest("form").find("input[data-name='sale']").val('');
+                }
+            }
+        })
+    }
+});
+
+$('#check-modal').on('click', function(e) {
+    let price = $(this).data('price'),
+        discount = $(this).closest("form").find("input[data-name='sale']").val(),
+        amount = $(this).closest("form").find("input[name=order-price]").val();
+    if(discount != null){
+        price = price - (price / 100 * discount);
+    }
+    if($(this).prop('checked')){
+        result = parseInt(price) + parseInt(amount);
+    } else {
+        result = parseInt(amount) - parseInt(price);
+    }
+
+    $(this).closest("form").find(".price-change").text(result);
+    $(this).closest("form").find("input[name=order-price]").text(result);
+    $(this).closest("form").find("input[name=order-price]").val(result);
+
 })
 
 
