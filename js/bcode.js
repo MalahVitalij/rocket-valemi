@@ -341,7 +341,7 @@ $(".radio").click(function(){
 
 // Form submit
 
-var forms = [].slice.call( document.body.querySelectorAll('form') );
+var forms = [].slice.call( document.body.querySelectorAll('form.validating') );
 forms.forEach(function(form){
     form.addEventListener('submit', function(e){
         e.preventDefault();

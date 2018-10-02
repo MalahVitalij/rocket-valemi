@@ -44,7 +44,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
-                        <form >
+                        <form class="validating">
                             <div class="form-block name">
                                 <input type="text" placeholder="Ваше имя" required pattern="[^0-9]+$" />
                             </div>
@@ -72,7 +72,7 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">Заказать<br/><span>звонок</span></div>
-                        <form action="zakaz_zvonka">
+                        <form class="validating" action="zakaz_zvonka">
                             <div class="form-block name">
                                 <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$" />
                             </div>
@@ -125,7 +125,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
-                        <form action="order_hill">
+                        <form class="validating" action="order_hill">
                             <div class="form-block name">
                                 <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$" />
                             </div>
@@ -155,7 +155,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">оплатить<br/><span>заказ</span></div>
-                        <form  method="get" autocomplete="off">
+                        <form class="validating" method="get" autocomplete="off">
                             <div class="form-block name">
                                 <input type="text" placeholder="ФИО" required pattern="[^0-9]+$" />
                             </div>
@@ -216,7 +216,19 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="clearfix"></div>
                 </div>
             </div>
-            
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="upload" value="1">
+                <input type="hidden" name="business" value="malah.vitalij-facilitator@gmail.com">
+                <input type="hidden" name="item_name_1" value="Бассейн - цвет хаки">
+                <input type="hidden" name="amount_1" value="5100">
+                <input type="hidden" name="item_name_2" value="Шары - цвет синий">
+                <input type="hidden" name="amount_2" value="0">
+                <input type="hidden" name="item_name_3" value="Горка">
+                <input type="hidden" name="amount_3" value="6500">
+                <input type="hidden" name="currency_code" value="RUB">
+                <input type="submit" value="PayPal">
+            </form>           
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="<?=get_template_directory_uri()?>/js/slick.js"></script>
