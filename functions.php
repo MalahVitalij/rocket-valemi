@@ -169,3 +169,46 @@ function promocode(){
     wp_die();
 
 }
+
+add_action('wp_ajax_nopriv_order_pool_big', 'order_pool_big');
+add_action('wp_ajax_order_pool_big', 'order_pool_big');
+function order_pool_big(){
+    parse_str($_POST['data'], $data);
+    parse_str($data['information'], $information);
+    unset($data['information']);
+    $array = array(
+        'name' => 'Имя',
+        'phone' => 'Телефон',
+        'city' => 'Город',
+        'size' => 'Размер',
+        'pool' => 'Цвет бассейна',
+        'babbles' => 'Цвет шариков',
+        'promocode' => 'Промокод',
+        'gorka' => 'Наличие горки',
+        'order-price' => 'Цена заказа',
+    );
+
+    foreach ($data as $key => $val) {
+       $post_content .= $array[$key] . ' : ' . $val . '<br>';
+    }
+
+    foreach ($information as $key => $val) {
+        $post_content .= $array[$key] . ' : ' . $val . '<br>';
+    }
+
+    $post_data = array(
+		'post_type'		=> 'order_pool',
+		'post_title'    => date('d-m-Y') . ' - ' . $data['name'],
+        'post_content'  =>  $post_content,
+	);
+
+    $post_id = wp_insert_post( $post_data );
+
+    if($post_id){
+        echo 'ok';
+    } else {
+        echo 'error';
+    }
+
+    wp_die();
+}

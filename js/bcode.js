@@ -234,13 +234,27 @@ $('.catalog-form-mobile-btn').click(function(e) {
     });
 
     $(".btn-view").click (function (){
-            $(".modal-overlay-order").fadeIn();
-            $('html, body').css('overflow-y', 'hidden'); 
-        });
-        $(".btn-close_view").click (function (){
-            $(".modal-overlay-order").fadeOut();
-            $('html, body').css('overflow-y', 'auto'); 
-        });
+        let modal = $(".modal-overlay-order"),
+            form = $(this).closest('form');
+            price = form.find('input[name=order-price]').val();
+            information = form.serialize();
+            form.reset();
+        modal.fadeIn();
+        modal.find('form input[name=information]').remove();
+        modal.find('form').append(
+            $('<input>', {
+                type: 'hidden',
+                name: 'information',
+                val: information
+            })
+        );
+        modal.find('form div.prhtml').text(price);
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+    $(".btn-close_view").click (function (){
+        $(".modal-overlay-order").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
 
 $(document).mouseup(function (e) {
     var myOrders = $(".modal-overlay-order");
@@ -254,13 +268,13 @@ $(document).mouseup(function (e) {
 /* модальное окно попап оплата */
 
     $(".btn-view-pay").click (function (){
-            $(".modal-overlay-orderPay").fadeIn();
-            $('html, body').css('overflow-y', 'hidden'); 
-        });
-        $(".btn-close_view").click (function (){
-            $(".modal-overlay-orderPay").fadeOut();
-            $('html, body').css('overflow-y', 'auto'); 
-        });
+        $(".modal-overlay-orderPay").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+    $(".btn-close_view").click (function (){
+        $(".modal-overlay-orderPay").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay");
@@ -273,22 +287,22 @@ $(document).mouseup(function (e) {
 /* модальное окно попап оплата */
 
     $(".btn-view-hill").click (function (){
-            $(".modal-overlay-order-hill").fadeIn();
-            $('html, body').css('overflow-y', 'hidden'); 
-        });
-        $(".btn-close_view").click (function (){
-            $(".modal-overlay-order-hill").fadeOut();
-            $('html, body').css('overflow-y', 'auto'); 
-        });
+        $(".modal-overlay-order-hill").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+    $(".btn-close_view").click (function (){
+        $(".modal-overlay-order-hill").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
 
-        $(".btn-view-pool").click (function (){
-            $(".modal-overlay-order-pool").fadeIn();
-            $('html, body').css('overflow-y', 'hidden'); 
-        });
-        $(".btn-close_view").click (function (){
-            $(".modal-overlay-order-pool").fadeOut();
-            $('html, body').css('overflow-y', 'auto'); 
-        });
+    $(".btn-view-pool").click (function (){
+        $(".modal-overlay-order-pool").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+    $(".btn-close_view").click (function (){
+        $(".modal-overlay-order-pool").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay-order-hill");
@@ -301,13 +315,14 @@ $(document).mouseup(function (e) {
 /* модальное окно попап оплата */
 
     $(".btn-view-call").click (function (){
-            $(".modal-overlay-order-call").fadeIn();
-            $('html, body').css('overflow-y', 'hidden'); 
-        });
-        $(".btn-close_view").click (function (){
-            $(".modal-overlay-order-call").fadeOut();
-            $('html, body').css('overflow-y', 'auto'); 
-        });
+        $(".modal-overlay-order-call").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
+
+    $(".btn-close_view").click (function (){
+        $(".modal-overlay-order-call").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
 
 $(document).mouseup(function (e) {
     var myPay = $(".modal-overlay-order-call");
@@ -318,116 +333,127 @@ $(document).mouseup(function (e) {
 });
 
 
-/* конец модальное окно попап оплата заказа */
-// popup end
-$(".radio").click(function(){
-    var price= $(this).attr("data-price");
-    let sale = $(this).closest("form").find('input[data-name=sale]').val(),
-        gorka = $(this).closest("form").find("input[type=checkbox]");
-    if(sale != 0){
-        price = parseInt(price) - (parseInt(price) / 100 * parseInt(sale));
-    }
+    /* конец модальное окно попап оплата заказа */
+    // popup end
+    $(".radio").click(function(){
+        let form = $(this).closest('form'),
+            sale = form.find('input[data-name=sale]').val();
 
-    if(gorka.prop('checked')){
-        gorka_price = parseInt(gorka.data('price')) - (parseInt(gorka.data('price')) / 100 * sale);
-        price = parseInt(price) + parseInt(gorka_price);
-    }
+        selected_size_price = $('input[name=size]:checked', form).data('price');
+        gorka = form.find('input:checkbox');
 
-    $(this).closest("form").find(".price-change").text(price);
-    $(this).closest("form").find("input[name='order-price']").text(price);
-    $(this).closest("form").find("input[name='order-price']").val(price);
-});
+        if (gorka.is(':checked')) {
+            gorka = gorka.data('price');
+            all_amount = parseInt(selected_size_price) + parseInt(gorka);
+        } else {
+            all_amount = parseInt(selected_size_price);
+        }
+
+        if(sale != 0){
+            all_amount = parseInt(all_amount) - (parseInt(all_amount) / 100 * parseInt(sale));
+        }
+
+        $(this).closest("form").find(".price-change").text(all_amount);
+        $(this).closest("form").find("input[name='order-price']").text(all_amount);
+        $(this).closest("form").find("input[name='order-price']").val(all_amount);
+    });
 
 
-// Form submit
+    // Form submit
 
-var forms = [].slice.call( document.body.querySelectorAll('form.validating') );
-forms.forEach(function(form){
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        console.log($(form).attr('action'));
-        let data = new FormData(),
-            info = $(this).serialize();
+    var forms = [].slice.call( document.body.querySelectorAll('form.validating') );
+    forms.forEach(function(form){
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            let data = new FormData(),
+                info = $(this).serialize();
 
-        $.ajax({
-            method:"POST",
-            url:ajaxurl,
-            data: { action: $(form).attr('action'), data:info},
-            success: function (r){
-                form.reset();
-                var myPay = $(".modal-overlay");
-                myPay.fadeOut();
-                $('html, body').css('overflow-y', 'auto'); 
-            }
-        });
-        
+            $.ajax({
+                method:"POST",
+                url:ajaxurl,
+                data: { action: $(form).attr('action'), data:info},
+                success: function (r){
+                    form.reset();
+                    var myPay = $(".modal-overlay");
+                    myPay.fadeOut();
+                    $('html, body').css('overflow-y', 'auto'); 
+                }
+            });
+            
+        })
     })
-})
 
-$('input:text.promocode').on('keyup', function(e) {
-    e.preventDefault();
-    let promo = $(this).val(),
-        variable = $(this);
-    if(promo == 0){
-        let price = variable.closest("form").find('input[name=size]:checked').data('price');
-        //set values no promo
-        variable.closest("form").find(".price-change").text(price);
-        variable.closest("form").find("input[name='order-price']").text(price);
-        variable.closest("form").find("input[name='order-price']").val(price);
-        variable.closest("form").find("input[data-name='sale']").val('');
-    }
-    if (promo.length > 4 && promo.length <= 12){
-        
+    $('.styled-btn1.apply__promo').on('click', function(e){
+        e.preventDefault();
+        let promo = $(this).closest('form').find('input:text.promocode').val(),
+         variable = $(this).closest('form').find('input:text.promocode'),
+             form = $(this).closest('form');
+
+        selected_size_price = $('input[name=size]:checked', form).data('price');
+        gorka = form.find('input:checkbox');
+
+        if (gorka.is(':checked')){
+            gorka = gorka.data('price');
+            all_amount = parseInt(selected_size_price) + parseInt(gorka);
+        }else{
+            all_amount = parseInt(selected_size_price);
+        }
+
+        if (promo == 0) {
+            variable.closest("form").find(".price-change").text(all_amount);
+            variable.closest("form").find("input[name='order-price']").text(all_amount);
+            variable.closest("form").find("input[name='order-price']").val(all_amount);
+            variable.closest("form").find("input[data-name='sale']").val('');
+        }
+
         $.ajax({
-            method:"POST",
-            url:ajaxurl,
-            data:{action:'promocode',promocode:promo},
-            success: function(r){
+            method: "POST",
+            url: ajaxurl,
+            data: { action: 'promocode', promocode: promo },
+            success: function (r) {
+
                 result = JSON.parse(r);
-                if(result.status){
-                    let start_price = variable.closest("form").find(".price-change").text(),
-                    calc = start_price - (start_price / 100 * result.percent),
-                        price = variable.closest("form").find('input[name=order-price]').val();
+
+                    variable.closest("form").find(".price-change").text(all_amount);
+                    variable.closest("form").find("input[name='order-price']").text(all_amount);
+                    variable.closest("form").find("input[name='order-price']").val(all_amount);
+                    variable.closest("form").find("input[data-name='sale']").val('');
+
+                if (result.status) {
+                    let calc = all_amount - (all_amount / 100 * result.percent);
                     //set values no promo
-                    variable.closest("form").find(".price-change").text(price);
-                    variable.closest("form").find("input[name=order-price]").text(price);
-                    variable.closest("form").find("input[name=order-price]").val(price);
+                    variable.closest("form").find(".price-change").text(all_amount);
+                    variable.closest("form").find("input[name='order-price']").text(all_amount);
+                    variable.closest("form").find("input[name='order-price']").val(all_amount);
                     variable.closest("form").find("input[data-name='sale']").val('');
                     //add discount
                     variable.closest("form").find(".price-change").text(calc);
                     variable.closest("form").find("input[name=order-price]").val(calc);
                     variable.closest("form").find("input[data-name=sale]").val(result.percent);
-                }else{
-                    let price = variable.closest("form").find('input[name=size]:checked').data('price');
-                    //set values no promo
-                    variable.closest("form").find(".price-change").text(price);
-                    variable.closest("form").find("input[name='order-price']").text(price);
-                    variable.closest("form").find("input[name='order-price']").val(price);
-                    variable.closest("form").find("input[data-name='sale']").val('');
                 }
             }
         })
-    }
-});
+    })
 
-$('#check-modal, #check, #check_3').on('click', function(e) {
-    let price = $(this).data('price'),
-        discount = $(this).closest("form").find("input[data-name='sale']").val(),
-        amount = $(this).closest("form").find("input[name=order-price]").val();
-    if(discount != null){
-        price = price - (price / 100 * discount);
-    }
-    if($(this).prop('checked')){
-        result = parseInt(price) + parseInt(amount);
-    } else {
-        result = parseInt(amount) - parseInt(price);
-    }
+    $('#check-modal, #check, #check_3').on('click', function(e) {
+        let price = $(this).data('price'),
+            form = $(this).closest("form")
+            discount = form.find("input[data-name='sale']").val(),
+            amount = form.find("input[name=order-price]").val();
+        if(discount != null){
+            price = price - (price / 100 * discount);
+        }
+        if($(this).prop('checked')){
+            result = parseInt(price) + parseInt(amount);
+        } else {
+            result = parseInt(amount) - parseInt(price);
+        }
 
-    $(this).closest("form").find(".price-change").text(result);
-    $(this).closest("form").find("input[name=order-price]").text(result);
-    $(this).closest("form").find("input[name=order-price]").val(result);
+        form.find(".price-change").text(result);
+        form.find("input[name=order-price]").text(result);
+        form.find("input[name=order-price]").val(result);
 
-})
+    })
 
 
 // $(document).bind("mouseup touchend" function (e) {

@@ -44,7 +44,7 @@ $pools = get_field('pool_sizes', options);
                
           </div>
           <div class="order-block order-form styled-form">
-               <form action="order_pool" autocomplete="off">
+               <form class="validating" action="order_pool" autocomplete="off">
                     <div class="form-block name">
                          <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$"/>
                     </div>
