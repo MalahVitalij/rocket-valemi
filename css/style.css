@@ -3525,3 +3525,10 @@ width: 4px;
 
 
 /*frontend fix end*/
+
+.apply__promo {
+    height: 30px;
+    line-height: 30px;
+    margin: 12px auto;  
+    font-size: 13px; 
+}

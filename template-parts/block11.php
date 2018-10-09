@@ -56,6 +56,7 @@ $pools = get_field('pool_sizes', options);
                     </div>
                     <div class="form-block promo">
                          <input type="text" name="promocode" class="promocode" placeholder="Ваш ПРОМОКОД" />
+                         <button class="styled-btn1 apply__promo">применить промокод</button>
                     </div>
                     <div class="form-block">
                         <?php $i=1; foreach ($pools as $pool) {?>

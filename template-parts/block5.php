@@ -112,6 +112,7 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="form-block promo">
                         <input type="text" name="promocode" placeholder="Ваш ПРОМОКОД">
                     </div>
+                    <button class="styled-btn1 apply__promo">применить промокод</button>
                     <div class="form-block check">
                         <input type="checkbox" id="check_3" data-price="<?=$gorka_price;?>">
                         <label for="check">Горка нужна</label>
@@ -172,6 +173,7 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     <div class="form-block promo">
                         <input type="text" placeholder="Ваш ПРОМОКОД" />
+                        <button class="styled-btn1 apply__promo">применить промокод</button>
                     </div>
                     <div class="form-block check">
                         <input type="checkbox" id="check" data-price="<?=$gorka_price;?>"/>

@@ -108,6 +108,7 @@ $gorka_price = get_field('gorka_price', options);
                             <div class="form-block promo">
                                 <input type="text" placeholder="Ваш ПРОМОКОД">
                             </div>
+                            <button class="styled-btn1 apply__promo">применить промокод</button>
                             <div class="form-block price">
                                 <div>Цена от:</div>
                                 <div><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
@@ -137,6 +138,7 @@ $gorka_price = get_field('gorka_price', options);
                             </div>
                             <div class="form-block promo">
                                 <input type="text" placeholder="Ваш ПРОМОКОД">
+                                <button class="styled-btn1 apply__promo">применить промокод</button>
                             </div>
                             <div class="form-block price">
                                 <div>Цена от:</div>
