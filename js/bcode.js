@@ -455,6 +455,11 @@ $(document).mouseup(function (e) {
 
     })
 
+    $('form.paypal').on('submit', function(e){
+        e.preventDefault();
+        console.log($(this));
+    });
+
 
 // $(document).bind("mouseup touchend" function (e) {
 //     var myPay = $(".modal-overlay-order-call");

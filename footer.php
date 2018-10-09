@@ -157,7 +157,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">оплатить<br/><span>заказ</span></div>
-                        <form class="validating" method="get" autocomplete="off">
+                        <form class="paypal" method="get" autocomplete="off">
                             <div class="form-block name">
                                 <input type="text" placeholder="ФИО" required pattern="[^0-9]+$" />
                             </div>
@@ -230,7 +230,6 @@ $gorka_price = get_field('gorka_price', options);
                 <input type="hidden" name="item_name_3" value="Горка">
                 <input type="hidden" name="amount_3" value="6500">
                 <input type="hidden" name="currency_code" value="RUB">
-                <input type="submit" value="PayPal">
             </form>           
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
