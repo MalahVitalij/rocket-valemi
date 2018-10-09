@@ -113,6 +113,7 @@
                                     <div class="form-block promo">
                                         <input type="text" class="promocode" name="promocode" placeholder="Ваш ПРОМОКОД" />
                                     </div>
+                                    <button class="styled-btn1">применить промокод</button>
                                     <div class="form-block">
                                         <div class="form-block-name">Выбрать размер бассейна:</div>
                                         <?php $i=11; foreach ($pools as $pool) {?>

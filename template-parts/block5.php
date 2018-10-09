@@ -15,6 +15,8 @@ $pools = get_field('pool_sizes', options);
 $privacy = get_field('privacy', $fpid);
 $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
 
+$gorka_price = get_field('gorka_price', options);
+
 ?>
 <!--цветовая гамма-->
 <section class="main-colors-scheme" id="catalog">
@@ -78,8 +80,8 @@ $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
                     <div class="form-block-wrap form-block-wrap-1">
                     <div class="form-block">                                        
                         <div class="form-block-name">Выбрать размер бассейна:</div>
-                        <?php $i=3; foreach ($pools as $pool) {?>
-                            <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==3)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
+                        <?php $i=25; foreach ($pools as $pool) {?>
+                            <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==25)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
                             <label for="size<?=$i?>"><?=$pool['size']?> см</label>
                         <?php $i++;}?>
                     </div>
@@ -99,19 +101,19 @@ $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
                     <div class="form-block">
                         <div class="form-block-name">Выбрать комплект шаров:</div>
                         <span data-object="ball" class="main__form-select-wrap form-block">
-                                <input class="main__form-select" readonly="" type="text" name="babbles" placeholder="<?=$bubbles[0]['title']?>" value="">
-                                <span class="main__form-submenu">
-                                    <?php foreach($bubbles as $bubble){?>
-                                        <span><?=$bubble['title']?></span>
-                                    <?php } ?>
-                                </span>
+                            <input class="main__form-select" readonly="" type="text" name="babbles" placeholder="<?=$bubbles[0]['title']?>" value="">
+                            <span class="main__form-submenu">
+                                <?php foreach($bubbles as $bubble){?>
+                                    <span><?=$bubble['title']?></span>
+                                <?php } ?>
+                            </span>
                         </span>
                     </div>
                     <div class="form-block promo">
                         <input type="text" name="promocode" placeholder="Ваш ПРОМОКОД">
                     </div>
                     <div class="form-block check">
-                        <input type="checkbox" id="check">
+                        <input type="checkbox" id="check_3" data-price="<?=$gorka_price;?>">
                         <label for="check">Горка нужна</label>
                     </div>
                     <div class="form-block price">
@@ -172,12 +174,15 @@ $header_under_recive_pool = get_field('header_under_recive_pool', $fpid);
                         <input type="text" placeholder="Ваш ПРОМОКОД" />
                     </div>
                     <div class="form-block check">
-                        <input type="checkbox" id="check" />
+                        <input type="checkbox" id="check" data-price="<?=$gorka_price;?>"/>
                         <label for="check">Горка нужна</label>
                     </div>
                     <div class="form-block price">
                         <div>Цена:</div>
                         <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                        <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                        <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                        <input type="hidden" data-name="sale">
                         <div>руб.</div>
                     </div>
                     </div>

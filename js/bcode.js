@@ -410,7 +410,7 @@ $('input:text.promocode').on('keyup', function(e) {
     }
 });
 
-$('#check-modal').on('click', function(e) {
+$('#check-modal, #check, #check_3').on('click', function(e) {
     let price = $(this).data('price'),
         discount = $(this).closest("form").find("input[data-name='sale']").val(),
         amount = $(this).closest("form").find("input[name=order-price]").val();
