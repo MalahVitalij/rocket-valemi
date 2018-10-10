@@ -458,37 +458,98 @@ $(document).mouseup(function (e) {
     $('form.paypal').on('submit', function(e){
         e.preventDefault();
         form = $(this);
+        serialized_data = $(this).serialize();
+
         sale = form.find('input[data-name=sale]').val();
         pool = $("[name=pool]", form);
         babbles = $("[name='babbles']", form);
         size = $("[name='size']:checked", form);
+        promocode = $("[name='promocode']", form);
+        paypal_form = $('#paypal_form');
 
-        if (form.find('input[name=gorka]').is(':checked')){
-            gorka = $("[name='gorka']", form);
-        }
+        $.ajax({
+            method: "POST",
+            url: ajaxurl,
+            data: { action: 'paypal_order', data: serialized_data },
+            success: function (r) {
 
-        pool_info = 'Бассейн. Размер: ' + size.val() + 'см. Цвет: ' + pool.val();
-        if(sale != null){
-            price_1 = size.data('price') - ( size.data('price') / 100 * sale );
-        }
-        item_name_1 = $('<input>', {
-            type: 'hidden',
-            name: 'item_name_1',
-            val: pool_info
+                //calculate pool info
+                pool_info = 'Бассейн. Размер: ' + size.val() + 'см. Цвет: ' + pool.val();
+                if (sale != null) {
+                    price_1 = size.data('price') - (size.data('price') / 100 * sale);
+                }
+                item_name_1 = $('<input>', {
+                    type: 'hidden',
+                    name: 'item_name_1',
+                    val: pool_info
+                });
+                amount_1 = $('<input>', {
+                    type: 'hidden',
+                    name: 'amount_1',
+                    val: price_1
+                });
+                paypal_form.append(item_name_1);
+                paypal_form.append(amount_1);
+
+                //add babbles info
+                babbles_info = 'Шарики. Цвет: ' + babbles.val();
+                item_name_2 = $('<input>', {
+                    type: 'hidden',
+                    name: 'item_name_2',
+                    val: babbles_info
+                });
+                amount_2 = $('<input>', {
+                    type: 'hidden',
+                    name: 'amount_2',
+                    val: '0'
+                });
+                paypal_form.append(item_name_2);
+                paypal_form.append(amount_2);
+
+                //add promocode if added
+                if (promocode.val() != null) {
+                    item_name_3 = $('<input>', {
+                        type: 'hidden',
+                        name: 'item_name_3',
+                        val: 'Промокод: ' + promocode.val()
+                    });
+                    amount_3 = $('<input>', {
+                        type: 'hidden',
+                        name: 'amount_3',
+                        val: '0'
+                    });
+                    paypal_form.append(item_name_3);
+                    paypal_form.append(amount_3);
+                }
+
+                //calculate with gorka if added
+                if (form.find('input[name=gorka]').is(':checked')) {
+                    gorka = $("[name='gorka']", form);
+                    price_3 = gorka.data('price');
+                    if (sale != null) {
+                        price_3 = price_3 - (price_3 / 100 * sale);
+                    }
+                    item_name_4 = $('<input>', {
+                        type: 'hidden',
+                        name: 'item_name_4',
+                        val: 'Горка'
+                    });
+                    amount_4 = $('<input>', {
+                        type: 'hidden',
+                        name: 'amount_4',
+                        val: price_3
+                    });
+                    paypal_form.append(item_name_4);
+                    paypal_form.append(amount_4);
+                }
+
+                paypal_form.submit();
+
+            }
         });
-        amount_1 = $('<input>', {
-            type: 'hidden',
-            name: 'amount_1',
-            val: price_1
-        });
-        item_name_1 = $('<input>', {
-            type: 'hidden',
-            name: 'item_name_1',
-            val: pool_info
-        }); 
-         
-         
-        console.log(check);
+        
+
+
     });
 
 

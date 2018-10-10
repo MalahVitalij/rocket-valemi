@@ -212,3 +212,41 @@ function order_pool_big(){
 
     wp_die();
 }
+
+add_action('wp_ajax_nopriv_paypal_order', 'paypal_order');
+add_action('wp_ajax_paypal_order', 'paypal_order');
+function paypal_order(){
+    parse_str($_POST['data'], $data);
+
+    $array = array(
+        'name' => 'Имя',
+        'phone' => 'Телефон',
+        'city' => 'Город',
+        'size' => 'Размер',
+        'pool' => 'Цвет бассейна',
+        'babbles' => 'Цвет шариков',
+        'promocode' => 'Промокод',
+        'gorka' => 'Наличие горки',
+        'order-price' => 'Цена заказа',
+    );
+
+    foreach ($data as $key => $val) {
+       $post_content .= $array[$key] . ' : ' . $val . '<br>';
+    }
+
+    $post_data = array(
+		'post_type'		=> 'cpt_paypal',
+		'post_title'    => date('d-m-Y') . ' - ' . $data['name'],
+        'post_content'  =>  $post_content,
+	);
+
+    $post_id = wp_insert_post( $post_data );
+
+    if($post_id){
+        echo 'ok';
+    } else {
+        echo 'error';
+    }
+
+    wp_die();
+}

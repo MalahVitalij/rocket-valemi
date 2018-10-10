@@ -197,7 +197,7 @@ $gorka_price = get_field('gorka_price', options);
                                 <?php $i++;}?>
                             </div>
                             <div class="form-block check-modal">
-                                <input type="checkbox" id="check-modal" name="gorka" data-price="<?=$gorka_price?>">
+                                <input type="checkbox" id="check-modal" name="gorka" value="Добавлена" data-price="<?=$gorka_price?>">
                                 <label for="check-modal">Горка нужна</label>
                             </div>
                             <div class="form-block promo">
@@ -219,16 +219,10 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal_form">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="upload" value="1">
                 <input type="hidden" name="business" value="malah.vitalij-facilitator@gmail.com">
-                <input type="hidden" name="item_name_1" value="Бассейн - цвет хаки">
-                <input type="hidden" name="amount_1" value="5100">
-                <input type="hidden" name="item_name_2" value="Шары - цвет синий">
-                <input type="hidden" name="amount_2" value="0">
-                <input type="hidden" name="item_name_3" value="Горка">
-                <input type="hidden" name="amount_3" value="6500">
                 <input type="hidden" name="currency_code" value="RUB">
             </form>           
 
