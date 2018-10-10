@@ -159,13 +159,13 @@ $gorka_price = get_field('gorka_price', options);
                         <div class="form-hd">оплатить<br/><span>заказ</span></div>
                         <form class="paypal" method="get" autocomplete="off">
                             <div class="form-block name">
-                                <input type="text" placeholder="ФИО" required pattern="[^0-9]+$" />
+                                <input type="text" placeholder="ФИО" name="name" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block phone">
-                                <input type="text" placeholder="Ваш телефон" required pattern="^[ 0-9]+$"/>
+                                <input type="text" placeholder="Ваш телефон" name="phone" required pattern="^[ 0-9]+$"/>
                             </div> 
                             <div class="form-block city">
-                                <input type="text" placeholder="Ваш город" required pattern="[^0-9]+$" />
+                                <input type="text" placeholder="Ваш город" name="city" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block">
                                 <div class="form-block-name">Выбрать цвет бассейна:</div>
@@ -181,7 +181,7 @@ $gorka_price = get_field('gorka_price', options);
                             <div class="form-block">
                                 <div class="form-block-name">Выбрать комплект шаров:</div>
                                 <span class="main__form-select-wrap form-block">
-                                    <input class="main__form-select" readonly="" type="text" placeholder="<?=$bubbles[0]['title']?>" value="<?=$bubbles[0]['title']?>">
+                                    <input class="main__form-select" readonly="" name="babbles" type="text" placeholder="<?=$bubbles[0]['title']?>" value="<?=$bubbles[0]['title']?>">
                                     <span class="main__form-submenu" style="display: none;">
                                         <?php foreach($bubbles as $bubble){?>
                                             <span><?=$bubble['title']?></span>
@@ -192,12 +192,12 @@ $gorka_price = get_field('gorka_price', options);
                             <div class="form-block">
                                 <div class="form-block-name">Выбрать размер бассейна:</div>
                                 <?php $i=5; foreach ($pools as $pool) {?>
-                                    <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==5)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
+                                    <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==5)?'checked':'';?> value="<?=$pool['size']?>" data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
                                     <label for="size<?=$i?>"><?=$pool['size']?> см</label>
                                 <?php $i++;}?>
                             </div>
                             <div class="form-block check-modal">
-                                <input type="checkbox" id="check-modal" data-price="<?=$gorka_price?>">
+                                <input type="checkbox" id="check-modal" name="gorka" data-price="<?=$gorka_price?>">
                                 <label for="check-modal">Горка нужна</label>
                             </div>
                             <div class="form-block promo">
@@ -232,7 +232,7 @@ $gorka_price = get_field('gorka_price', options);
                 <input type="hidden" name="currency_code" value="RUB">
             </form>           
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="<?=get_template_directory_uri()?>/js/jquery-3.3.1.js"></script>
         <script src="<?=get_template_directory_uri()?>/js/slick.js"></script>
         <script src="<?=get_template_directory_uri()?>/js/bcode.js"></script>
         <?php wp_footer(); ?>

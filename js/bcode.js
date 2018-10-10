@@ -238,7 +238,7 @@ $('.catalog-form-mobile-btn').click(function(e) {
             form = $(this).closest('form');
             price = form.find('input[name=order-price]').val();
             information = form.serialize();
-            form.reset();
+            form[0].reset();
         modal.fadeIn();
         modal.find('form input[name=information]').remove();
         modal.find('form').append(
@@ -457,7 +457,38 @@ $(document).mouseup(function (e) {
 
     $('form.paypal').on('submit', function(e){
         e.preventDefault();
-        console.log($(this));
+        form = $(this);
+        sale = form.find('input[data-name=sale]').val();
+        pool = $("[name=pool]", form);
+        babbles = $("[name='babbles']", form);
+        size = $("[name='size']:checked", form);
+
+        if (form.find('input[name=gorka]').is(':checked')){
+            gorka = $("[name='gorka']", form);
+        }
+
+        pool_info = 'Бассейн. Размер: ' + size.val() + 'см. Цвет: ' + pool.val();
+        if(sale != null){
+            price_1 = size.data('price') - ( size.data('price') / 100 * sale );
+        }
+        item_name_1 = $('<input>', {
+            type: 'hidden',
+            name: 'item_name_1',
+            val: pool_info
+        });
+        amount_1 = $('<input>', {
+            type: 'hidden',
+            name: 'amount_1',
+            val: price_1
+        });
+        item_name_1 = $('<input>', {
+            type: 'hidden',
+            name: 'item_name_1',
+            val: pool_info
+        }); 
+         
+         
+        console.log(check);
     });
 
 
