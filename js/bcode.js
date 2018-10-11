@@ -229,7 +229,21 @@ $('.catalog-form-mobile-btn').click(function(e) {
 });
 
     $(".catalog-form-mobile-btn").click (function (){
-        $(".modal-overlay-order").fadeIn();
+        let modal = $(".modal-overlay-order"),
+            form = $(this).closest('form');
+        price = form.find('input[name=order-price]').val();
+        information = form.serialize();
+        form[0].reset();
+        modal.fadeIn();
+        modal.find('form input[name=information]').remove();
+        modal.find('form').append(
+            $('<input>', {
+                type: 'hidden',
+                name: 'information',
+                val: information
+            })
+        );
+        modal.find('form div.prhtml').text(price);
         $('html, body').css('overflow-y', 'hidden'); 
     });
 
