@@ -3,6 +3,10 @@ $(window).on('load', function(){
     $('body').fadeTo('slow' , 1);
 });
 $(document).ready(function() {
+
+    $(window).on("resize load", function () {
+        console.log($(window).width());
+    });
    
 
     $('.popular-slider').slick({
@@ -428,6 +432,16 @@ $('#check-modal, #check, #check_3').on('click', function(e) {
     $(this).closest("form").find("input[name=order-price]").val(result);
 
 })
+
+ $('a[href*="#"]').click(function() {
+      var target = $(this.hash);
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+  });
 
 
 // $(document).bind("mouseup touchend" function (e) {

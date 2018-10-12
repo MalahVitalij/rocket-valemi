@@ -5,7 +5,7 @@ $desc = get_field('block_2_desc', $fpid);
 $stars = get_field('block_2_stars', $fpid);
 ?>
 <!--клиенты-->
-<section class="main-clients">
+<section id="main-clients" class="main-clients">
     <div class="container">
     <div class="section-side-title right-side w-side">Наши клиенты</div>
     <div class="sec-title sec-w"><?=$title?></div>

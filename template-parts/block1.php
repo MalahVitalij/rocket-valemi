@@ -26,5 +26,5 @@ $points = get_field('block_1_points', $fpid);
         </div>
 
     </div>
-    <a href="#" class="scroll-to"></a>
+    <a href="#main-clients" class="scroll-to"></a>
 </section>

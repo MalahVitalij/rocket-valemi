@@ -224,7 +224,7 @@ $block_5_slider = get_field('block_5_slider', $fpid);
                     </div>
                 <?php }?>
             </div>
-          <a href="#" class="scroll-to"></a>
+          <a href="#main-set" class="scroll-to"></a>
           <p>еще комплекты</p>
      </div>
 </section>

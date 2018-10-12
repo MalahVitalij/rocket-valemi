@@ -4,7 +4,11 @@
    
 }
 
-
+@media (max-width: 900px ){
+    .main-example .example-wrapper .example-block .ex-ask .photo-block {
+        width: auto;
+    }
+}
 @media only screen and (max-width: 1310px) {
     
     .content .main-userfulness .userfulness-center{
@@ -345,6 +349,8 @@
         justify-content: space-around;
         -ms-align-items: flex-start;
         align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
     }
     .scheme-wrapper .colors-form .form-wrapper form .form-block-wrap{
         width: 33%;
@@ -566,6 +572,10 @@
     .phone-block .modal-btn {
         margin-right: 0;
     }
+    .banner-advantages {
+        margin-left: 0;
+        justify-content: flex-start;
+    }
 
 }
 @media only screen and (max-width: 754px) {
@@ -623,7 +633,7 @@
         margin-top: 95px;
     }
 }
-@media only screen and (max-width: 724px) {
+@media only screen and (max-width: 740px) {
     .banner-form .form-wrapper{
        margin-top: 95px;
     }
@@ -937,6 +947,10 @@
     .main-popular .sec-bg-title {
         display: none;
     }
+   /* .banner-advantages {
+        margin-left: 0;
+        justify-content: center;
+    }*/
 }
 
 
@@ -1327,8 +1341,10 @@
         transform: translateX(-50%);
     }
     .main-example .example-wrapper .example-block .ex-ask .photo-block {
-        width: 125px;
-        margin-right: 0;
+        max-width: none;
+        width: auto;
+        /*display: block;*/
+        margin-right: 0px;
         padding-top: 20px; 
     }
     .main-example .example-wrapper .example-block .ex-ask .photo-block img{

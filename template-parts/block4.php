@@ -8,7 +8,7 @@ $points = get_field('block_4_points');
 
 ?>
 <!--состав материалов-->
-<section class="main-compound">
+<section class="main-compound" id="main-compound">
     <div class="container">
         <div class="section-side-title right-side p-side">Экологично</div>
         <div class="sec-title sec-p"><?=$title?></div>

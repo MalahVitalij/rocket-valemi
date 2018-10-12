@@ -29,7 +29,7 @@ $pools = get_field('pool_sizes', options);
                          <li><?=$point['point']?></li>
                     <?php }?>
                </ol>
-               <?=$block_11_after_ul?>
+              <b> <?=$block_11_after_ul?></b>
                <a href="<?=$privacy?>" class="politics">Политика конфиденциальности</a>
                <div class="styled-form order-desc-form">
                     <form>

@@ -31,5 +31,5 @@ $colors = ['pink', 'purp', 'orng', 'orng', 'purp', 'pink'];
                 
         </div>
     </div>
-    <a href="#" class="scroll-to"></a>
+    <a href="#main-compound" class="scroll-to"></a>
 </section>
