@@ -101,15 +101,23 @@ function order_pool(){
     
     parse_str($_POST['data'], $data);
 
+    $array = array(
+        'name' => 'Имя',
+        'phone' => 'Телефон',
+        'city' => 'Город',
+        'promocode' => 'Промокод',
+        'size' => 'Размер',
+        'order-price' => 'Цена',
+    );
+
+    foreach($data as $key=>$val){
+        $content .= $array[$key] . ': ' . $val . '<br>';
+    }
+
     $post_data = array(
 		'post_type'		=> 'order_pool',
 		'post_title'    => date('d-m-Y') . ' - ' . $data['name'],
-        'post_content'  =>  'Имя : ' . $data['name'] . '<br>' .
-                            'Телефон : ' . $data['phone'] . '<br>' .
-                            'Город : ' . $data['city'] . '<br>' .
-                            'Размер : ' . $data['size'] . 'см' . '<br>' .
-                            'Промокод : ' . $data['promocode'] . '<br>' .
-                            'Сумма заказа : ' . $data['order-price'],
+        'post_content'  =>  $content,
 	);
 
     $post_id = wp_insert_post( $post_data );

@@ -95,7 +95,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
-                        <form action="order_pool" class="validating">
+                        <form action="order_pool" class="validating" autocomplete="off">
                             <div class="form-block name">
                                 <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$" />
                             </div>
@@ -106,12 +106,15 @@ $gorka_price = get_field('gorka_price', options);
                                 <input type="text" placeholder="Ваш город" name="city" required pattern="[^0-9]+$" />
                             </div>
                             <div class="form-block promo">
-                                <input type="text" placeholder="Ваш ПРОМОКОД">
+                                <input type="text" name="promocode" class="promocode" placeholder="Ваш ПРОМОКОД">
                             </div>
                             <button class="styled-btn1 apply__promo">применить промокод</button>
                             <div class="form-block price">
-                                <div>Цена от:</div>
-                                <div><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                                <div>Цена:</div>
+                                <div class='price-change'></div>
+                                <input type="hidden" name="order-price" class="order-price" value="">
+                                <input type="hidden" data-name="price" value="">
+                                <input type="hidden" data-name="sale">
                                 <div>руб.</div>
                             </div>
                             <button type="submit" class="styled-btn1">Заказать бассейн</button>
@@ -126,7 +129,7 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">Сделать<br/><span>заказ</span></div>
-                        <form class="validating" action="order_hill">
+                        <form class="validating" action="order_hill" autocomplete="off">
                             <div class="form-block name">
                                 <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$" />
                             </div>
