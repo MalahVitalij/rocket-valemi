@@ -100,7 +100,7 @@
                         <div class="main-block banner-form">
                             <div class="form-wrapper styled-form">
                                 <div class="form-hd">Оставить <br/><span>заявку</span></div>
-                                <form action="order_pool" autocomplete="off">
+                                <form action="order_pool" autocomplete="off" class="validating">
                                     <div class="form-block name">
                                         <input type="text" placeholder="Ваше имя" name="name" required pattern="[^0-9]+$"/>
                                     </div>

@@ -76,12 +76,12 @@ $gorka_price = get_field('gorka_price', options);
         <div class="wrap-balls-form">
             <div class="form-wrapper ">
                 <div class="form-hd">Сделать<span>заказ</span></div>
-                <form class="form-760">
+                <form class="form-760" autocomplete="off">
                     <div class="form-block-wrap form-block-wrap-1">
                     <div class="form-block">                                        
                         <div class="form-block-name">Выбрать размер бассейна:</div>
                         <?php $i=25; foreach ($pools as $pool) {?>
-                            <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==25)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
+                            <input value="<?=$pool['size']?>" type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==25)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
                             <label for="size<?=$i?>"><?=$pool['size']?> см</label>
                         <?php $i++;}?>
                     </div>
@@ -110,12 +110,12 @@ $gorka_price = get_field('gorka_price', options);
                         </span>
                     </div>
                     <div class="form-block promo">
-                        <input type="text" name="promocode" placeholder="Ваш ПРОМОКОД">
+                        <input type="text" name="promocode" class="promocode" placeholder="Ваш ПРОМОКОД">
                     </div>
                     <button class="styled-btn1 apply__promo">применить промокод</button>
                     <div class="form-block check">
-                        <input type="checkbox" id="check_3" data-price="<?=$gorka_price;?>">
-                        <label for="check">Горка нужна</label>
+                        <input type="checkbox" id="check_3" name="gorka" value="Добавлена" data-price="<?=$gorka_price;?>">
+                        <label for="check_3">Горка нужна</label>
                     </div>
                     <div class="form-block price">
                         <div>Цена:</div>
@@ -138,19 +138,19 @@ $gorka_price = get_field('gorka_price', options);
         <div class="colors-form">
             <div class="form-wrapper ">
                 <div class="form-hd">Сделать<span>заказ</span></div>
-                <form class="form-760">
+                <form class="form-760" autocomplete="off">
                     <div class="form-block-wrap form-block-wrap-1">
                     <div class="form-block">                                        
                         <div class="form-block-name">Выбрать размер бассейна:</div>
                         <?php $i=3; foreach ($pools as $pool) {?>
-                            <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==3)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
+                            <input value="<?=$pool['size']?>" type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==3)?'checked':'';?> data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
                             <label for="size<?=$i?>"><?=$pool['size']?> см</label>
                         <?php $i++;}?>
                     </div>
                     <div class="form-block">
                         <div class="form-block-name">Выбрать цвет бассейна:</div>
                         <span  data-object='img-block' class="main__form-select-wrap">
-                                <input class="main__form-select" readonly="" type="text" placeholder="<?=$pools_types[0]['color_name']?>" value="">
+                                <input class="main__form-select" readonly="" name="pool" type="text" placeholder="<?=$pools_types[0]['color_name']?>" value="<?=$pools_types[0]['color_name']?>">
                                 <span class="main__form-submenu">
                                     <?php foreach($pools_types as $pool){?>
                                         <span><?=$pool['color_name']?></span>
@@ -163,7 +163,7 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="form-block">
                         <div class="form-block-name">Выбрать комплект шаров:</div>
                         <span data-object='ball' class="main__form-select-wrap form-block">
-                                <input class="main__form-select" readonly="" type="text" placeholder="<?=$bubbles[0]['title']?>" value="">
+                                <input class="main__form-select" name="babbles" readonly="" type="text" placeholder="<?=$bubbles[0]['title']?>" value="<?=$bubbles[0]['title']?>">
                                 <span class="main__form-submenu">
                                     <?php foreach($bubbles as $bubble){?>
                                         <span><?=$bubble['title']?></span>
@@ -172,11 +172,11 @@ $gorka_price = get_field('gorka_price', options);
                         </span>
                     </div>
                     <div class="form-block promo">
-                        <input type="text" placeholder="Ваш ПРОМОКОД" />
+                        <input type="text" class="promocode" name="promocode" placeholder="Ваш ПРОМОКОД" />
                         <button class="styled-btn1 apply__promo">применить промокод</button>
                     </div>
                     <div class="form-block check">
-                        <input type="checkbox" id="check" data-price="<?=$gorka_price;?>"/>
+                        <input type="checkbox" id="check" name="gorka" value="Добавлена" data-price="<?=$gorka_price;?>"/>
                         <label for="check">Горка нужна</label>
                     </div>
                     <div class="form-block price">
