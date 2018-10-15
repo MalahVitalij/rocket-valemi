@@ -182,12 +182,12 @@ $gorka_price = get_field('gorka_price', options);
                                 </span>
                             </div>
                             <div class="form-block">
-                                <div class="form-block-name">Выбрать комплект шаров:</div>
+                                <div class="form-block-name">Цвет шаров:</div>
                                 <span class="main__form-select-wrap form-block">
-                                    <input class="main__form-select" readonly="" name="babbles" type="text" placeholder="<?=$bubbles[0]['title']?>" value="<?=$bubbles[0]['title']?>">
+                                    <input class="main__form" name="babbles" type="text" placeholder="<?//=$bubbles[0]['title']?>" value="<?//=$bubbles[0]['title']?>">
                                     <span class="main__form-submenu" style="display: none;">
                                         <?php foreach($bubbles as $bubble){?>
-                                            <span><?=$bubble['title']?></span>
+                                            <span><?//=$bubble['title']?></span>
                                         <?php } ?>
                                     </span>
                                 </span>
