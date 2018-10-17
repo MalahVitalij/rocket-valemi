@@ -27,7 +27,7 @@ $pool2 = $pools[1];
                     <div class="price-wrapper">
                          <?php price_html($pool1['price'], $pool1['sale_price']);?>
                     </div>
-                    <button type="submit" class="styled-btn1 btn-view-pool">Заказать бассейн</button>
+                    <button type="submit" class="styled-btn1 btn-view-pool" data-size="<?=$pool1['size']?>" data-price="<?php price_value($pool1['price'], $pool1['sale_price']);?>">Заказать бассейн</button>
                </div>
                <div class="set-block center set-block-1">
                     <img src="<?=get_template_directory_uri()?>/img/set-main.png" alt="Комплект" />
@@ -44,7 +44,7 @@ $pool2 = $pools[1];
                     <div class="price-wrapper">
                          <?php price_html($pool2['price'], $pool2['sale_price']);?>
                     </div>
-                    <button type="submit" class="styled-btn1 btn-view-pool">Заказать бассейн</button>
+                    <button type="submit" class="styled-btn1 btn-view-pool" data-size="<?=$pool2['size']?>" data-price="<?php price_value($pool2['price'], $pool2['sale_price']);?>">Заказать бассейн</button>
                </div>
           </div>
      </div>

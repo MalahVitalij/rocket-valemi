@@ -99,12 +99,12 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     <div class="form-block-wrap form-block-wrap-2">
                     <div class="form-block">
-                        <div class="form-block-name">Выбрать комплект шаров:</div>
+                        <div class="form-block-name">Цвет шаров:</div>
                         <span data-object="ball" class="main__form-select-wrap form-block">
-                            <input class="main__form-select" readonly="" type="text" name="babbles" placeholder="<?=$bubbles[0]['title']?>" value="">
+                            <input class="main__form"  type="text" name="babbles" placeholder="<?//=$bubbles[0]['title']?>" value="">
                             <span class="main__form-submenu">
                                 <?php foreach($bubbles as $bubble){?>
-                                    <span><?=$bubble['title']?></span>
+                                    <span><?//=$bubble['title']?></span>
                                 <?php } ?>
                             </span>
                         </span>
@@ -161,12 +161,12 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     <div class="form-block-wrap form-block-wrap-2">
                     <div class="form-block">
-                        <div class="form-block-name">Выбрать комплект шаров:</div>
-                        <span data-object='ball' class="main__form-select-wrap form-block">
-                                <input class="main__form-select" name="babbles" readonly="" type="text" placeholder="<?=$bubbles[0]['title']?>" value="<?=$bubbles[0]['title']?>">
+                        <div class="form-block-name">Цвет шаров:</div>
+                        <span data-object='ball' class="main__form-select form-block">
+                                <input class="main__form" name="babbles" type="text" placeholder="<?//=$bubbles[0]['title']?>" value="<?//=$bubbles[0]['title']?>">
                                 <span class="main__form-submenu">
                                     <?php foreach($bubbles as $bubble){?>
-                                        <span><?=$bubble['title']?></span>
+                                        <span><?//=$bubble['title']?></span>
                                     <?php } ?>
                                 </span>
                         </span>

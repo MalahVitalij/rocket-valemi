@@ -314,7 +314,24 @@ $(document).mouseup(function (e) {
     });
 
     $(".btn-view-pool").click (function (){
-        $(".modal-overlay-order-pool").fadeIn();
+        let price = $(this).data('price'),
+            size = $(this).data('size'),
+            target = $(".modal-overlay-order-pool");
+
+            target.find('input[name=size]').remove();
+            target.find('input[name=price]').remove();
+
+        target.fadeIn();
+        target.find('form').append(
+            $('<input>', {
+                type: 'hidden',
+                name: 'size',
+                val: size
+            })
+        );
+        target.find('.price-change').text(price);
+        target.find('.order-price').val(price);
+        target.find('input[data-name=price]').val(price);
         $('html, body').css('overflow-y', 'hidden'); 
     });
     $(".btn-close_view").click (function (){
@@ -394,6 +411,10 @@ $(document).mouseup(function (e) {
                     form.reset();
                     var myPay = $(".modal-overlay");
                     myPay.fadeOut();
+                    price = $(form).find('input[name=size]:checked').data('price');
+                    $(form).find('input[name=order-price]').val(price);
+                    $(form).find('input[name=order-price]').text(price);
+                    $(form).find('.price-change').text(price);
                     $('html, body').css('overflow-y', 'auto'); 
                 }
             });
@@ -408,11 +429,18 @@ $(document).mouseup(function (e) {
              form = $(this).closest('form');
 
         selected_size_price = $('input[name=size]:checked', form).data('price');
+        if (selected_size_price == null){
+            selected_size_price = form.find('input[data-name="price"]').val();
+        }
         gorka = form.find('input:checkbox');
 
         if (gorka.is(':checked')){
             gorka = gorka.data('price');
-            all_amount = parseInt(selected_size_price) + parseInt(gorka);
+            if (gorka != null){
+                all_amount = parseInt(selected_size_price) + parseInt(gorka);
+            } else {
+                all_amount = parseInt(selected_size_price);
+            }
         }else{
             all_amount = parseInt(selected_size_price);
         }
