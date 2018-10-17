@@ -3759,3 +3759,8 @@ button.slick-arrow {
  }
 
 }
+
+.scheme-wrapper .wrap-balls .ball img {
+    max-width: 100%;
+    height: auto;
+}

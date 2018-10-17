@@ -1538,3 +1538,19 @@
         margin-top: -5px;
     }
 }
+
+
+@media (min-width: 1201px) {
+.scheme-wrapper .check-ball-wrapper {
+    flex-wrap: wrap; 
+    max-width: 582px;
+}
+}
+
+@media (max-width: 1200px) {
+.scheme-wrapper .check-ball-wrapper {
+    flex-wrap: wrap; 
+    max-width: 450px;
+}
+
+}
