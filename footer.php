@@ -222,12 +222,49 @@ $gorka_price = get_field('gorka_price', options);
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal_form">
-                <input type="hidden" name="cmd" value="_cart">
-                <input type="hidden" name="upload" value="1">
-                <input type="hidden" name="business" value="malah.vitalij-facilitator@gmail.com">
-                <input type="hidden" name="currency_code" value="RUB">
-            </form>           
+
+            <?php 
+            
+            $pay_data = get_field('payment_methods', 'options');
+
+            $form_actions = array(
+                array(
+                    'action'=> 'https://www.paypal.com/cgi-bin/webscr',
+                    'fields'=> '<input type="hidden" name="cmd" value="_cart">
+                                <input type="hidden" name="upload" value="1">
+                                <input type="hidden" name="currency_code" value="RUB">',
+                    'request'=> "<input type='hidden' name='business' value='%s'>",
+                    'user_field'=> 'paypal' 
+                ),
+                array(
+                    'action'=> 'https://money.yandex.ru/quickpay/confirm.xml',
+                    'fields'=> '<input type="hidden" name="formcomment" value="Valemi">    
+                                <input type="hidden" name="short-dest" value="Valemi">
+                                <input type="hidden" name="quickpay-form" value="donate">
+                                <input type="hidden" name="paymentType" value="PC">
+                                <input type="hidden" name="targets" value="оплата товара">',
+                    'request'=> "<input type='hidden' name='receiver' value='%s'>",
+                    'user_field'=> 'yandex' 
+                ),
+                array(
+                    'action'=> 'https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js',
+                    'fields'=> '<input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+                                <input class="tinkoffPayRow" type="hidden" name="language" value="ru">',
+                    'request'=> "<input class='tinkoffPayRow' type='hidden' name='terminalkey' value='%s'>",
+                    'user_field'=> 'tinkov' 
+                )
+            );
+
+            ?>
+
+            <form class="web_pay" action="<?=$form_actions[$pay_data]['action'];?>" data-type="<?=$pay_data?>" <?php if($pay_data==2){echo 'name="TinkoffPayForm" onsubmit="pay(this); return false;"';}?>>
+                <?=$form_actions[$pay_data]['fields']?>
+                <?php echo sprintf($form_actions[$pay_data]['request'], get_field($form_actions[$pay_data]['user_field'] . '_user', 'options'))?>
+            </form>
+
+        <?php if($pay_data==2){?>
+            <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+        <?php } ?>
 
         <script src="<?=get_template_directory_uri()?>/js/jquery-3.3.1.js"></script>
         <script src="<?=get_template_directory_uri()?>/js/slick.js"></script>

@@ -511,8 +511,11 @@ $(document).mouseup(function (e) {
         babbles = $("[name='babbles']", form);
         size = $("[name='size']:checked", form);
         promocode = $("[name='promocode']", form);
-        paypal_form = $('#paypal_form');
+        pay_form = $('form.web_pay');
+        form_type = pay_form.data('type');
 
+        yandex_str = '';
+        item_name_4 = null;
         $.ajax({
             method: "POST",
             url: ajaxurl,
@@ -520,76 +523,141 @@ $(document).mouseup(function (e) {
             success: function (r) {
 
                 //calculate pool info
-                pool_info = 'Бассейн. Размер: ' + size.val() + 'см. Цвет: ' + pool.val();
+                //pool_info - информация о бассейне
+                //price_1 - цена за бассейн
+                pool_info = 'Бассейн : Размер - ' + size.val() + 'см. Цвет - ' + pool.val();
                 if (sale != null) {
                     price_1 = size.data('price') - (size.data('price') / 100 * sale);
                 }
-                item_name_1 = $('<input>', {
-                    type: 'hidden',
-                    name: 'item_name_1',
-                    val: pool_info
-                });
-                amount_1 = $('<input>', {
-                    type: 'hidden',
-                    name: 'amount_1',
-                    val: price_1
-                });
-                paypal_form.append(item_name_1);
-                paypal_form.append(amount_1);
 
                 //add babbles info
-                babbles_info = 'Шарики. Цвет: ' + babbles.val();
-                item_name_2 = $('<input>', {
-                    type: 'hidden',
-                    name: 'item_name_2',
-                    val: babbles_info
-                });
-                amount_2 = $('<input>', {
-                    type: 'hidden',
-                    name: 'amount_2',
-                    val: '0'
-                });
-                paypal_form.append(item_name_2);
-                paypal_form.append(amount_2);
+                //pool_info - информация о шариках
+                babbles_info = 'Шарики : Цвет - ' + babbles.val();
 
                 //add promocode if added
-                if (promocode.val() != null) {
-                    item_name_3 = $('<input>', {
-                        type: 'hidden',
-                        name: 'item_name_3',
-                        val: 'Промокод: ' + promocode.val()
-                    });
-                    amount_3 = $('<input>', {
-                        type: 'hidden',
-                        name: 'amount_3',
-                        val: '0'
-                    });
-                    paypal_form.append(item_name_3);
-                    paypal_form.append(amount_3);
+                //pool_info - информация о проимокоде
+                if (promocode.val() != '') {
+                    item_name_3 = $('<input>', { type: 'hidden', name: 'item_name_3', val: 'Промокод: ' + promocode.val()}); 
+                    amount_3 = $('<input>', { type: 'hidden', name: 'amount_3', val: '0' }); 
                 }
 
                 //calculate with gorka if added
+                //pool_info - информация о горке
+                //price_3 - цена за горку
                 if (form.find('input[name=gorka]').is(':checked')) {
+
                     gorka = $("[name='gorka']", form);
                     price_3 = gorka.data('price');
+
                     if (sale != null) {
                         price_3 = price_3 - (price_3 / 100 * sale);
                     }
-                    item_name_4 = $('<input>', {
-                        type: 'hidden',
-                        name: 'item_name_4',
-                        val: 'Горка'
-                    });
-                    amount_4 = $('<input>', {
-                        type: 'hidden',
-                        name: 'amount_4',
-                        val: price_3
-                    });
-                    paypal_form.append(item_name_4);
-                    paypal_form.append(amount_4);
+
+                    item_name_4 = $('<input>', { type: 'hidden', name: 'item_name_4', val: 'Горка' });
+                    amount_4 = $('<input>', { type: 'hidden', name: 'amount_4', val: price_3 });
+                    
                 }
 
-                paypal_form.submit();
+                switch (form_type) {
+                    case 0:
+
+                        item_name_1 = $('<input>', { type: 'hidden', name: 'item_name_1', val: pool_info }); pay_form.append(item_name_1);
+                        amount_1 = $('<input>', { type: 'hidden', name: 'amount_1', val: price_1 }); pay_form.append(amount_1);
+
+
+                        item_name_2 = $('<input>', { type: 'hidden', name: 'item_name_2', val: babbles_info }); pay_form.append(item_name_2);
+                        amount_2 = $('<input>', { type: 'hidden', name: 'amount_2', val: '0' }); pay_form.append(amount_2);
+
+                        if (promocode.val() != '') {
+                            pay_form.append(item_name_3);
+                            pay_form.append(amount_3); 
+                        };
+
+                        if (form.find('input[name=gorka]').is(':checked')) {
+                            pay_form.append(item_name_4);
+                            pay_form.append(amount_4);
+                        };
+
+                        pay_form.submit();
+
+                        break;
+                    case 1:
+
+                        yandex_str = pool_info + '. Цена - ' + price_1;
+                        yandex_str = yandex_str + '. ' + babbles_info;
+                        if (promocode.val() != '') {
+                            yandex_str = yandex_str + '. Промокод : ' + promocode.val();
+                        }
+                        if (form.find('input[name=gorka]').is(':checked')) {
+                            yandex_str = yandex_str + '. Горка : Цена ' + price_3;
+                        }
+
+                        yandex_sum = price_1;
+                        if (form.find('input[name=gorka]').is(':checked')) {
+                            yandex_sum = yandex_sum + price_3;
+                        }
+
+                        pay_form.append($('<input>', { type: 'hidden', name: 'sum', val: yandex_sum }));
+                        pay_form.append($('<input>', { type: 'hidden', name: 'comment', val: yandex_str }));
+
+                        pay_form.submit();
+
+                        break;
+                    case 2:
+                        
+                        Items = new Array();
+
+                        Items.push({
+                            "Name": pool_info,
+                            "Price": price_1 * 100,
+                            "Amount": price_1 * 100 * 1.00,
+                            "Quantity": 1.00,
+                            "Tax": "none"
+                        })
+
+                        if (form.find('input[name=gorka]').is(':checked')) {
+                            Items.push({
+                                "Name": 'Горка : Цена ' + price_3,
+                                "Price": price_3 * 1.00,
+                                "Quantity": 1.00,
+                                "Amount": price_3 * 1.00 * 1.00,
+                                "Tax": "none"
+                            })
+                        }
+
+
+                        description = babbles_info;
+                        if (promocode.val() != '') {
+                            description = description + 'Промокод : ' + promocode.val();
+                        }
+
+
+                        tinkov_sum = price_1;
+                        if (form.find('input[name=gorka]').is(':checked')) {
+                            tinkov_sum = tinkov_sum + price_3;
+                        }
+                        tinkov_sum = tinkov_sum * 1.00;
+
+                        receipt = {
+                            "Email": 'valemi@mail.ru',
+                            "Name": $("[name=name]", form).val(),
+                            "Phone": $("[name=phone]", form).val(),
+                            "Taxation": "osn",
+                            "Items": Items
+                        }
+                        
+                        pay_form.append($('<input>', { type: 'hidden', name: 'amount', val: tinkov_sum }));
+                        pay_form.append($('<input>', { type: 'hidden', name: 'description', val: description }));
+                        pay_form.append($('<input>', { type: 'hidden', name: 'name', val: $("[name=name]", form).val()}));
+                        pay_form.append($('<input>', { type: 'hidden', name: 'phone', val: $("[name=phone]", form).val()}));
+                        pay_form.append($('<input>', { type: 'hidden', name: 'receipt', val: JSON.stringify(receipt)}));
+
+                        pay_form.submit();
+
+                        break;
+                    default:
+                        console.log('error');
+                }
 
             }
         });
