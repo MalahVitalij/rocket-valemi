@@ -260,6 +260,7 @@ $gorka_price = get_field('gorka_price', options);
             <form class="web_pay" action="<?=$form_actions[$pay_data]['action'];?>" data-type="<?=$pay_data?>" <?php if($pay_data==2){echo 'name="TinkoffPayForm" onsubmit="pay(this); return false;"';}?>>
                 <?=$form_actions[$pay_data]['fields']?>
                 <?php echo sprintf($form_actions[$pay_data]['request'], get_field($form_actions[$pay_data]['user_field'] . '_user', 'options'))?>
+                <div id="pay_fields"></div>
             </form>
 
         <?php if($pay_data==2){?>

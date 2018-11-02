@@ -604,13 +604,17 @@ $(document).mouseup(function (e) {
 
                         break;
                     case 2:
-                        
+
+                        fields = pay_form.find('#pay_fields');
+
+                        fields[0].innerHTML = '';
+
                         Items = new Array();
 
                         Items.push({
                             "Name": pool_info,
-                            "Price": price_1 * 100,
-                            "Amount": price_1 * 100 * 1.00,
+                            "Price": price_1 + '00',
+                            "Amount": price_1 + '00',
                             "Quantity": 1.00,
                             "Tax": "none"
                         })
@@ -618,9 +622,9 @@ $(document).mouseup(function (e) {
                         if (form.find('input[name=gorka]').is(':checked')) {
                             Items.push({
                                 "Name": 'Горка : Цена ' + price_3,
-                                "Price": price_3 * 1.00,
+                                "Price": price_3 + '00',
+                                "Amount": price_3 + '00',
                                 "Quantity": 1.00,
-                                "Amount": price_3 * 1.00 * 1.00,
                                 "Tax": "none"
                             })
                         }
@@ -636,7 +640,7 @@ $(document).mouseup(function (e) {
                         if (form.find('input[name=gorka]').is(':checked')) {
                             tinkov_sum = tinkov_sum + price_3;
                         }
-                        tinkov_sum = tinkov_sum * 1.00;
+                        tinkov_sum = tinkov_sum;
 
                         receipt = {
                             "Email": 'valemi@mail.ru',
@@ -646,11 +650,11 @@ $(document).mouseup(function (e) {
                             "Items": Items
                         }
                         
-                        pay_form.append($('<input>', { type: 'hidden', name: 'amount', val: tinkov_sum }));
-                        pay_form.append($('<input>', { type: 'hidden', name: 'description', val: description }));
-                        pay_form.append($('<input>', { type: 'hidden', name: 'name', val: $("[name=name]", form).val()}));
-                        pay_form.append($('<input>', { type: 'hidden', name: 'phone', val: $("[name=phone]", form).val()}));
-                        pay_form.append($('<input>', { type: 'hidden', name: 'receipt', val: JSON.stringify(receipt)}));
+                        fields.append($('<input>', { type: 'hidden', name: 'amount', val: tinkov_sum }));
+                        fields.append($('<input>', { type: 'hidden', name: 'description', val: description }));
+                        fields.append($('<input>', { type: 'hidden', name: 'name', val: $("[name=name]", form).val()}));
+                        fields.append($('<input>', { type: 'hidden', name: 'phone', val: $("[name=phone]", form).val()}));
+                        fields.append($('<input>', { type: 'hidden', name: 'receipt', val: JSON.stringify(receipt)}));
 
                         pay_form.submit();
 
