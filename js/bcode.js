@@ -250,12 +250,12 @@ $('.catalog-form-mobile-btn').click(function(e) {
         modal.find('form div.prhtml').text(price);
         $('html, body').css('overflow-y', 'hidden'); 
     });
-
     $(".btn-view").click (function (){
         let modal = $(".modal-overlay-order"),
             form = $(this).closest('form');
             price = form.find('input[name=order-price]').val();
             information = form.serialize();
+             console.log(form);
             form[0].reset();
         modal.fadeIn();
         modal.find('form input[name=information]').remove();
@@ -274,6 +274,7 @@ $('.catalog-form-mobile-btn').click(function(e) {
         $('html, body').css('overflow-y', 'auto'); 
     });
 
+
 $(document).mouseup(function (e) {
     var myOrders = $(".modal-overlay-order");
     if (myOrders.has(e.target).length === 0){
@@ -289,8 +290,16 @@ $(document).mouseup(function (e) {
         $(".modal-overlay-orderPay").fadeIn();
         $('html, body').css('overflow-y', 'hidden'); 
     });
+    $(".btn__order-pool").click(function() {
+        $(".modal-overlay-orderPull").fadeIn();
+        $('html, body').css('overflow-y', 'hidden'); 
+    });
     $(".btn-close_view").click (function (){
         $(".modal-overlay-orderPay").fadeOut();
+        $('html, body').css('overflow-y', 'auto'); 
+    });
+     $(".btn-close_view").click (function (){
+        $(".modal-overlay-orderPull").fadeOut();
         $('html, body').css('overflow-y', 'auto'); 
     });
 
@@ -396,6 +405,11 @@ $(document).mouseup(function (e) {
 
     // Form submit
 
+     $(".btn-close_view").click(function() {
+        $(".modal-overlay-order-success").fadeOut();
+        $('html, body').css('overflow-y', 'auto');
+     });
+
     var forms = [].slice.call( document.body.querySelectorAll('form.validating') );
     forms.forEach(function(form){
         form.addEventListener('submit', function(e){
@@ -415,7 +429,9 @@ $(document).mouseup(function (e) {
                     $(form).find('input[name=order-price]').val(price);
                     $(form).find('input[name=order-price]').text(price);
                     $(form).find('.price-change').text(price);
-                    $('html, body').css('overflow-y', 'auto'); 
+                    $(".modal-overlay-order-success").fadeIn();
+                    $('html, body').css('overflow-y', 'hidden');
+
                 }
             });
             

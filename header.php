@@ -139,6 +139,7 @@
                         </div>
                         <!--кнопки-->
                         <div class="wrap-header-btn">
+                            <button class="styled-btn1 btn__order-pool">Заказать бассейн</button>
                             <button type="submit" class="styled-btn1 btn-view">Заказать бассейн</button>
                             <button type="button" class="styled-btn2 btn-view-pay">Оплатить</button>
                         </div>

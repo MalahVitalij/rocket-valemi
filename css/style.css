@@ -3764,3 +3764,9 @@ button.slick-arrow {
     max-width: 100%;
     height: auto;
 }
+
+.modal-overlay-order-success p{
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+}
