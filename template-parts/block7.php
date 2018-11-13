@@ -12,6 +12,7 @@ $gorka_price = get_field('gorka_price', options);
 ?>
 <!--к комплекту-->
 <section class="main-additional">
+     <a name="block7"></a>
      <div class="container main-additional-wrap">
      <div class="section-side-title left-side p-side">Горка к бассейну</div>
      <div class="sec-title sec-p"><?=$title?></div>

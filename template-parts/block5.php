@@ -20,6 +20,7 @@ $gorka_price = get_field('gorka_price', options);
 ?>
 <!--цветовая гамма-->
 <section class="main-colors-scheme" id="catalog">
+    <a name="block5"></a>
     <div class="container">
     <div class="section-side-title left-side p-side">Большой выбор</div>
     <div class="sec-title sec-p"><?=$title?></div>

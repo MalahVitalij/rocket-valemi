@@ -21,6 +21,7 @@ $block_10_text_4 = get_field('block_10_text_4', $fpid);
 ?>
 <!--доставка-->
 <section class="main-delivery" id="paydel">
+     <a name="block10"></a>
      <div class="container">
      <div class="section-side-title right-side">Доставка</div>
      <div class="hd-block">

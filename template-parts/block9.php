@@ -15,6 +15,7 @@ $block_9_under_big_image = get_field('block_9_under_big_image', $fpid);
 ?>
 <!--отзывы-->
 <section class="main-reviews" id="reviews">
+     <a name="block9"></a>
      <div class="container">
           <div class="sec-bg-title">Отзывы</div>
           <div class="hd-block">

@@ -12,6 +12,7 @@ $pool2 = $pools[1];
 ?>
 <!--комплект-->
 <section class="main-set" id="main-set">
+     <a name="block6"></a>
      <div class="container">
      <div class="section-side-title right-side w-side">Купить бассейн</div>
      <div class="sec-title sec-w"><?=$title?></div>
