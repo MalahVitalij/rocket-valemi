@@ -3,7 +3,7 @@
 global $fpid;
 
 $title = get_field('block_9_title', $fpid);
-$desc = get_field('block_9_title', $fpid);
+$desc = get_field('block_9_desc', $fpid);
 
 $block_9_big_image = get_field('block_9_big_image', $fpid);
 $block_9_text = get_field('block_9_text', $fpid);
