@@ -238,37 +238,37 @@ $gorka_price = get_field('gorka_price', options);
                 <div class="main-block popup-wrap">
                     <div class="form-wrapper styled-form popup-make-order">
                         <div class="form-hd">оплатить<br/><span>заказ</span></div>
-                        <form class="paypal" method="get" autocomplete="off">
-                            <div class="form-block name">
-                                <input type="text" placeholder="ФИО" name="name" required pattern="[^0-9]+$" />
-                            </div>
-                            <div class="form-block phone">
-                                <input type="text" placeholder="Ваш телефон" name="phone" required pattern="^[ 0-9]+$"/>
-                            </div> 
-                            <div class="form-block city">
-                                <input type="text" placeholder="Ваш город" name="city" required pattern="[^0-9]+$" />
-                            </div>
-                            <div class="form-block">
-                                <div class="form-block-name">Выбрать размер бассейна:</div>
-                                <?php $i=100; foreach ($pools as $pool) {?>
-                                    <input type="radio" name="size" class="radio" id="size<?=$i?>" <?=($i==100)?'checked':'';?> value="<?=$pool['size']?>" data-price="<?php price_value($pool['price'], $pool['sale_price'])?>"/>
-                                    <label for="size<?=$i?>"><?=$pool['size']?> см</label>
-                                <?php $i++;}?>
-                            </div>
-                            <div class="form-block promo">
-                                <input type="text" name="promocode" class="promocode" placeholder="Ваш ПРОМОКОД" />
-                                <button class="styled-btn1 apply__promo">применить промокод</button>
-                            </div>
-                            <div class="form-block price">
-                                <div>Цена от:</div>
-                                <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
-                                <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                                <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                                <input type="hidden" data-name="sale">
-                                <div>руб.</div>
-                            </div>
-                            <button type="submit" class="styled-btn1">Заказать</button>
-                        </form>
+                        <form action="order_pool" autocomplete="off" class="validating">
+                                    <div class="form-block name">
+                                        <input type="text" placeholder="Ваше имя" name="name" required="" pattern="[^0-9]+$">
+                                    </div>
+                                    <div class="form-block phone">
+                                        <input type="text" placeholder="Ваш телефон" name="phone" required="" pattern="^[ 0-9]+$">
+                                    </div> 
+                                    <div class="form-block city">
+                                        <input type="text" placeholder="Ваш город" name="city" required="" pattern="[^0-9]+$">
+                                    </div>
+                                    <div class="form-block promo">
+                                        <input type="text" class="promocode" name="promocode" placeholder="Ваш ПРОМОКОД">
+                                    </div>
+                                    <button class="styled-btn1 apply__promo">применить промокод</button>
+                                    <div class="form-block">
+                                        <div class="form-block-name">Выбрать размер бассейна:</div>
+                                                                                    <input type="radio" name="size" class="radio" id="size11" checked="" value="90" data-price="4990">
+                                            <label for="size11">90 см</label>
+                                                                                    <input type="radio" name="size" class="radio" id="size12" value="120" data-price="9900">
+                                            <label for="size12">120 см</label>
+                                                                            </div>
+                                    <div class="form-block price">
+                                        <div>Цена от:</div>
+                                        <div class="price-change">4990</div>
+                                        <input type="hidden" name="order-price" class="order-price" value="4990">
+                                        <input type="hidden" data-name="price" value="4990">
+                                        <input type="hidden" data-name="sale">
+                                        <div>руб.</div>
+                                    </div>
+                                    <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                                </form>
                     </div>
                     <a href="<?=$privacy?>" class="btn-close_view"><img src="<?=get_template_directory_uri()?>/img/close-btn-popup.png" alt="img"></a>
                     <div class="clearfix"></div>
