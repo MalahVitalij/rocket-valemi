@@ -86,6 +86,10 @@ function zakaz_zvonka(){
 
     $post_id = wp_insert_post( $post_data );
 
+    $message = "Имя : {$data['name']} Телефон : {$data['phone']}";
+
+    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+
     if($post_id){
         echo 'ok';
     } else {
@@ -100,6 +104,7 @@ add_action('wp_ajax_order_pool', 'order_pool');
 function order_pool(){
     
     parse_str($_POST['data'], $data);
+    $message = '';
 
     $array = array(
         'name' => 'Имя',
@@ -112,6 +117,7 @@ function order_pool(){
 
     foreach($data as $key=>$val){
         $content .= $array[$key] . ': ' . $val . '<br>';
+        $message .= "{$array[$key]} : {$val}\r\n";
     }
 
     $post_data = array(
@@ -121,6 +127,9 @@ function order_pool(){
 	);
 
     $post_id = wp_insert_post( $post_data );
+
+    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+
 
     if($post_id){
         echo 'ok';
@@ -146,6 +155,10 @@ function order_hill(){
 	);
 
     $post_id = wp_insert_post( $post_data );
+
+    $message = "Имя : {$data['name']} \r\n Телефон : {$data['phone']} \r\n Город : {$data['city']}";
+
+    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
 
     if($post_id){
         echo 'ok';
@@ -198,10 +211,13 @@ function order_pool_big(){
 
     foreach ($data as $key => $val) {
        $post_content .= $array[$key] . ' : ' . $val . '<br>';
+       $message .= "{$array[$key]} : {$val} \r\n";
     }
 
     foreach ($information as $key => $val) {
         $post_content .= $array[$key] . ' : ' . $val . '<br>';
+        $message .= "{$array[$key]} : {$val} \r\n";
+
     }
 
     $post_data = array(
@@ -211,6 +227,9 @@ function order_pool_big(){
 	);
 
     $post_id = wp_insert_post( $post_data );
+
+    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+
 
     if($post_id){
         echo 'ok';
