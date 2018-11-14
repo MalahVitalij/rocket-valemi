@@ -128,7 +128,7 @@ function order_pool(){
 
     $post_id = wp_insert_post( $post_data );
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Заказ бассейна', $message);
 
 
     if($post_id){
@@ -158,7 +158,7 @@ function order_hill(){
 
     $message = "Имя : {$data['name']} \r\n Телефон : {$data['phone']} \r\n Город : {$data['city']}";
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Заказ горки', $message);
 
     if($post_id){
         echo 'ok';
@@ -228,7 +228,7 @@ function order_pool_big(){
 
     $post_id = wp_insert_post( $post_data );
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Большая форма заказа бассена', $message);
 
 
     if($post_id){
