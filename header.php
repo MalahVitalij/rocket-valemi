@@ -1,3 +1,5 @@
+<!-- промокод syrkova -->
+
 <?php global $fpid; ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -122,12 +124,14 @@
                                         <?php $i++;}?>
                                     </div>
                                     <div class="form-block price">
-                                        <div class="base-price"></div>
-                                        <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
-                                        <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                                        <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                                        <input type="hidden" data-name="sale" data-type="">
-                                        <div>руб.</div>
+                                        <del class="base-price"></del>
+                                        <div class="price-change-wrapper">
+                                            <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                                            <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                                            <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                                            <input type="hidden" data-name="sale" data-type="">
+                                            <div class="price-change-rub" style="">руб.</div>
+                                        </div>
                                     </div>
                                     <button type="submit" class="styled-btn1">Заказать бассейн</button>
                                 </form>

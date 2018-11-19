@@ -25,6 +25,9 @@ ul, ol {
     padding: 0;
     margin: 0;
 }
+del {
+        text-decoration: line-through;
+}
 
 a, a:hover, a:focus, a:active, a:visited {
     text-decoration: none;
@@ -909,15 +912,23 @@ form .form-block {
     align-self: flex-start;
 }
 
-.styled-form form .form-block.price>div:nth-child(2) {
+.styled-form form .form-block.price .price-change {
     align-self: center;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 30px;
+    line-height: 32px;
     font-family: "GilroyExtra", sans-serif;
 }
 
-.styled-form form .form-block.price>div:nth-child(3) {
+.styled-form form .form-block.price .price-change-rub {
     align-self: flex-end;
+    padding-bottom: 7px;
+    padding-left: 7px;
+}
+
+.styled-form form .form-block.price .base-price {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
 }
 
 .styled-form .form-subtitle {
