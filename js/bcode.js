@@ -1,13 +1,13 @@
-$(window).on('load', function(){
+$(window).on('load', function () {
     $('body').addClass('load');
-    $('body').fadeTo('slow' , 1);
+    $('body').fadeTo('slow', 1);
 });
-$(document).ready(function() {
+$(document).ready(function () {
 
     $(window).on("resize load", function () {
         console.log($(window).width());
     });
-   
+
 
     $('.popular-slider').slick({
         dots: false,
@@ -17,24 +17,24 @@ $(document).ready(function() {
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
-                    {
-                       breakpoint: 1270,
-                       settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 1
-                        }
-                    },
-                    {
-                       breakpoint: 755,
-                       settings: {
-                          slidesToShow: 1,
-                          slidesToScroll: 1
-                        }
-                    }
-                ]
+            {
+                breakpoint: 1270,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 755,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
-    
-    $('.check-ball-wrapper .ball').on('click', function(){
+
+    $('.check-ball-wrapper .ball').on('click', function () {
         $(this).find('img').attr('alt');//находим тег img, забираем атрибут alt
         if (!$('.checked-ball .desc').text()) {//проверяем поле, если оно не пустое
             $('.checked-ball .desc').text();//очищаем поле
@@ -42,12 +42,12 @@ $(document).ready(function() {
         } else {//если пустое 
             $('.checked-ball .desc').text($(this).find('img').attr('alt'));//вставляем значение из найденого атрибута
         }
-        
+
         $(this).find('img').attr('src');
         if (!$('.checked-ball .img-block').find('img').attr('src', '')) {
             $('.checked-ball .img-block').find('img').attr('src', '');
             $('.checked-ball .img-block').find('img').attr('src', $(this).find('img').attr('src'));
-            
+
         } else {
             $('.checked-ball .img-block').find('img').attr('src', $(this).find('img').attr('src'));
         }
@@ -55,89 +55,89 @@ $(document).ready(function() {
 
 
 
-// burger-menu
-$('.menu-btn').on('click', function(e) {
-    if($(window).width() >= 610){
-        $('.main-menu').toggleClass('hidden-li');
-    } 
-    if($(window).width() < 610 ){
-        // $('.menu-btn').removeClass('menu-btn_active');
-        $('.main-menu').removeClass('hidden-li');
-        $('.main-menu').toggleClass('main-menu-active');
-        $('html, body').toggleClass('overflow'); 
-    };
-  e.preventDefault;
-  $(this).toggleClass('menu-btn_active');
-});
+    // burger-menu
+    $('.menu-btn').on('click', function (e) {
+        if ($(window).width() >= 610) {
+            $('.main-menu').toggleClass('hidden-li');
+        }
+        if ($(window).width() < 610) {
+            // $('.menu-btn').removeClass('menu-btn_active');
+            $('.main-menu').removeClass('hidden-li');
+            $('.main-menu').toggleClass('main-menu-active');
+            $('html, body').toggleClass('overflow');
+        };
+        e.preventDefault;
+        $(this).toggleClass('menu-btn_active');
+    });
 
 
-$('.main-top-wrapper .menu-block .main-menu li a').on('click', function() {
-    $('.main-menu').removeClass('main-menu-active');
-    $('.menu-btn').removeClass('menu-btn_active');
-    $('html, body').removeClass('overflow'); 
-});
-
-$( window ).resize( function() {
-
-    if($(window).width() > 610 && $('.menu-btn').hasClass('menu-btn_active')){
-        console.log("dfsf")
-        $('.menu-btn').removeClass('menu-btn_active');
-        $('.main-menu').addClass('hidden-li');
-    } else{
-        // $('.main-menu').addClass('hidden-li');
-        // 
-    };
-
-    if($(window).width() < 610 && $('.main-menu').hasClass('main-menu-active')){
+    $('.main-top-wrapper .menu-block .main-menu li a').on('click', function () {
         $('.main-menu').removeClass('main-menu-active');
         $('.menu-btn').removeClass('menu-btn_active');
-    } else{
-        $('.main-menu').addClass('hidden-li');
-        /*$('.main-menu').removeClass('hidden-li');
-        $('.menu-btn').removeClass('menu-btn_active');*/
-    };
-});
+        $('html, body').removeClass('overflow');
+    });
+
+    $(window).resize(function () {
+
+        if ($(window).width() > 610 && $('.menu-btn').hasClass('menu-btn_active')) {
+            console.log("dfsf")
+            $('.menu-btn').removeClass('menu-btn_active');
+            $('.main-menu').addClass('hidden-li');
+        } else {
+            // $('.main-menu').addClass('hidden-li');
+            // 
+        };
+
+        if ($(window).width() < 610 && $('.main-menu').hasClass('main-menu-active')) {
+            $('.main-menu').removeClass('main-menu-active');
+            $('.menu-btn').removeClass('menu-btn_active');
+        } else {
+            $('.main-menu').addClass('hidden-li');
+            /*$('.main-menu').removeClass('hidden-li');
+            $('.menu-btn').removeClass('menu-btn_active');*/
+        };
+    });
 
 
 
-// цвета шариков и басейнов в инпут
+    // цвета шариков и басейнов в инпут
 
-$('.ball').on('click','img', function(){
-   colorToInput( $(this), $('[data-object="ball"]') )
-})
+    $('.ball').on('click', 'img', function () {
+        colorToInput($(this), $('[data-object="ball"]'))
+    })
 
-$('[data-object="ball"]').on('click','.main__form-submenu span', function(){
-    var text = $(this).text();
-    $('.ball img[alt=' + text + ']').click()
-})
+    $('[data-object="ball"]').on('click', '.main__form-submenu span', function () {
+        var text = $(this).text();
+        $('.ball img[alt=' + text + ']').click()
+    })
 
-$('.img-block').on('click','img', function(){
-   colorToInput( $(this),  $('[data-object="img-block"]') )
-})
+    $('.img-block').on('click', 'img', function () {
+        colorToInput($(this), $('[data-object="img-block"]'))
+    })
 
-function colorToInput( ho, to ){
-    var alt =ho.attr('alt');
-    to.find('input').attr('value', alt);
-}
+    function colorToInput(ho, to) {
+        var alt = ho.attr('alt');
+        to.find('input').attr('value', alt);
+    }
 
-// цвета шариков и басейнов в инпут конец
-
-
-/*
-$('.main-menu li').on('click', function(e) {
-    $('.menu-btn').removeClass('main-menu-active');
-  e.preventDefault;
-  $(this).toggleClass('menu-btn_active');
-});*/
-// burger-menu end
+    // цвета шариков и басейнов в инпут конец
 
 
+    /*
+    $('.main-menu li').on('click', function(e) {
+        $('.menu-btn').removeClass('main-menu-active');
+      e.preventDefault;
+      $(this).toggleClass('menu-btn_active');
+    });*/
+    // burger-menu end
 
-// при разрешении 760 добавляется класс к valemi - это
+
+
+    // при разрешении 760 добавляется класс к valemi - это
     $(window).on('load resize', function () {
-        if($(window).width() <= 980){
-            
-            
+        if ($(window).width() <= 980) {
+
+
             $('.advan-slider').not('.slick-initialized').slick({
                 dots: false,
                 arrows: true,
@@ -151,17 +151,17 @@ $('.main-menu li').on('click', function(e) {
                         settings: "unslick"
                     },
                     {
-                       breakpoint: 980,
-                       settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 1
+                        breakpoint: 980,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
                         }
                     },
                     {
-                       breakpoint: 755,
-                       settings: {
-                          slidesToShow: 1,
-                          slidesToScroll: 1
+                        breakpoint: 755,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
                         }
                     }
                 ]
@@ -179,60 +179,61 @@ $('.main-menu li').on('click', function(e) {
                         settings: "unslick"
                     },
                     {
-                       breakpoint: 900,
-                       settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 1
-                    }},
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
                     {
-                       breakpoint: 600,
-                       settings: {
-                          slidesToShow: 1,
-                          slidesToScroll: 1
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
                     }
-                }
-                    ]
-                });
+                ]
+            });
         }
-        
+
     });
-// при разрешении 760 добавляется класс к valemi - это
+    // при разрешении 760 добавляется класс к valemi - это
 
 
 
-// select style
+    // select style
 
-  $(".main__form-select").on("click", function() {
-    $(this).closest(".main__form-select-wrap").find(".main__form-submenu").slideToggle(0);
-  });
+    $(".main__form-select").on("click", function () {
+        $(this).closest(".main__form-select-wrap").find(".main__form-submenu").slideToggle(0);
+    });
 
-  
 
-  $(".main__form-submenu").on("click",'span', function() {
-    $(this).closest('.main__form-select-wrap').find('.main__form-select').attr('value',($(this).text()));
-    $(this).parent().slideUp(0);
-  });
 
-  // select style end
+    $(".main__form-submenu").on("click", 'span', function () {
+        $(this).closest('.main__form-select-wrap').find('.main__form-select').attr('value', ($(this).text()));
+        $(this).parent().slideUp(0);
+    });
 
-// popup
+    // select style end
 
-/* модальное окно попап заказа */
-$('.btn-close_view').click(function(e) {
-    e.preventDefault();
-    //do other stuff when a click happens
-});
-$('.btn-view').click(function(e) {
-    e.preventDefault();
-    //do other stuff when a click happens
-});
+    // popup
 
-$('.catalog-form-mobile-btn').click(function(e) {
-    e.preventDefault();
-    //do other stuff when a click happens
-});
+    /* модальное окно попап заказа */
+    $('.btn-close_view').click(function (e) {
+        e.preventDefault();
+        //do other stuff when a click happens
+    });
+    $('.btn-view').click(function (e) {
+        e.preventDefault();
+        //do other stuff when a click happens
+    });
 
-    $(".catalog-form-mobile-btn").click (function (){
+    $('.catalog-form-mobile-btn').click(function (e) {
+        e.preventDefault();
+        //do other stuff when a click happens
+    });
+
+    $(".catalog-form-mobile-btn").click(function () {
         let modal = $(".modal-overlay-order"),
             form = $(this).closest('form');
         price = form.find('input[name=order-price]').val();
@@ -248,15 +249,15 @@ $('.catalog-form-mobile-btn').click(function(e) {
             })
         );
         modal.find('form div.prhtml').text(price);
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn-view").click (function (){
+    $(".btn-view").click(function () {
         let modal = $(".modal-overlay-order"),
             form = $(this).closest('form');
-            price = form.find('input[name=order-price]').val();
-            information = form.serialize();
-             console.log(form);
-            form[0].reset();
+        price = form.find('input[name=order-price]').val();
+        information = form.serialize();
+        console.log(form);
+        form[0].reset();
         modal.fadeIn();
         modal.find('form input[name=information]').remove();
         modal.find('form').append(
@@ -267,68 +268,68 @@ $('.catalog-form-mobile-btn').click(function(e) {
             })
         );
         modal.find('form div.prhtml').text(price);
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-order").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
 
 
-$(document).mouseup(function (e) {
-    var myOrders = $(".modal-overlay-order");
-    if (myOrders.has(e.target).length === 0){
-        
-        myOrders.fadeOut();
-        // $('html, body').css('overflow-y', 'auto');
-    }
-});
-/* конец модальное окно попап просмотр заказа */
-/* модальное окно попап оплата */
+    $(document).mouseup(function (e) {
+        var myOrders = $(".modal-overlay-order");
+        if (myOrders.has(e.target).length === 0) {
 
-    $(".btn-view-pay").click (function (){
+            myOrders.fadeOut();
+            // $('html, body').css('overflow-y', 'auto');
+        }
+    });
+    /* конец модальное окно попап просмотр заказа */
+    /* модальное окно попап оплата */
+
+    $(".btn-view-pay").click(function () {
         $(".modal-overlay-orderPay").fadeIn();
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn__order-pool").click(function() {
+    $(".btn__order-pool").click(function () {
         $(".modal-overlay-orderPull").fadeIn();
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-orderPay").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
-     $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-orderPull").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
 
-$(document).mouseup(function (e) {
-    var myPay = $(".modal-overlay");
-    if (myPay.has(e.target).length === 0){
-        $('html, body').css('overflow-y', 'auto'); 
-        myPay.fadeOut();
-    }
-});
-/* конец модальное окно попап оплата заказа */
-/* модальное окно попап оплата */
+    $(document).mouseup(function (e) {
+        var myPay = $(".modal-overlay");
+        if (myPay.has(e.target).length === 0) {
+            $('html, body').css('overflow-y', 'auto');
+            myPay.fadeOut();
+        }
+    });
+    /* конец модальное окно попап оплата заказа */
+    /* модальное окно попап оплата */
 
-    $(".btn-view-hill").click (function (){
+    $(".btn-view-hill").click(function () {
         $(".modal-overlay-order-hill").fadeIn();
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-order-hill").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
 
-    $(".btn-view-pool").click (function (){
+    $(".btn-view-pool").click(function () {
         let price = $(this).data('price'),
             size = $(this).data('size'),
             target = $(".modal-overlay-order-pool");
 
-            target.find('input[name=size]').remove();
-            target.find('input[name=price]').remove();
+        target.find('input[name=size]').remove();
+        target.find('input[name=price]').remove();
 
         target.fadeIn();
         target.find('form').append(
@@ -341,46 +342,47 @@ $(document).mouseup(function (e) {
         target.find('.price-change').text(price);
         target.find('.order-price').val(price);
         target.find('input[data-name=price]').val(price);
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
-    $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-order-pool").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
 
-$(document).mouseup(function (e) {
-    var myPay = $(".modal-overlay-order-hill");
-    if (myPay.has(e.target).length === 0){
-        // $('html, body').css('overflow-y', 'auto'); 
-        myPay.fadeOut();
-    }
-});
-/* конец модальное окно попап оплата заказа */
-/* модальное окно попап оплата */
+    $(document).mouseup(function (e) {
+        var myPay = $(".modal-overlay-order-hill");
+        if (myPay.has(e.target).length === 0) {
+            // $('html, body').css('overflow-y', 'auto'); 
+            myPay.fadeOut();
+        }
+    });
+    /* конец модальное окно попап оплата заказа */
+    /* модальное окно попап оплата */
 
-    $(".btn-view-call").click (function (){
+    $(".btn-view-call").click(function () {
         $(".modal-overlay-order-call").fadeIn();
-        $('html, body').css('overflow-y', 'hidden'); 
+        $('html, body').css('overflow-y', 'hidden');
     });
 
-    $(".btn-close_view").click (function (){
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-order-call").fadeOut();
-        $('html, body').css('overflow-y', 'auto'); 
+        $('html, body').css('overflow-y', 'auto');
     });
 
-$(document).mouseup(function (e) {
-    var myPay = $(".modal-overlay-order-call");
-    if (myPay.has(e.target).length === 0){
-        // $('html, body').css('overflow-y', 'auto'); 
-        myPay.fadeOut();
-    }
-});
+    $(document).mouseup(function (e) {
+        var myPay = $(".modal-overlay-order-call");
+        if (myPay.has(e.target).length === 0) {
+            // $('html, body').css('overflow-y', 'auto'); 
+            myPay.fadeOut();
+        }
+    });
 
 
     /* конец модальное окно попап оплата заказа */
     // popup end
-    $(".radio").click(function(){
+    $(".radio").click(function () {
         let form = $(this).closest('form'),
+            promoType = form.find('input[data-name=sale]').data('type'),
             sale = form.find('input[data-name=sale]').val();
 
         selected_size_price = $('input[name=size]:checked', form).data('price');
@@ -393,10 +395,18 @@ $(document).mouseup(function (e) {
             all_amount = parseInt(selected_size_price);
         }
 
-        if(sale != 0){
-            all_amount = parseInt(all_amount) - (parseInt(all_amount) / 100 * parseInt(sale));
-        }
+        if (sale != 0) {
 
+            $(this).closest("form").find(".base-price").html(all_amount);
+
+            if ('fixed' == promoType) {
+                all_amount = all_amount - sale;
+            } else {
+                all_amount = parseInt(all_amount) - (parseInt(all_amount) / 100 * parseInt(sale));
+            }
+
+        }
+        
         $(this).closest("form").find(".price-change").text(all_amount);
         $(this).closest("form").find("input[name='order-price']").text(all_amount);
         $(this).closest("form").find("input[name='order-price']").val(all_amount);
@@ -405,23 +415,23 @@ $(document).mouseup(function (e) {
 
     // Form submit
 
-     $(".btn-close_view").click(function() {
+    $(".btn-close_view").click(function () {
         $(".modal-overlay-order-success").fadeOut();
         $('html, body').css('overflow-y', 'auto');
-     });
+    });
 
-    var forms = [].slice.call( document.body.querySelectorAll('form.validating') );
-    forms.forEach(function(form){
-        form.addEventListener('submit', function(e){
+    var forms = [].slice.call(document.body.querySelectorAll('form.validating'));
+    forms.forEach(function (form) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
             let data = new FormData(),
                 info = $(this).serialize();
 
             $.ajax({
-                method:"POST",
-                url:ajaxurl,
-                data: { action: $(form).attr('action'), data:info},
-                success: function (r){
+                method: "POST",
+                url: ajaxurl,
+                data: { action: $(form).attr('action'), data: info },
+                success: function (r) {
                     form.reset();
                     var myPay = $(".modal-overlay");
                     myPay.fadeOut();
@@ -434,30 +444,30 @@ $(document).mouseup(function (e) {
 
                 }
             });
-            
+
         })
     })
 
-    $('.styled-btn1.apply__promo').on('click', function(e){
+    $('.styled-btn1.apply__promo').on('click', function (e) {
         e.preventDefault();
         let promo = $(this).closest('form').find('input:text.promocode').val(),
-         variable = $(this).closest('form').find('input:text.promocode'),
-             form = $(this).closest('form');
+            variable = $(this).closest('form').find('input:text.promocode'),
+            form = $(this).closest('form');
 
         selected_size_price = $('input[name=size]:checked', form).data('price');
-        if (selected_size_price == null){
+        if (selected_size_price == null) {
             selected_size_price = form.find('input[data-name="price"]').val();
         }
         gorka = form.find('input:checkbox');
 
-        if (gorka.is(':checked')){
+        if (gorka.is(':checked')) {
             gorka = gorka.data('price');
-            if (gorka != null){
+            if (gorka != null) {
                 all_amount = parseInt(selected_size_price) + parseInt(gorka);
             } else {
                 all_amount = parseInt(selected_size_price);
             }
-        }else{
+        } else {
             all_amount = parseInt(selected_size_price);
         }
 
@@ -476,13 +486,25 @@ $(document).mouseup(function (e) {
 
                 result = JSON.parse(r);
 
-                    variable.closest("form").find(".price-change").text(all_amount);
-                    variable.closest("form").find("input[name='order-price']").text(all_amount);
-                    variable.closest("form").find("input[name='order-price']").val(all_amount);
-                    variable.closest("form").find("input[data-name='sale']").val('');
+                variable.closest("form").find(".price-change").text(all_amount);
+                variable.closest("form").find("input[name='order-price']").text(all_amount);
+                variable.closest("form").find("input[name='order-price']").val(all_amount);
+                variable.closest("form").find("input[data-name='sale']").val('');
+                variable.closest("form").find("input[data-name='sale']").data('type', '');
+
+                variable.closest("form").find('.base-price').html('');
 
                 if (result.status) {
-                    let calc = all_amount - (all_amount / 100 * result.percent);
+
+                    variable.data('type', result.type);
+                    variable.closest("form").find("input[data-name='sale']").data('type', result.type);
+
+                    if ('fixed' == result.type) {
+                        calc = all_amount - result.percent;
+                    } else {
+                        calc = all_amount - (all_amount / 100 * result.percent);
+                    }
+
                     //set values no promo
                     variable.closest("form").find(".price-change").text(all_amount);
                     variable.closest("form").find("input[name='order-price']").text(all_amount);
@@ -492,20 +514,23 @@ $(document).mouseup(function (e) {
                     variable.closest("form").find(".price-change").text(calc);
                     variable.closest("form").find("input[name=order-price]").val(calc);
                     variable.closest("form").find("input[data-name=sale]").val(result.percent);
+                    
+                    variable.closest("form").find(".base-price").html(all_amount);
+                    
                 }
             }
         })
     })
 
-    $('#check-modal, #check, #check_3').on('click', function(e) {
+    $('#check-modal, #check, #check_3').on('click', function (e) {
         let price = $(this).data('price'),
             form = $(this).closest("form")
-            discount = form.find("input[data-name='sale']").val(),
+        discount = form.find("input[data-name='sale']").val(),
             amount = form.find("input[name=order-price]").val();
-        if(discount != null){
+        if (discount != null) {
             price = price - (price / 100 * discount);
         }
-        if($(this).prop('checked')){
+        if ($(this).prop('checked')) {
             result = parseInt(price) + parseInt(amount);
         } else {
             result = parseInt(amount) - parseInt(price);
@@ -517,7 +542,7 @@ $(document).mouseup(function (e) {
 
     })
 
-    $('form.paypal').on('submit', function(e){
+    $('form.paypal').on('submit', function (e) {
         e.preventDefault();
         form = $(this);
         serialized_data = $(this).serialize();
@@ -553,8 +578,8 @@ $(document).mouseup(function (e) {
                 //add promocode if added
                 //pool_info - информация о проимокоде
                 if (promocode.val() != '') {
-                    item_name_3 = $('<input>', { type: 'hidden', name: 'item_name_3', val: 'Промокод: ' + promocode.val()}); 
-                    amount_3 = $('<input>', { type: 'hidden', name: 'amount_3', val: '0' }); 
+                    item_name_3 = $('<input>', { type: 'hidden', name: 'item_name_3', val: 'Промокод: ' + promocode.val() });
+                    amount_3 = $('<input>', { type: 'hidden', name: 'amount_3', val: '0' });
                 }
 
                 //calculate with gorka if added
@@ -571,7 +596,7 @@ $(document).mouseup(function (e) {
 
                     item_name_4 = $('<input>', { type: 'hidden', name: 'item_name_4', val: 'Горка' });
                     amount_4 = $('<input>', { type: 'hidden', name: 'amount_4', val: price_3 });
-                    
+
                 }
 
                 switch (form_type) {
@@ -586,7 +611,7 @@ $(document).mouseup(function (e) {
 
                         if (promocode.val() != '') {
                             pay_form.append(item_name_3);
-                            pay_form.append(amount_3); 
+                            pay_form.append(amount_3);
                         };
 
                         if (form.find('input[name=gorka]').is(':checked')) {
@@ -665,12 +690,12 @@ $(document).mouseup(function (e) {
                             "Taxation": "osn",
                             "Items": Items
                         }
-                        
+
                         fields.append($('<input>', { type: 'hidden', name: 'amount', val: tinkov_sum }));
                         fields.append($('<input>', { type: 'hidden', name: 'description', val: description }));
-                        fields.append($('<input>', { type: 'hidden', name: 'name', val: $("[name=name]", form).val()}));
-                        fields.append($('<input>', { type: 'hidden', name: 'phone', val: $("[name=phone]", form).val()}));
-                        fields.append($('<input>', { type: 'hidden', name: 'receipt', val: JSON.stringify(receipt)}));
+                        fields.append($('<input>', { type: 'hidden', name: 'name', val: $("[name=name]", form).val() }));
+                        fields.append($('<input>', { type: 'hidden', name: 'phone', val: $("[name=phone]", form).val() }));
+                        fields.append($('<input>', { type: 'hidden', name: 'receipt', val: JSON.stringify(receipt) }));
 
                         pay_form.submit();
 
@@ -681,39 +706,39 @@ $(document).mouseup(function (e) {
 
             }
         });
-        
+
 
 
     });
 
- $('a[href*="#"]').click(function() {
-      var target = $(this.hash);
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-  });
+    $('a[href*="#"]').click(function () {
+        var target = $(this.hash);
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    });
 
 
-// $(document).bind("mouseup touchend" function (e) {
-//     var myPay = $(".modal-overlay-order-call");
-//     if (myPay.has(e.target).length === 0){
-//         // $('html, body').css('overflow-y', 'auto'); 
-//         myPay.fadeOut();
-//     }
-// });
+    // $(document).bind("mouseup touchend" function (e) {
+    //     var myPay = $(".modal-overlay-order-call");
+    //     if (myPay.has(e.target).length === 0){
+    //         // $('html, body').css('overflow-y', 'auto'); 
+    //         myPay.fadeOut();
+    //     }
+    // });
 
 
 
 
-/*
-на всплывающий попап
-$(".btn-wishes_popap").click (function PopUpShow(){
-    $(this).closest('.my-wishes-item').find(".my-wishes-item_popap").fadeIn('slow');
-    setTimeout( function() { $(".my-wishes-item_popap").fadeOut('slow'); }, 1000);
-});*/
-    
+    /*
+    на всплывающий попап
+    $(".btn-wishes_popap").click (function PopUpShow(){
+        $(this).closest('.my-wishes-item').find(".my-wishes-item_popap").fadeIn('slow');
+        setTimeout( function() { $(".my-wishes-item_popap").fadeOut('slow'); }, 1000);
+    });*/
+
 });
 

@@ -111,7 +111,7 @@
                                         <input type="text" placeholder="Ваш город"  name="city" required  pattern="[^0-9]+$"/>
                                     </div>
                                     <div class="form-block promo">
-                                        <input type="text" class="promocode" name="promocode" placeholder="Ваш ПРОМОКОД" />
+                                        <input type="text" class="promocode" name="promocode" data-type="" placeholder="Ваш ПРОМОКОД" />
                                     </div>
                                     <button class="styled-btn1 apply__promo">применить промокод</button>
                                     <div class="form-block">
@@ -122,11 +122,11 @@
                                         <?php $i++;}?>
                                     </div>
                                     <div class="form-block price">
-                                        <div>Цена от:</div>
-                                        <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                                        <div class="base-price"></div>
+                                        <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
                                         <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
                                         <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                                        <input type="hidden" data-name="sale">
+                                        <input type="hidden" data-name="sale" data-type="">
                                         <div>руб.</div>
                                     </div>
                                     <button type="submit" class="styled-btn1">Заказать бассейн</button>

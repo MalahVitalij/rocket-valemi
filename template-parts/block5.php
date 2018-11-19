@@ -119,11 +119,11 @@ $gorka_price = get_field('gorka_price', options);
                         <label for="check_3">Горка нужна</label>
                     </div>
                     <div class="form-block price">
-                        <div>Цена:</div>
+                        <div class="base-price"></div>
                         <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
                         <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
                         <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="sale">
+                        <input type="hidden" data-name="sale" data-type="">
                         <div>руб.</div>
                     </div>
                     </div>
@@ -181,11 +181,11 @@ $gorka_price = get_field('gorka_price', options);
                         <label for="check">Горка нужна</label>
                     </div>
                     <div class="form-block price">
-                        <div>Цена:</div>
+                        <div class="base-price"></div>
                         <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
                         <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
                         <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="sale">
+                        <input type="hidden" data-name="sale" data-type="">
                         <div>руб.</div>
                     </div>
                     </div>

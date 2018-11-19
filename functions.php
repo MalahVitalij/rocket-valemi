@@ -175,11 +175,27 @@ function promocode(){
 
     $promocodes = get_field('promo', options);
     foreach ($promocodes as $item) {
-        if($item['title'] == $_POST['promocode']){
+
+        if($item['title'] == strtolower($_POST['promocode'])){
+
+            //promocode exists
             $result['status'] = 1;
-            $result['message'] = 'Промокод с скидкой в ' . $item['percent'] . '% применен!';
+
+            //get discount type
+            if(0 == $item['discount_type']) :
+                $result['type'] = 'per';
+            else : 
+                $result['type'] = 'fixed';
+            endif;
+
+            //mesage
+            $result['message'] = 'Промокод применен!';
+
+            //discount amount
             $result['percent'] = "{$item['percent']}";
+
             break;
+
         } else {
             $result['status'] = 0;
         }
