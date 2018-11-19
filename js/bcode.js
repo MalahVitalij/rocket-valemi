@@ -524,39 +524,32 @@ $(document).ready(function () {
 
     $('#check-modal, #check, #check_3').on('click', function (e) {
 
-        let form = $(this).closest("form"),
-            gorka_price = $(this).data('price'),
-            discount_type = form.find("input[data-name='sale']").data('type'),
-            discount_amount = form.find("input[data-name='sale']").val(),
-            order_amount = form.find("input[name=order-price]").val();
-        
-        let pool_price = form.find('input[name=size]').data('price');
+        var form, gorka_price, discount_type, discount_amount, order_amount, pool_price, base_price, result;
 
-        let base_price = parseInt(gorka_price) + parseInt(pool_price);
-
-        if (discount_amount != null) {
-            if ("fixed" == discount_type) {
-                gorka_price = gorka_price - discount_amount;
-            } else {
-                gorka_price = gorka_price - (gorka_price / 100 * discount_amount);
-            }
-        }
+        form = $(this).closest("form");
+        gorka_price = $(this).data('price');
+        discount_type = form.find("input[data-name='sale']").data('type');
+        discount_amount = form.find("input[data-name='sale']").val();
+        order_amount = form.find("input[name=order-price]").val();
+        pool_price = form.find('input[name=size]:checked').data('price');
 
         if ($(this).prop('checked')) {
-            result = parseInt(gorka_price) + parseInt(order_amount);
+            base_price = parseInt(gorka_price) + parseInt(pool_price);
         } else {
-            result = parseInt(order_amount) - parseInt(gorka_price);
+            base_price = pool_price;
         }
 
-        if (discount_type == 'fixed' || discount_type == 'per') {
-
-            if (!$(this).prop('checked')) {
-                base_price = base_price - gorka_price;
-            }
-            
+        if (discount_type == 'fixed') {
+            result = base_price - discount_amount;
             form.find(".base-price").text(base_price);
-        } else {
+        }
+        else if (discount_type == 'per') {
+            result = base_price - (base_price / 100 * discount_amount);
+            form.find(".base-price").text(base_price);
+        }
+        else {
             form.find(".base-price").text('');
+            result = base_price;
         }
 
         form.find(".price-change").text(result);
