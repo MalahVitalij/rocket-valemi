@@ -406,7 +406,7 @@ $(document).ready(function () {
             }
 
         }
-        
+
         $(this).closest("form").find(".price-change").text(all_amount);
         $(this).closest("form").find("input[name='order-price']").text(all_amount);
         $(this).closest("form").find("input[name='order-price']").val(all_amount);
@@ -514,26 +514,49 @@ $(document).ready(function () {
                     variable.closest("form").find(".price-change").text(calc);
                     variable.closest("form").find("input[name=order-price]").val(calc);
                     variable.closest("form").find("input[data-name=sale]").val(result.percent);
-                    
+
                     variable.closest("form").find(".base-price").html(all_amount);
-                    
+
                 }
             }
         })
     })
 
     $('#check-modal, #check, #check_3').on('click', function (e) {
-        let price = $(this).data('price'),
-            form = $(this).closest("form")
-        discount = form.find("input[data-name='sale']").val(),
-            amount = form.find("input[name=order-price]").val();
-        if (discount != null) {
-            price = price - (price / 100 * discount);
+
+        let form = $(this).closest("form"),
+            gorka_price = $(this).data('price'),
+            discount_type = form.find("input[data-name='sale']").data('type'),
+            discount_amount = form.find("input[data-name='sale']").val(),
+            order_amount = form.find("input[name=order-price]").val();
+        
+        let pool_price = form.find('input[name=size]').data('price');
+
+        let base_price = parseInt(gorka_price) + parseInt(pool_price);
+
+        if (discount_amount != null) {
+            if ("fixed" == discount_type) {
+                gorka_price = gorka_price - discount_amount;
+            } else {
+                gorka_price = gorka_price - (gorka_price / 100 * discount_amount);
+            }
         }
+
         if ($(this).prop('checked')) {
-            result = parseInt(price) + parseInt(amount);
+            result = parseInt(gorka_price) + parseInt(order_amount);
         } else {
-            result = parseInt(amount) - parseInt(price);
+            result = parseInt(order_amount) - parseInt(gorka_price);
+        }
+
+        if (discount_type == 'fixed' || discount_type == 'per') {
+
+            if (!$(this).prop('checked')) {
+                base_price = base_price - gorka_price;
+            }
+            
+            form.find(".base-price").text(base_price);
+        } else {
+            form.find(".base-price").text('');
         }
 
         form.find(".price-change").text(result);
