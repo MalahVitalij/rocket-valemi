@@ -126,7 +126,7 @@ $gorka_price = get_field('gorka_price', options);
                 <button class="styled-btn1 apply__promo">применить промокод</button>
                 <div class="form-block price">
                     <del class="base-price"></del>
-                    <div class='price-change'></div>
+                    <div class="price-change"></div>
                     <div class="base-price"></div>
                     <div class="price-change"></div>
                     <input type="hidden" name="order-price" class="order-price" value="">
@@ -161,8 +161,6 @@ $gorka_price = get_field('gorka_price', options);
                     <button class="styled-btn1 apply__promo">применить промокод</button>
                 </div>
                 <div class="form-block price">
-                    <del class="base-price"></del>
-                    <div>
                     <div class="base-price"></div>
                     <div class="price-change">
                         <?php the_field('gorka_price', options)?>
