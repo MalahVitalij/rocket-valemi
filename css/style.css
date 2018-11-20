@@ -1980,15 +1980,17 @@ main {
     font-family: "GilroyExtra", sans-serif;
     align-self: center;
 }
-.colors-form .form-wrapper .form-block.price div.base-price {
+.colors-form .form-wrapper .form-block.price del.base-price {
     font-size: 19px;
     font-weight: 700;
+        color: #4d4f5b;
     margin-right: 25px;
 }
 .colors-form .form-wrapper .form-block.price div.price-change-rub {
         align-self: flex-end;
         padding-bottom: 7px;
         padding-left: 7px;
+        font-family: "GilroyExtra", sans-serif;
 }
 
 .colors-form .form-wrapper .form-block.price div:first-child {
