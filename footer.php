@@ -125,13 +125,10 @@ $gorka_price = get_field('gorka_price', options);
                 </div>
                 <button class="styled-btn1 apply__promo">применить промокод</button>
                 <div class="form-block price">
-<<<<<<< HEAD
                     <del class="base-price"></del>
                     <div class='price-change'></div>
-=======
                     <div class="base-price"></div>
                     <div class="price-change"></div>
->>>>>>> wp_dev
                     <input type="hidden" name="order-price" class="order-price" value="">
                     <input type="hidden" data-name="price" value="">
                     <input type="hidden" data-name="sale" data-type="">
@@ -164,13 +161,10 @@ $gorka_price = get_field('gorka_price', options);
                     <button class="styled-btn1 apply__promo">применить промокод</button>
                 </div>
                 <div class="form-block price">
-<<<<<<< HEAD
                     <del class="base-price"></del>
                     <div>
-=======
                     <div class="base-price"></div>
                     <div class="price-change">
->>>>>>> wp_dev
                         <?php the_field('gorka_price', options)?>
                     </div>
                     <div>руб.</div>
