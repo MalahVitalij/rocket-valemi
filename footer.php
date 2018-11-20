@@ -125,8 +125,13 @@ $gorka_price = get_field('gorka_price', options);
                 </div>
                 <button class="styled-btn1 apply__promo">применить промокод</button>
                 <div class="form-block price">
+<<<<<<< HEAD
                     <del class="base-price"></del>
                     <div class='price-change'></div>
+=======
+                    <div class="base-price"></div>
+                    <div class="price-change"></div>
+>>>>>>> wp_dev
                     <input type="hidden" name="order-price" class="order-price" value="">
                     <input type="hidden" data-name="price" value="">
                     <input type="hidden" data-name="sale" data-type="">
@@ -155,16 +160,24 @@ $gorka_price = get_field('gorka_price', options);
                     <input type="text" placeholder="Ваш город" name="city" required pattern="[^0-9]+$" />
                 </div>
                 <div class="form-block promo">
-                    <input type="text" placeholder="Ваш ПРОМОКОД">
+                    <input type="text" name="promocode" class="promocode" placeholder="Ваш ПРОМОКОД">
                     <button class="styled-btn1 apply__promo">применить промокод</button>
                 </div>
                 <div class="form-block price">
+<<<<<<< HEAD
                     <del class="base-price"></del>
                     <div>
+=======
+                    <div class="base-price"></div>
+                    <div class="price-change">
+>>>>>>> wp_dev
                         <?php the_field('gorka_price', options)?>
                     </div>
                     <div>руб.</div>
                 </div>
+                <input type="hidden" data-name="price" value="<?php the_field('gorka_price', options)?>">
+                <input type="hidden" name="order-price">
+                <input type="hidden" data-name="sale">
                 <button type="submit" class="styled-btn1">Заказать горку</button>
             </form>
         </div>
