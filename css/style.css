@@ -895,7 +895,7 @@ form .form-block {
 
 .styled-form form .form-block.price {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -929,6 +929,7 @@ form .form-block {
     color: #ffffff;
     font-size: 19px;
     font-weight: 700;
+    margin-right: 25px; 
 }
 
 .styled-form .form-subtitle {
