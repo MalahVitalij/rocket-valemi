@@ -126,13 +126,13 @@ $gorka_price = get_field('gorka_price', options);
                 <button class="styled-btn1 apply__promo">применить промокод</button>
                 <div class="form-block price">
                     <del class="base-price"></del>
-                    <div class="price-change"></div>
-                    <div class="base-price"></div>
-                    <div class="price-change"></div>
-                    <input type="hidden" name="order-price" class="order-price" value="">
-                    <input type="hidden" data-name="price" value="">
-                    <input type="hidden" data-name="sale" data-type="">
-                    <div>руб.</div>
+                    <div class="price-change-wrapper">
+                        <div class="price-change"></div>
+                        <input type="hidden" name="order-price" class="order-price" value="">
+                        <input type="hidden" data-name="price" value="">
+                        <input type="hidden" data-name="sale" data-type="">
+                        <div class="price-change-rub">руб.</div>
+                    </div>
                 </div>
                 <button type="submit" class="styled-btn1">Заказать бассейн</button>
             </form>
@@ -161,11 +161,14 @@ $gorka_price = get_field('gorka_price', options);
                     <button class="styled-btn1 apply__promo">применить промокод</button>
                 </div>
                 <div class="form-block price">
-                    <div class="base-price"></div>
-                    <div class="price-change">
-                        <?php the_field('gorka_price', options)?>
+                    <del class="base-price"></del>
+                    <div class="price-change-wrapper">
+                        <div class="price-change">
+                            <?php the_field('gorka_price', options)?>
+                        </div>
+                        <div class="price-change-rub">руб.</div>
                     </div>
-                    <div>руб.</div>
+                   
                 </div>
                 <input type="hidden" data-name="price" value="<?php the_field('gorka_price', options)?>">
                 <input type="hidden" name="order-price">

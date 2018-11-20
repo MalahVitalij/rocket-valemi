@@ -1962,7 +1962,7 @@ main {
 
 .colors-form .form-wrapper .form-block.price {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -1973,6 +1973,22 @@ main {
     font-size: 13px;
     line-height: 13px;
     font-weight: 700;
+}
+.colors-form .form-wrapper .form-block.price div.price-change {
+    font-size: 30px;
+    line-height: 32px;
+    font-family: "GilroyExtra", sans-serif;
+    align-self: center;
+}
+.colors-form .form-wrapper .form-block.price div.base-price {
+    font-size: 19px;
+    font-weight: 700;
+    margin-right: 25px;
+}
+.colors-form .form-wrapper .form-block.price div.price-change-rub {
+        align-self: flex-end;
+        padding-bottom: 7px;
+        padding-left: 7px;
 }
 
 .colors-form .form-wrapper .form-block.price div:first-child {
