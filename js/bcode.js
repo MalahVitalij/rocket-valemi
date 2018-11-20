@@ -486,6 +486,8 @@ $(document).ready(function () {
 
                 result = JSON.parse(r);
 
+                console.log(result);
+
                 variable.closest("form").find(".price-change").text(all_amount);
                 variable.closest("form").find("input[name='order-price']").text(all_amount);
                 variable.closest("form").find("input[name='order-price']").val(all_amount);
@@ -737,7 +739,6 @@ $(document).ready(function () {
         }
     });
 
-
     // $(document).bind("mouseup touchend" function (e) {
     //     var myPay = $(".modal-overlay-order-call");
     //     if (myPay.has(e.target).length === 0){
@@ -758,3 +759,92 @@ $(document).ready(function () {
 
 });
 
+//pass form
+function calculateRegularPrice(el) {
+    let pool, pool_price, gorka_enabled, gorka, gorka_price, result;
+
+    gorka_enabled = false;
+
+    result = {
+        'pool': '',
+        'gorka': 0,
+    }
+    
+    pool = el.find('input[name=size]');
+    if (pool.length) {
+        pool_price = pool.data('price');
+        result.pool = parseInt(pool_price);
+    };
+
+    gorka = el.find('input[name=gorka]');
+    if (gorka.is(':checked')) {
+        gorka_enabled = true;
+    };
+    if (gorka.length && gorka_enabled) {
+        gorka_price = gorka.data('price');
+        result.gorka = parseInt(gorka_price);
+    };
+
+    return result;
+}
+//pass form
+function getFormDiscount(el) {
+    let discount_field, discount_type, discount_amount, result;
+
+    result = {
+        'status':0,
+        'type': '',
+        'amount': 0
+    }
+
+    discount_field = el.find('input[data-name=sale]');
+    if (discount_field.length) {
+        discount_type = discount_field.data('type');
+        discount_amount = discount_field.val();
+    }
+
+    if (discount_type.length == 0) {
+        return result;
+    }
+
+    result.status = 1;
+    result.type = discount_type;
+    result.amount = discount_amount;
+
+    return result;
+
+}
+//pass results of previous 2 functions 
+function calculateDiscount(goods, discount) {
+
+    let price_no_discount, price_with_discount, result;
+
+    result = {
+        'price': 0,
+        'discount':0
+    }
+
+    price_no_discount = 0;
+
+    $.each(goods, function (key, val) {
+        price_no_discount = price_no_discount + val;
+    })
+
+    result.price = price_no_discount;
+
+    if (!discount.status) {
+        return result;
+    }
+
+    if ('fixed' == discount.type) {
+        price_with_discount = price_no_discount - discount.amount;
+        result.discount = price_with_discount;
+        return result;
+    }
+
+    price_with_discount = price_no_discount / 100 * discount.amount;
+    result.discount = price_with_discount;
+
+    return result;
+    
+}
