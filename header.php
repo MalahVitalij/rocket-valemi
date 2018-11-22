@@ -19,6 +19,37 @@
         <script>
             ajaxurl = '<?=admin_url("admin-ajax.php")?>';
         </script>
+		<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter44624194 = new Ya.Metrika2({
+                    id:44624194,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true,
+                    ecommerce:"dataLayer"
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/44624194" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
     </head>
     <body>
     <?php
@@ -58,7 +89,7 @@
                         </div>
                         <div class="phone-block">
                             <a href="tel:<?=preg_replace('/[^0-9]/', '', $phone);?>"><img src="<?=get_template_directory_uri()?>/img/phone-icon.png" alt="телефон" /><?=$phone?> </a>
-                            <button class="styled-bnt modal-btn btn-view-call">Заказать звонок</button>
+                            <button class="styled-bnt modal-btn btn-view-call" data-yatarget="zakazat-zvonok">Заказать звонок</button>
                         </div>
                     </div>
                 </div>
@@ -133,17 +164,17 @@
                                             <div class="price-change-rub" style="">руб.</div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                                    <button type="submit" class="styled-btn1" data-yatarget="zakazat-basein-header">Заказать бассейн</button>
                                 </form>
                                 <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                                 <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                             </div>
                             <div class="clearfix"></div>
-                            <button type="button" class="styled-btn2 btn-view-pay">Оплатить</button>
+                            <button type="button" class="styled-btn2 btn-view-pay" data-yatarget="oplatit">Оплатить</button>
                         </div>
                         <!--кнопки-->
                         <div class="wrap-header-btn">
-                            <button class="styled-btn1 btn__order-pool">Заказать бассейн</button>
+                            <button class="styled-btn1 btn__order-pool" data-yatarget="zakazat-bassein-header-mob">Заказать бассейн</button>
                             <button type="submit" class="styled-btn1 btn-view">Заказать бассейн</button>
                             <button type="button" class="styled-btn2 btn-view-pay">Оплатить</button>
                         </div>

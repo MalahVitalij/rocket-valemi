@@ -33,7 +33,7 @@ $gorka_price = get_field('gorka_price', options);
                     <div><?=$gorka_price?></div>
                     <div>руб.</div>
                </div>
-               <button type="submit" class="styled-btn1 btn-view-hill">Заказать горку</button>
+               <button type="submit" class="styled-btn1 btn-view-hill" data-yatarget="zakazat-gorky">Заказать горку</button>
           </div>
           <div class="add-ball ball1"><img src="<?=get_template_directory_uri()?>/img/add-ball1.png" alt="ball1" /></div>
           <div class="add-ball ball2"><img src="<?=get_template_directory_uri()?>/img/add-ball2.png" alt="ball2" /></div>

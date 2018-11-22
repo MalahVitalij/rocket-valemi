@@ -4,9 +4,11 @@ $(window).on('load', function () {
 });
 $(document).ready(function () {
 
-    $(window).on("resize load", function () {
-        console.log($(window).width());
-    });
+	$('[data-yaTarget]').on('click', function(){
+		target = $(this).data('yatarget');
+		yaCounter44624194.reachGoal(target);
+	});
+	
 
 
     $('.popular-slider').slick({

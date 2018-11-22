@@ -174,6 +174,7 @@ add_action('wp_ajax_promocode', 'promocode');
 function promocode(){
 
     $promocodes = get_field('promo', options);
+	
     foreach ($promocodes as $item) {
 
         if($item['title'] == strtolower($_POST['promocode'])){

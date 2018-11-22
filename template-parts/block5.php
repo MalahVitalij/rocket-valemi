@@ -131,7 +131,7 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     </div>
                     <div class="form-block-wrap form-block-wrap-3">
-                    <button type="submit" class="catalog-form-mobile-btn">Заказать бассейн</button>
+                    <button type="submit" class="catalog-form-mobile-btn" data-yatarget="zakazat-bassein-block5">Заказать бассейн</button>
                     <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                     <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                     </div>
@@ -196,7 +196,7 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     </div>
                     <div class="form-block-wrap form-block-wrap-3">
-                    <button type="submit" class="styled-btn1 blue btn-view">Заказать бассейн</button>
+                    <button type="submit" class="styled-btn1 blue btn-view" data-yatarget="zakazat-bassein-block5">Заказать бассейн</button>
                     <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                     <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                     </div>

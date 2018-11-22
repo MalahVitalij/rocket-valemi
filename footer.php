@@ -73,7 +73,7 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     <div>руб.</div>
                 </div>
-                <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                <button type="submit" class="styled-btn1" data-yatarget="zakazat-bassein-block5-popup">Заказать бассейн</button>
             </form>
         </div>
         <a href="#" class="btn-close_view"><img src="<?=get_template_directory_uri()?>/img/close-btn-popup.png" alt="img"></a>
@@ -134,7 +134,7 @@ $gorka_price = get_field('gorka_price', options);
                         <div class="price-change-rub">руб.</div>
                     </div>
                 </div>
-                <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                <button type="submit" class="styled-btn1" data-yatarget="zakazat-bassein-90-120-popup">Заказать бассейн</button>
             </form>
         </div>
         <a href="#" class="btn-close_view"><img src="<?=get_template_directory_uri()?>/img/close-btn-popup.png" alt="img"></a>
@@ -173,7 +173,7 @@ $gorka_price = get_field('gorka_price', options);
                 <input type="hidden" data-name="price" value="<?php the_field('gorka_price', options)?>">
                 <input type="hidden" name="order-price">
                 <input type="hidden" data-name="sale">
-                <button type="submit" class="styled-btn1">Заказать горку</button>
+                <button type="submit" class="styled-btn1" data-yatarget="zakazat-gorky-popup">Заказать горку</button>
             </form>
         </div>
         <a href="<?=$privacy?>" class="btn-close_view"><img src="<?=get_template_directory_uri()?>/img/close-btn-popup.png"
@@ -253,7 +253,7 @@ $gorka_price = get_field('gorka_price', options);
                     </div>
                     
                 </div>
-                <button type="submit" class="styled-btn1">оплатить</button>
+                <button type="submit" class="styled-btn1" data-yatarget="oplatit-popup">оплатить</button>
             </form>
         </div>
         <a href="<?=$privacy?>" class="btn-close_view"><img src="<?=get_template_directory_uri()?>/img/close-btn-popup.png"
@@ -300,7 +300,7 @@ $gorka_price = get_field('gorka_price', options);
                     <input type="hidden" data-name="sale" data-type="">
                     <div>руб.</div>
                 </div>
-                <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                <button type="submit" class="styled-btn1" data-yatarget="zakazat-basein-header-popup-mob">Заказать бассейн</button>
             </form>
 
         </div>

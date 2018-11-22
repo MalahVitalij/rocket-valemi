@@ -94,7 +94,7 @@ $pools = get_field('pool_sizes', options);
                               </div>
                               
                          </div>
-                         <button type="submit" class="styled-btn1">Заказать бассейн</button>
+                         <button type="submit" class="styled-btn1" data-yatarget="zakazat-bassein-footer">Заказать бассейн</button>
                     </form>
                     <div class="form-subtitle">
                          <?=$header_under_recive_pool?>
