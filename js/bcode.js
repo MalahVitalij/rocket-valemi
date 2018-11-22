@@ -488,8 +488,6 @@ $(document).ready(function () {
 
                 result = JSON.parse(r);
 
-                console.log(result);
-
                 variable.closest("form").find(".price-change").text(all_amount);
                 variable.closest("form").find("input[name='order-price']").text(all_amount);
                 variable.closest("form").find("input[name='order-price']").val(all_amount);
