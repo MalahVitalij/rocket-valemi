@@ -128,7 +128,7 @@ function order_pool(){
 
     $post_id = wp_insert_post( $post_data );
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Заказ бассейна', $message);
 
 
     if($post_id){
@@ -158,7 +158,7 @@ function order_hill(){
 
     $message = "Имя : {$data['name']} \r\n Телефон : {$data['phone']} \r\n Город : {$data['city']}";
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Заказ горки', $message);
 
     if($post_id){
         echo 'ok';
@@ -174,12 +174,29 @@ add_action('wp_ajax_promocode', 'promocode');
 function promocode(){
 
     $promocodes = get_field('promo', options);
+	
     foreach ($promocodes as $item) {
-        if($item['title'] == $_POST['promocode']){
+
+        if($item['title'] == strtolower($_POST['promocode'])){
+
+            //promocode exists
             $result['status'] = 1;
-            $result['message'] = 'Промокод с скидкой в ' . $item['percent'] . '% применен!';
+
+            //get discount type
+            if(0 == $item['discount_type']) :
+                $result['type'] = 'per';
+            else : 
+                $result['type'] = 'fixed';
+            endif;
+
+            //mesage
+            $result['message'] = 'Промокод применен!';
+
+            //discount amount
             $result['percent'] = "{$item['percent']}";
+
             break;
+
         } else {
             $result['status'] = 0;
         }
@@ -228,7 +245,7 @@ function order_pool_big(){
 
     $post_id = wp_insert_post( $post_data );
 
-    wp_mail(get_option('admin_email'), 'Заказ звонка', $message);
+    wp_mail(get_option('admin_email'), 'Большая форма заказа бассена', $message);
 
 
     if($post_id){

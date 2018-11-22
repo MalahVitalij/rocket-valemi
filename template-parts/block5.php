@@ -20,6 +20,7 @@ $gorka_price = get_field('gorka_price', options);
 ?>
 <!--цветовая гамма-->
 <section class="main-colors-scheme" id="catalog">
+    <a name="block5"></a>
     <div class="container">
     <div class="section-side-title left-side p-side">Большой выбор</div>
     <div class="sec-title sec-p"><?=$title?></div>
@@ -118,16 +119,19 @@ $gorka_price = get_field('gorka_price', options);
                         <label for="check_3">Горка нужна</label>
                     </div>
                     <div class="form-block price">
-                        <div>Цена:</div>
-                        <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
-                        <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="sale">
-                        <div>руб.</div>
+                        <del class="base-price"></del>
+                        <div class="price-change-wrapper">
+                             <div class='price-change'><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                            <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                            <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                            <input type="hidden" data-name="sale" data-type="">
+                            <div class="price-change-rub">руб.</div>
+                        </div>
+                       
                     </div>
                     </div>
                     <div class="form-block-wrap form-block-wrap-3">
-                    <button type="submit" class="catalog-form-mobile-btn">Заказать бассейн</button>
+                    <button type="submit" class="catalog-form-mobile-btn" data-yatarget="zakazat-bassein-block5">Заказать бассейн</button>
                     <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                     <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                     </div>
@@ -180,16 +184,19 @@ $gorka_price = get_field('gorka_price', options);
                         <label for="check">Горка нужна</label>
                     </div>
                     <div class="form-block price">
-                        <div>Цена:</div>
-                        <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
-                        <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
-                        <input type="hidden" data-name="sale">
-                        <div>руб.</div>
+                        <del class="base-price"></del>
+                        <div class="price-change-wrapper">
+                             <div class="price-change"><?php price_value($pools[0]['price'], $pools[0]['sale_price'])?></div>
+                            <input type="hidden" name="order-price" class="order-price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                            <input type="hidden" data-name="price" value="<?php price_value($pools[0]['price'], $pools[0]['sale_price'])?>">
+                            <input type="hidden" data-name="sale" data-type="">
+                            <div class="price-change-rub">руб.</div>
+                        </div>
+                       
                     </div>
                     </div>
                     <div class="form-block-wrap form-block-wrap-3">
-                    <button type="submit" class="styled-btn1 blue btn-view">Заказать бассейн</button>
+                    <button type="submit" class="styled-btn1 blue btn-view" data-yatarget="zakazat-bassein-block5">Заказать бассейн</button>
                     <div class="form-subtitle"><?=$header_under_recive_pool?></div>
                     <a href="<?=$privacy?>" class="form-pol">Политика конфиденциальности</a>
                     </div>

@@ -8,6 +8,7 @@ $points = get_field('block_1_points', $fpid);
 
 <!--преимущества-->
 <section class="main-advantages">
+    <a name="block1"></a>
     <div class="container">
 
         <div class="sec-title sec-p"><?=$title?></div>

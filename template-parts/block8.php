@@ -16,6 +16,7 @@ $ans3 = get_field('ans_3', $fpid);
 
 <!--пояснения-->
 <section class="main-example">
+     <a name="block8"></a>
      <div class="container">
      <div class="example-wrapper">
           <div class="example-block left purp">

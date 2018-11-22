@@ -947,6 +947,14 @@
     .main-popular .sec-bg-title {
         display: none;
     }
+    .styled-btn1.btn-view {
+        display: none;
+    }
+    .modal-overlay-orderPull .popup-make-order .radio + label {
+        height: 30px;
+    }
+
+    
    /* .banner-advantages {
         margin-left: 0;
         justify-content: center;
@@ -1553,4 +1561,28 @@
     max-width: 450px;
 }
 
+}
+
+@media (max-height: 750px) {
+    .modal-overlay-orderPay .popup-wrap {
+        top: 70%;
+    }
+}
+
+
+@media (max-height: 550px) {
+    .modal-overlay-orderPay .popup-wrap {
+        top: 97%;
+    }
+}
+
+@media (max-height: 410px) {
+    .modal-overlay-orderPay .popup-wrap {
+        top: 105%;
+    }
+}
+@media (max-height: 350px) {
+    .modal-overlay-orderPay .popup-wrap {
+        top: 114%;
+    }
 }

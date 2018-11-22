@@ -8,6 +8,7 @@ $colors = ['pink', 'purp', 'orng', 'orng', 'purp', 'pink'];
 ?>
 <!--полезность-->
 <section class="main-userfulness">
+    <a name="block3"></a>
     <div class="container">
         <div class="section-side-title left-side p-side">Полезно</div>
         <div class="sec-title sec-p"><?=$title?></div>
