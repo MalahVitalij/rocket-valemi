@@ -10,6 +10,7 @@ $(document).ready(function () {
 	});
 	
 
+
     $('.popular-slider').slick({
         dots: false,
         arrows: true,

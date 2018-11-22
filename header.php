@@ -1,3 +1,5 @@
+<!-- промокод syrkova -->
+
 <?php global $fpid; ?>
 <!DOCTYPE html>
 <html lang="ru">
