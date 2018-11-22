@@ -177,7 +177,7 @@ function promocode(){
 	
     foreach ($promocodes as $item) {
 
-        if(strtolower($item['title']) == strtolower($_POST['promocode'])){
+        if(mb_strtolower($item['title'], 'UTF-8') == mb_strtolower($_POST['promocode'], 'UTF-8')){
 
             //promocode exists
             $result['status'] = 1;
